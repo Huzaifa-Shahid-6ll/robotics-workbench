@@ -241,5 +241,6 @@
     "@robotics-workbench/agents": "0.1.0",
     "@robotics-workbench/webviews": "0.1.0",
     "vscode-languageclient": "9.0.1"
-  }
+  },
+  "license": "MIT"
 }

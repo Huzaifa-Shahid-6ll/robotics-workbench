@@ -1,0 +1,30 @@
+name: Bug report
+description: Report a reproducible problem with Robotics Workbench.
+title: "[Bug] "
+labels: [bug]
+body:
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Steps to reproduce
+      description: Start with a small sketch or synthetic fixture where possible.
+    validations:
+      required: true
+  - type: textarea
+    id: behavior
+    attributes:
+      label: Expected and actual behavior
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Environment
+      placeholder: Workbench, Windows, VS Code, Node, and applicable tool versions
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Redacted evidence
+      description: Remove tokens, personal paths, board serial numbers, and private source.

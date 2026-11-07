@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="640" viewBox="0 0 1280 640" role="img" aria-labelledby="title description">
+  <title id="title">Robotics Workbench</title>
+  <desc id="description">A blueprint-style banner with a three-stage flow from sketch to compile to recording.</desc>
+  <defs>
+    <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse">
+      <path d="M32 0H0v32" fill="none" stroke="#223747" stroke-width="1"/>
+    </pattern>
+    <linearGradient id="panel" x2="1" y2="1">
+      <stop stop-color="#142737"/><stop offset="1" stop-color="#111e2d"/>
+    </linearGradient>
+  </defs>
+  <rect width="1280" height="640" rx="28" fill="#101b27"/>
+  <rect width="1280" height="640" rx="28" fill="url(#grid)" opacity=".7"/>
+  <rect x="36" y="36" width="1208" height="568" rx="20" fill="none" stroke="#395469"/>
+  <path d="M64 114V64h50m1052 0h50v50m0 412v50h-50m-1052 0H64v-50" fill="none" stroke="#77dfc7" stroke-width="3"/>
+  <g font-family="Consolas, Menlo, monospace">
+    <text x="94" y="128" fill="#77dfc7" font-size="24" letter-spacing="4">ROBOTICS WORKBENCH</text>
+    <text x="94" y="501" fill="#9db7c8" font-size="21">WINDOWS x64  /  VS CODE  /  LOCAL</text>
+  </g>
+  <g font-family="Segoe UI, Arial, sans-serif" fill="#f4f9fc" font-size="82" font-weight="700" letter-spacing="-3">
+    <text x="88" y="256">Sketch.</text>
+    <text x="88" y="352">Build.</text>
+    <text x="88" y="448">Observe.</text>
+  </g>
+  <rect x="664" y="115" width="488" height="410" rx="16" fill="url(#panel)" stroke="#436277" stroke-width="2"/>
+  <g font-family="Consolas, Menlo, monospace">
+    <text x="700" y="160" fill="#b8d0dd" font-size="19" letter-spacing="3">WORKBENCH FLOW</text>
+    <path d="M725 223v229" stroke="#77dfc7" stroke-width="2" stroke-dasharray="5 7"/>
+    <g fill="#192f40" stroke="#436277">
+      <rect x="747" y="198" width="366" height="69" rx="8"/>
+      <rect x="747" y="296" width="366" height="69" rx="8"/>
+      <rect x="747" y="394" width="366" height="69" rx="8"/>
+    </g>
+    <g fill="#101b27" stroke="#77dfc7" stroke-width="3">
+      <circle cx="725" cy="232" r="9"/><circle cx="725" cy="330" r="9"/><circle cx="725" cy="428" r="9"/>
+    </g>
+    <g fill="#f4f9fc" font-size="22">
+      <text x="772" y="241">01  Arduino sketch</text>
+      <text x="772" y="339">02  Compile receipt</text>
+      <text x="772" y="437">03  Serial recording</text>
+    </g>
+  </g>
+</svg>
