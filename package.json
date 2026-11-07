@@ -52,7 +52,7 @@
     "@vscode/vsce": "4.1.0",
     "esbuild": "0.28.2",
     "playwright": "1.61.1",
-    "typescript": "5.9.3",
+    "typescript": "7.0.2",
     "vscode-languageclient": "9.0.1"
   },
   "overrides": {
