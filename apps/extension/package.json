@@ -242,5 +242,14 @@
     "@robotics-workbench/webviews": "0.1.0",
     "vscode-languageclient": "9.0.1"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Huzaifa-Shahid-6ll/robotics-workbench.git",
+    "directory": "apps/extension"
+  },
+  "bugs": {
+    "url": "https://github.com/Huzaifa-Shahid-6ll/robotics-workbench/issues"
+  },
+  "homepage": "https://huzaifa-shahid-6ll.github.io/robotics-workbench/"
 }
