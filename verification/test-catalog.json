@@ -1,0 +1,569 @@
+{
+  "schemaVersion": 1,
+  "scope": "Registered executed procedures; presence is not a current implementation or release pass.",
+  "tests": [
+    {
+      "testId": "arduino.compile-only",
+      "procedure": "Compile-only guarded adapter procedure in packages/test-fixtures/arduino/compile-probe.ts: actual installed CLI valid+invalid C++ build, spaces/non-ASCII path, scoped diagnostic, assertCurrent, unchanged fixture SHA.",
+      "evidenceClass": "software-with-installed-toolchain",
+      "evidenceRecord": "verification/task-04.json"
+    },
+    {
+      "testId": "arduino.existing-example",
+      "procedure": ".venv-validation/Scripts/python scripts/compatibility/compile-probe.py --cli 'C:/Program Files/Arduino IDE/resources/app/lib/backend/resources/arduino-cli.exe' --existing-sketch 'C:\\Program Files\\Arduino IDE\\resources\\app\\lib\\backend\\resources\\Examples\\01.Basics\\Blink' --fqbn arduino:avr:uno",
+      "evidenceClass": "software",
+      "evidenceRecord": "verification/task-00-completion.json"
+    },
+    {
+      "testId": "codex.coordinator",
+      "procedure": "Recorded isolated native provider fixture; see retained procedure and source script",
+      "evidenceClass": "live-provider",
+      "evidenceRecord": "verification/task-05.json"
+    },
+    {
+      "testId": "codex.live",
+      "procedure": "Recorded isolated native provider fixture; see retained procedure and source script",
+      "evidenceClass": "live-provider",
+      "evidenceRecord": "verification/task-05.json"
+    },
+    {
+      "testId": "compatibility.arduino-compile",
+      "procedure": ".venv-validation/Scripts/python scripts/compatibility/compile-probe.py --cli 'C:/Program Files/Arduino IDE/resources/app/lib/backend/resources/arduino-cli.exe'",
+      "evidenceClass": "software",
+      "evidenceRecord": "verification/task-00-01.json"
+    },
+    {
+      "testId": "compatibility.environment",
+      "procedure": "npm run doctor",
+      "evidenceClass": "software",
+      "evidenceRecord": "verification/task-00-01.json"
+    },
+    {
+      "testId": "compatibility.providers",
+      "procedure": "Historical local bench procedure. Use the test ID and its owning task packet to identify prerequisites for a new run.",
+      "evidenceClass": "live-provider-protocol-only",
+      "evidenceRecord": "verification/task-00-01.json"
+    },
+    {
+      "testId": "compatibility.sqlite",
+      "procedure": "node scripts/compatibility/sqlite-probe.mjs",
+      "evidenceClass": "software",
+      "evidenceRecord": "verification/task-00-01.json"
+    },
+    {
+      "testId": "context.pin-handoff",
+      "procedure": "node --test artifacts/task06-context-tests.cjs",
+      "evidenceClass": "software",
+      "evidenceRecord": "verification/task-06.json"
+    },
+    {
+      "testId": "dependencies.audit",
+      "procedure": "npm audit --json",
+      "evidenceClass": "software",
+      "evidenceRecord": "verification/task-00-01.json"
+    },
+    {
+      "testId": "documentation.contracts",
+      "procedure": ".venv-validation/Scripts/python scripts/validate_pack.py --contracts --report artifacts/document-validation.json",
+      "evidenceClass": "document",
+      "evidenceRecord": "verification/task-00-01.json"
+    },
+    {
+      "testId": "documentation.contracts-final",
+      "procedure": ".venv-validation/Scripts/python.exe scripts/validate_pack.py --contracts",
+      "evidenceClass": "document",
+      "evidenceRecord": "verification/task-09.json"
+    },
+    {
+      "testId": "documentation.final",
+      "procedure": ".venv-validation/Scripts/python.exe scripts/validate_pack.py --contracts",
+      "evidenceClass": "document",
+      "evidenceRecord": "verification/task-02.json"
+    },
+    {
+      "testId": "hardware.raw-provenance",
+      "procedure": "Read-only SQLite/artifact verification: segment hashes and concatenated raw SHA match; final connection segment contains probe startup marker and counter:0 after uploader completion.",
+      "evidenceClass": "real-hardware",
+      "evidenceRecord": "verification/task-04.json"
+    },
+    {
+      "testId": "hardware.uno-loop",
+      "procedure": "Historical local bench procedure. Use the test ID and its owning task packet to identify prerequisites for a new run.",
+      "evidenceClass": "real-hardware",
+      "evidenceRecord": "verification/task-04.json"
+    },
+    {
+      "testId": "host.development",
+      "procedure": "npm run test:host",
+      "evidenceClass": "software",
+      "evidenceRecord": "verification/task-00-01.json"
+    },
+    {
+      "testId": "host.engineering-controller-faults",
+      "procedure": "node scripts/engineering/controller-audit.cjs",
+      "evidenceClass": "mocked-native-host-boundary",
+      "evidenceRecord": "verification/task-10.json"
+    },
+    {
+      "testId": "host.installed",
+      "procedure": "npm run test:packaged",
+      "evidenceClass": "packaged-windows",
+      "evidenceRecord": "verification/task-02.json"
+    },
+    {
+      "testId": "host.installed-final-corrections",
+      "procedure": "npm run test:packaged",
+      "evidenceClass": "packaged-windows",
+      "evidenceRecord": "verification/task-09.json"
+    },
+    {
+      "testId": "host.installed-vsix",
+      "procedure": "npm run test:packaged",
+      "evidenceClass": "packaged-windows",
+      "evidenceRecord": "verification/task-00-01.json"
+    },
+    {
+      "testId": "host.native-review",
+      "procedure": "Installed host checkNativeReview/checkController in apps/extension/test/host.ts",
+      "evidenceClass": "packaged-windows",
+      "evidenceRecord": "verification/task-06.json"
+    },
+    {
+      "testId": "ide.ordinary-files",
+      "procedure": "Start installed Arduino IDE.exe with literal staged WorkbenchProbe.ino argument; observe own responding sketch-named native window, verify source SHA unchanged, CloseMainWindow and observe no remaining owned IDE processes.",
+      "evidenceClass": "native-application",
+      "evidenceRecord": "verification/task-04.json"
+    },
+    {
+      "testId": "install.clean",
+      "procedure": "npm ci --ignore-scripts",
+      "evidenceClass": "software",
+      "evidenceRecord": "verification/task-00-completion.json"
+    },
+    {
+      "testId": "language.actual-installed",
+      "procedure": "node scripts/language/run-host.mjs",
+      "evidenceClass": "real-tools-synthetic-source",
+      "evidenceRecord": "verification/task-08.json"
+    },
+    {
+      "testId": "native.cad",
+      "procedure": "node artifacts/task10-cad-spike.cjs",
+      "evidenceClass": "actual-native-software-no-physical-fit",
+      "evidenceRecord": "verification/task-10.json"
+    },
+    {
+      "testId": "native.installed-kicad",
+      "procedure": "node artifacts/task10-installed-kicad.cjs",
+      "evidenceClass": "installed-windows-native-cli",
+      "evidenceRecord": "verification/task-10.json"
+    },
+    {
+      "testId": "native.installed-vsix",
+      "procedure": "node scripts/compatibility/native-package.mjs",
+      "evidenceClass": "packaged-windows",
+      "evidenceRecord": "verification/task-00-completion.json"
+    },
+    {
+      "testId": "native.kicad",
+      "procedure": "Historical local bench procedure. Use the test ID and its owning task packet to identify prerequisites for a new run.",
+      "evidenceClass": "actual-native-cli",
+      "evidenceRecord": "verification/task-10.json"
+    },
+    {
+      "testId": "native.viewer",
+      "procedure": "node scripts/engineering/viewer-spike.mjs",
+      "evidenceClass": "actual-independent-public-viewer",
+      "evidenceRecord": "verification/task-10.json"
+    },
+    {
+      "testId": "opencode.coordinator",
+      "procedure": "Recorded isolated native provider fixture; see retained procedure and source script",
+      "evidenceClass": "live-provider",
+      "evidenceRecord": "verification/task-05.json"
+    },
+    {
+      "testId": "opencode.live",
+      "procedure": "Recorded isolated native provider fixture; see retained procedure and source script",
+      "evidenceClass": "live-provider",
+      "evidenceRecord": "verification/task-05.json"
+    },
+    {
+      "testId": "package",
+      "procedure": "npm run package",
+      "evidenceClass": "packaged-windows",
+      "evidenceRecord": "verification/task-02.json"
+    },
+    {
+      "testId": "package.exact-after-host-fixture-fix",
+      "procedure": ".venv-validation/Scripts/python.exe scripts/inspect-vsix.py artifacts/robotics-workbench-0.1.0.vsix",
+      "evidenceClass": "packaged-windows",
+      "evidenceRecord": "verification/task-08.json"
+    },
+    {
+      "testId": "package.exact-final",
+      "procedure": ".venv-validation/Scripts/python.exe scripts/inspect-vsix.py artifacts/robotics-workbench-0.1.0.vsix",
+      "evidenceClass": "software",
+      "evidenceRecord": "verification/task-10.json"
+    },
+    {
+      "testId": "package.final-corrections",
+      "procedure": "npm run package",
+      "evidenceClass": "packaged-windows",
+      "evidenceRecord": "verification/task-09.json"
+    },
+    {
+      "testId": "package.inspection",
+      "procedure": "npm run package",
+      "evidenceClass": "software",
+      "evidenceRecord": "verification/task-00-01.json"
+    },
+    {
+      "testId": "package.native-runtime",
+      "procedure": "Installed package host loads checksum-matched native prebuild; every require-cache module remains under installed vendor; owned ordinary file rejected as serial port.",
+      "evidenceClass": "packaged-windows",
+      "evidenceRecord": "verification/task-04.json"
+    },
+    {
+      "testId": "package.production",
+      "procedure": "npm run package",
+      "evidenceClass": "software",
+      "evidenceRecord": "verification/task-00-completion.json"
+    },
+    {
+      "testId": "provider.codex-lifecycle",
+      "procedure": ".venv-validation/Scripts/python scripts/compatibility/codex-lifecycle.py --executable 'C:\\nvm4w\\nodejs\\node_modules\\@openai\\codex\\node_modules\\@openai\\codex-win32-x64\\vendor\\x86_64-pc-windows-msvc\\bin\\codex.exe' --live",
+      "evidenceClass": "live-provider",
+      "evidenceRecord": "verification/task-00-completion.json"
+    },
+    {
+      "testId": "provider.context",
+      "procedure": "node scripts/hardware/task-04-provider.mjs --context artifacts/task04-live/77607bd6-d6e0-4d8f-9927-a401cf4cf843/application-context.json --executable 'C:/nvm4w/nodejs/node_modules/@openai/codex/node_modules/@openai/codex-win32-x64/vendor/x86_64-pc-windows-msvc/bin/codex.exe'",
+      "evidenceClass": "live-provider",
+      "evidenceRecord": "verification/task-04.json"
+    },
+    {
+      "testId": "provider.opencode-lifecycle",
+      "procedure": "Historical local bench procedure. Use the test ID and its owning task packet to identify prerequisites for a new run.",
+      "evidenceClass": "live-provider",
+      "evidenceRecord": "verification/task-00-completion.json"
+    },
+    {
+      "testId": "software.boundaries",
+      "procedure": "npm run check",
+      "evidenceClass": "software",
+      "evidenceRecord": "verification/task-00-01.json"
+    },
+    {
+      "testId": "software.boundaries-final",
+      "procedure": "npm run check",
+      "evidenceClass": "software",
+      "evidenceRecord": "verification/task-08.json"
+    },
+    {
+      "testId": "software.engineering-rpc",
+      "procedure": "node --test artifacts/task10-contract-tests.cjs",
+      "evidenceClass": "software",
+      "evidenceRecord": "verification/task-10.json"
+    },
+    {
+      "testId": "software.interval-export-final",
+      "procedure": "node --test artifacts/tests/apps/companion/test/telemetry-service.test.cjs",
+      "evidenceClass": "software",
+      "evidenceRecord": "verification/task-09.json"
+    },
+    {
+      "testId": "software.lifecycle",
+      "procedure": "npm test",
+      "evidenceClass": "software",
+      "evidenceRecord": "verification/task-00-01.json"
+    },
+    {
+      "testId": "software.observer-delayed-finalization",
+      "procedure": "node --test --test-name-pattern=\"capture observers receive\" artifacts/task10-observer-delayed-fixed.cjs",
+      "evidenceClass": "software",
+      "evidenceRecord": "verification/task-10.json"
+    },
+    {
+      "testId": "software.observer-finalization",
+      "procedure": "node --test artifacts/task10-observer-fixed.cjs",
+      "evidenceClass": "software",
+      "evidenceRecord": "verification/task-10.json"
+    },
+    {
+      "testId": "software.tests",
+      "procedure": "Historical local bench procedure. Use the test ID and its owning task packet to identify prerequisites for a new run.",
+      "evidenceClass": "software",
+      "evidenceRecord": "verification/task-02.json"
+    },
+    {
+      "testId": "telemetry.retained-real-capture",
+      "procedure": "node artifacts/task09-retained-replay.cjs",
+      "evidenceClass": "historical-real-capture-replay",
+      "evidenceRecord": "verification/task-09.json"
+    },
+    {
+      "testId": "ui.browser",
+      "procedure": "node scripts/ui/agent-qa.mjs",
+      "evidenceClass": "synthetic-browser-ui",
+      "evidenceRecord": "verification/task-06.json"
+    },
+    {
+      "testId": "ui.documents-production",
+      "procedure": "node scripts/ui/documents-qa.mjs",
+      "evidenceClass": "synthetic-browser-ui",
+      "evidenceRecord": "verification/task-08.json"
+    },
+    {
+      "testId": "ui.engineering-production",
+      "procedure": "node scripts/ui/engineering-qa.mjs",
+      "evidenceClass": "synthetic-browser-ui",
+      "evidenceRecord": "verification/task-10.json"
+    },
+    {
+      "testId": "ui.telemetry-production",
+      "procedure": "node scripts/ui/telemetry-qa.mjs",
+      "evidenceClass": "synthetic-browser-ui",
+      "evidenceRecord": "verification/task-09.json"
+    },
+    {
+      "testId": "ui.wiring-production",
+      "procedure": "node scripts/ui/wiring-qa.mjs",
+      "evidenceClass": "synthetic-browser-ui",
+      "evidenceRecord": "verification/task-07.json"
+    },
+    {
+      "testId": "verification.requirement-coverage",
+      "procedure": "node scripts/verification/validate-evidence.mjs",
+      "evidenceClass": "document"
+    },
+    {
+      "testId": "task11.hardware.exact-upload-handoff",
+      "procedure": "Historical local bench procedure. Use the test ID and its owning task packet to identify prerequisites for a new run.",
+      "evidenceClass": "real-hardware",
+      "evidenceRecord": "verification/evidence/task-11/hardware/62f27e38-44b2-46d9-8994-fd5f4b4f7800/result.json"
+    },
+    {
+      "testId": "task11.hardware.external-contention",
+      "procedure": "Same executed scripts/hardware/task11-recovery.ts initial dedicated-Uno procedure as task11.hardware.exact-upload-handoff: open an independent native serial owner, request guarded upload, assert explicit refusal and preserve that owner. This subcheck passed within the retained run that failed later; it is not an overall bench pass.",
+      "evidenceClass": "real-hardware",
+      "evidenceRecord": "verification/evidence/task-11/hardware/62f27e38-44b2-46d9-8994-fd5f4b4f7800/result.json"
+    },
+    {
+      "testId": "task11.hardware.physical-unplug-replug",
+      "procedure": "Historical local bench procedure. Use the test ID and its owning task packet to identify prerequisites for a new run.",
+      "evidenceClass": "real-hardware",
+      "evidenceRecord": "verification/evidence/task-11/hardware/bb6c4ee7-baee-4571-b6e2-96a61e9a35cb/result.json"
+    },
+    {
+      "testId": "task11.hardware.capture-process-loss",
+      "procedure": "Historical local bench procedure. Use the test ID and its owning task packet to identify prerequisites for a new run.",
+      "evidenceClass": "real-hardware",
+      "evidenceRecord": "verification/evidence/task-11/hardware/bfb807e6-7b24-4aa3-a6f3-9522f88de8ce/result.json"
+    },
+    {
+      "testId": "task11.complete.document",
+      "procedure": "Executed scripts/recovery/task11-complete.ts via artifacts/task11-complete.cjs against retained bench62f27e38 project/data, then --resume of complete/ab7486e6-2c71-4aa7-9280-b96e22260ed7. Validate actual PDF extraction, exact citation and PNG bytes for the explicitly synthetic PDF; resumed result identifies the original executed sourceRunId. No manufacturer fact or manual UI pass is claimed.",
+      "evidenceClass": "actual-native-software-with-retained-hardware-evidence",
+      "evidenceRecord": "verification/evidence/task-11/complete/0e823e4f-73c4-486f-8f7c-74d341664237/result.json"
+    },
+    {
+      "testId": "task11.complete.kicad",
+      "procedure": "Executed scripts/recovery/task11-complete.ts via artifacts/task11-complete.cjs against the retained dedicated bench and --resume of complete/ab7486e6-2c71-4aa7-9280-b96e22260ed7. Validate actual installed KiCad generation, independent netlist reopen and expected connector endpoint sets for synthetic logical design. Exact executable/arguments/digests are retained in result.commands; this does not verify physical wiring or a GUI viewer.",
+      "evidenceClass": "actual-native-software-with-retained-hardware-evidence",
+      "evidenceRecord": "verification/evidence/task-11/complete/0e823e4f-73c4-486f-8f7c-74d341664237/result.json"
+    },
+    {
+      "testId": "task11.complete.cad",
+      "procedure": "Executed scripts/recovery/task11-complete.ts via artifacts/task11-complete.cjs against the retained dedicated bench and --resume of complete/ab7486e6-2c71-4aa7-9280-b96e22260ed7. Validate actual CadQuery generation plus independent STEP/STL reopen, synthetic dimensions/volume and exact selected artifact handoff. Native interpreter arguments and artifact hashes are retained; GUI rendering and physical fit remain unverified.",
+      "evidenceClass": "actual-native-software-with-retained-hardware-evidence",
+      "evidenceRecord": "verification/evidence/task-11/complete/0e823e4f-73c4-486f-8f7c-74d341664237/result.json"
+    },
+    {
+      "testId": "task11.complete.retained-recording",
+      "procedure": "Executed scripts/recovery/task11-complete.ts resumed procedure: derive complete counter samples from the retained actual Uno recording, freeze exact recording/parser/revision interval, attach to a declared experiment and retain an inconclusive outcome. No new USB capture/upload or physical accuracy judgment occurs in this runner.",
+      "evidenceClass": "actual-native-software-with-retained-hardware-evidence",
+      "evidenceRecord": "verification/evidence/task-11/complete/0e823e4f-73c4-486f-8f7c-74d341664237/result.json"
+    },
+    {
+      "testId": "task11.complete.archive-restore",
+      "procedure": "Executed scripts/recovery/task11-complete.ts resumed procedure: archive the cross-feature bench, restore into separate new project/data roots, independently reopen restored KiCad source and verify source/artifact counts, historical operations, unchanged original upload, no new uploads/captures and no restored current device observations. Retained result records 20 source files,47 artifacts and21 operations. This native software procedure does not replace manual recovery UI/accessibility checks.",
+      "evidenceClass": "actual-native-software-with-retained-hardware-evidence",
+      "evidenceRecord": "verification/evidence/task-11/complete/0e823e4f-73c4-486f-8f7c-74d341664237/result.json"
+    },
+    {
+      "testId": "performance.host-baseline",
+      "procedure": "node scripts/performance/host.mjs (baseline isolated actual VS Code host). Retain same-machine process memory, executable/version/environment and baseline host report before the workbench comparison; no provider, USB or optional CAD/compiler peak participates.",
+      "evidenceClass": "actual-windows-vscode-host-performance",
+      "evidenceRecord": "verification/evidence/task-11/performance/host-a10278d7-2f5c-4be8-8440-29ff7f819e7c/result.json"
+    },
+    {
+      "testId": "performance.host-workbench",
+      "procedure": "node scripts/performance/host.mjs (workbench isolated actual VS Code host):100-component/multifile/10000-row fixture, actual activation promise, host/companion process memory, sampled command/posted-state timings and repeated panel disposal. Rendered feedback, exact listener retention, arbitrary workload peaks and screen-reader behavior remain separate evidence.",
+      "evidenceClass": "actual-windows-vscode-host-performance",
+      "evidenceRecord": "verification/evidence/task-11/performance/host-a10278d7-2f5c-4be8-8440-29ff7f819e7c/result.json"
+    },
+    {
+      "testId": "performance.sustained-raw-display",
+      "procedure": "node artifacts/task11-sustained.cjs 1800000 (source scripts/performance/sustained.ts). Run the real raw recorder and bounded display preview for30 minutes of actual wall time with synthetic chunks; verify exact raw SHA/segment identities, bounded preview, retained overload partial evidence and warm-process RSS samples. No USB, VS Code rendered plot, calibration or full application memory claim.",
+      "evidenceClass": "synthetic-stream-actual-wall-time",
+      "evidenceRecord": "verification/evidence/task-11/performance/e333d08f-33cf-4911-b5f5-c027687ca8dd/result.json"
+    },
+    {
+      "testId": "task11.ui.agent",
+      "procedure": "node scripts/ui/agent-qa.mjs, executed within node scripts/ui/task11-qa.mjs isolated output roots against production JavaScript/CSS. Synthetic S02/S03/S06 states, keyboard/focus/draft safety, three theme families, computed contrast and30 warm rendered feedback/context samples. Browser scaling is separate from native zoom/Narrator verification.",
+      "evidenceClass": "synthetic-browser-ui",
+      "evidenceRecord": "verification/evidence/task-11/ui/browser/46efbccd-a573-4bca-8342-6970472e3361/result.json"
+    },
+    {
+      "testId": "task11.ui.wiring",
+      "procedure": "node scripts/ui/wiring-qa.mjs, executed within node scripts/ui/task11-qa.mjs isolated output roots against production JavaScript/CSS. Synthetic S04/S05 table/canvas states, keyboard/focus, three theme families, computed contrast and30 warm rendered selection samples using100 components. No native or hardware verdict.",
+      "evidenceClass": "synthetic-browser-ui",
+      "evidenceRecord": "verification/evidence/task-11/ui/browser/46efbccd-a573-4bca-8342-6970472e3361/result.json"
+    },
+    {
+      "testId": "task11.ui.documents",
+      "procedure": "node scripts/ui/documents-qa.mjs, executed within node scripts/ui/task11-qa.mjs isolated output roots against production JavaScript/CSS. Synthetic S10 states and exact-citation presentation, keyboard/focus, theme/reflow screenshots and computed contrast. Actual vendor extraction/native accessibility remain separate procedures.",
+      "evidenceClass": "synthetic-browser-ui",
+      "evidenceRecord": "verification/evidence/task-11/ui/browser/46efbccd-a573-4bca-8342-6970472e3361/result.json"
+    },
+    {
+      "testId": "task11.ui.telemetry",
+      "procedure": "node scripts/ui/telemetry-qa.mjs, executed within node scripts/ui/task11-qa.mjs isolated output roots against production JavaScript/CSS. Synthetic S07/S08/S09 states, immutable interval/experiment presentation, keyboard/focus, computed contrast and30 warm rendered raw-control feedback samples using10000 rows. No real sensor or Narrator pass.",
+      "evidenceClass": "synthetic-browser-ui",
+      "evidenceRecord": "verification/evidence/task-11/ui/browser/46efbccd-a573-4bca-8342-6970472e3361/result.json"
+    },
+    {
+      "testId": "task11.ui.engineering",
+      "procedure": "node scripts/ui/engineering-qa.mjs, executed within node scripts/ui/task11-qa.mjs isolated output roots against production JavaScript/CSS. Synthetic S11/S16 states, readiness/stale artifact presentation, keyboard/focus, three theme families and computed contrast. Screenshots do not verify native viewer rendering or physical CAD fit.",
+      "evidenceClass": "synthetic-browser-ui",
+      "evidenceRecord": "verification/evidence/task-11/ui/browser/46efbccd-a573-4bca-8342-6970472e3361/result.json"
+    },
+    {
+      "testId": "provider.task11-codex-1",
+      "procedure": "Historical local bench procedure. Use the test ID and its owning task packet to identify prerequisites for a new run.",
+      "evidenceClass": "live-provider",
+      "evidenceRecord": "verification/evidence/task11/providers/70601b9c-1b0e-4900-ad9f-d11d32b4b75d/codex-1.json"
+    },
+    {
+      "testId": "provider.task11-codex-2",
+      "procedure": "Historical local bench procedure. Use the test ID and its owning task packet to identify prerequisites for a new run.",
+      "evidenceClass": "live-provider",
+      "evidenceRecord": "verification/evidence/task11/providers/70601b9c-1b0e-4900-ad9f-d11d32b4b75d/codex-2.json"
+    },
+    {
+      "testId": "provider.task11-codex-3",
+      "procedure": "Historical local bench procedure. Use the test ID and its owning task packet to identify prerequisites for a new run.",
+      "evidenceClass": "live-provider",
+      "evidenceRecord": "verification/evidence/task11/providers/70601b9c-1b0e-4900-ad9f-d11d32b4b75d/codex-3.json"
+    },
+    {
+      "testId": "provider.task11-opencode-1",
+      "procedure": "Historical local bench procedure. Use the test ID and its owning task packet to identify prerequisites for a new run.",
+      "evidenceClass": "live-provider",
+      "evidenceRecord": "verification/evidence/task11/providers/70601b9c-1b0e-4900-ad9f-d11d32b4b75d/opencode-1.json"
+    },
+    {
+      "testId": "provider.task11-opencode-2",
+      "procedure": "Historical local bench procedure. Use the test ID and its owning task packet to identify prerequisites for a new run.",
+      "evidenceClass": "live-provider",
+      "evidenceRecord": "verification/evidence/task11/providers/70601b9c-1b0e-4900-ad9f-d11d32b4b75d/opencode-2.json"
+    },
+    {
+      "testId": "provider.task11-opencode-3",
+      "procedure": "Historical local bench procedure. Use the test ID and its owning task packet to identify prerequisites for a new run.",
+      "evidenceClass": "live-provider",
+      "evidenceRecord": "verification/evidence/task11/providers/70601b9c-1b0e-4900-ad9f-d11d32b4b75d/opencode-3.json"
+    },
+    {
+      "testId": "task11.native-review.source-preservation",
+      "procedure": "node scripts/ui/task11-conflict-native.mjs --launch --owner-released; root advanced exact checkpoint phases baseline/proposed/written/conflicted and finished. Actual apps/extension/test/task11-manual-conflict-host.ts executes TaskReview/nativeReviewHost diff and dirty-editor/external-write revert refusal; retained automated-assertions.json checks exact saved/unsaved source copies. Synthetic source and immutable fixture JSON review store only. Keyboard/visual/zoom were not run; Narrator skipped at user request; never manual-ui evidence.",
+      "evidenceClass": "actual-native-host-synthetic-source-and-fixture-review-store",
+      "evidenceRecord": "verification/evidence/task-11/ui/native-conflict/6bf7b7f0-374c-46ce-a8a3-e10d85a8b989/automated-assertions.json"
+    },
+    {
+      "testId": "provider.snapshot-diagnosis",
+      "procedure": "Source scripts/agents/task11-live.ts --diagnose-snapshot with explicit retained bench project/data and exact companion path. Actual hello, project.snapshot and shutdown only; observed project.snapshot duration182.4532ms and source unchanged. No provider path/inference, compiler, upload or serial operation is configured. This is IPC read timing, not rendered feedback.",
+      "evidenceClass": "actual-companion-read-only",
+      "evidenceRecord": "verification/evidence/task11/providers/snapshot-diagnosis/05ee810b-c5b5-4d72-901d-117be8fd7cad/result.json"
+    },
+    {
+      "testId": "task11.refined-package",
+      "procedure": "npm run package after the stale-revision input-scan fix; exact inspected VSIX checksum and runtime artifacts retained in final TASK-11 record.",
+      "evidenceClass": "packaged-windows",
+      "evidenceRecord": "verification/task-11.json"
+    },
+    {
+      "testId": "task11.refined-installed-host",
+      "procedure": "npm run test:packaged after the stale-revision input-scan fix: trusted and restricted installed host, native runtime loading and companion exit observed.",
+      "evidenceClass": "packaged-windows",
+      "evidenceRecord": "verification/task-11.json"
+    },
+    {
+      "testId": "provider.task11-suite",
+      "procedure": "Fresh three Codex plus three OpenCode read-only tasks on the same persistent project, exact facts and one MCP snapshot each, application-owned handoff, unchanged source and operation receipts.",
+      "evidenceClass": "live-provider",
+      "evidenceRecord": "verification/evidence/task11/providers/70601b9c-1b0e-4900-ad9f-d11d32b4b75d/result.json"
+    },
+    {
+      "testId": "hardware.stale-revision-input-scan",
+      "procedure": "Six hardware boundary tests plus TypeScript: current revision gets fresh tree hashes; stale revision performs no tree reads and cannot become current.",
+      "evidenceClass": "software",
+      "evidenceRecord": "verification/evidence/task11/providers/snapshot-diagnosis/80157e3f-46ab-43f3-b407-d744ab109398/followup.json"
+    },
+    {
+      "testId": "release.maintenance",
+      "procedure": "Historical local bench procedure. Use the test ID and its owning task packet to identify prerequisites for a new run.",
+      "evidenceClass": "actual-isolated-vscode-cli-installed-companion-and-real-sqlite-synthetic-data",
+      "evidenceRecord": "verification/evidence/task-12/final-7bfb1fd7-c1bd-493d-ac1d-6da9758bcae0/maintenance/result.json"
+    },
+    {
+      "testId": "release.dependencies",
+      "procedure": "Historical local bench procedure. Use the test ID and its owning task packet to identify prerequisites for a new run.",
+      "evidenceClass": "software",
+      "evidenceRecord": "verification/evidence/task-12/final-7bfb1fd7-c1bd-493d-ac1d-6da9758bcae0/dependency-restore.json"
+    },
+    {
+      "testId": "release.final-integrity",
+      "procedure": "npm run check: type/boundary/evidence checks and nine release-validator tests",
+      "evidenceClass": "software",
+      "evidenceRecord": "verification/evidence/task-12/final-7bfb1fd7-c1bd-493d-ac1d-6da9758bcae0/final-integrity.log"
+    },
+    {
+      "testId": "task11.native-keyboard-receipts",
+      "procedure": "Recovery and upload-detail inspection subset only; not the complete keyboard journey or new hardware evidence.",
+      "evidenceClass": "native-ui-automation",
+      "evidenceRecord": "verification/evidence/task-11/ui/native/0bfc2f57-a4f4-4552-8cde-ed2c6598f45e/result.json"
+    },
+    {
+      "testId": "task12.native-diagnostic-preview",
+      "procedure": "Actual preview/consent/save-dialog/cancel path. File selection/export was not completed; no visual or speech acceptance.",
+      "evidenceClass": "native-ui-automation",
+      "evidenceRecord": "verification/evidence/task-11/ui/native/0bfc2f57-a4f4-4552-8cde-ed2c6598f45e/result.json"
+    },
+    {
+      "testId": "task11.native-visual-capture",
+      "procedure": "Actual native dimensions, clipping, appearance, theme inspection and zoom acceptance could not be observed.",
+      "evidenceClass": "native-ui-automation",
+      "evidenceRecord": "verification/evidence/task-11/ui/native/0bfc2f57-a4f4-4552-8cde-ed2c6598f45e/result.json"
+    },
+    {
+      "testId": "task11.native-screen-reader",
+      "procedure": "Screen Reader Optimized mode and an accessibility tree are not spoken Windows screen-reader output. Earlier Narrator stop request remains retained.",
+      "evidenceClass": "native-ui-automation",
+      "evidenceRecord": "verification/evidence/task-11/ui/native/0bfc2f57-a4f4-4552-8cde-ed2c6598f45e/result.json"
+    },
+    {
+      "testId": "task11.agent-error-recovery",
+      "procedure": "Five controller boundary checks, including recovered read errors, persistent action errors and unchanged task/hardware outcomes. VS Code and provider replies are synthetic.",
+      "evidenceClass": "software",
+      "evidenceRecord": "verification/evidence/task-12/resumed-0bfc2f57/final/agent-error-fixed/result.json"
+    },
+    {
+      "testId": "release.vendor-support-review",
+      "procedure": "D49 supported-platform acceptance remains blocked. Use a supported Windows client for release verification or establish a documented applicable support path before acceptance.",
+      "evidenceClass": "document",
+      "evidenceRecord": "verification/evidence/task-12/resumed-0bfc2f57/vendor-support-review.json"
+    }
+  ]
+}

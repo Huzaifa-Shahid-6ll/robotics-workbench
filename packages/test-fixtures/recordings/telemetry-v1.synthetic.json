@@ -1,0 +1,21 @@
+{
+  "kind": "synthetic-software-fixture",
+  "parserVersion": "telemetry-v1",
+  "timestampBasis": "host-receive monotonic milliseconds; not sensor acquisition time",
+  "recordingId": "44444444-4444-4444-8444-444444444444",
+  "connectionSessionId": "55555555-5555-4555-8555-555555555555",
+  "profile": {
+    "schemaVersion": 1,
+    "id": "66666666-6666-4666-8666-666666666666",
+    "parserVersion": "telemetry-v1",
+    "mode": "labeled-numeric",
+    "channels": [{"channelId": "range", "label": "Range", "unit": "mm", "source": "range"}]
+  },
+  "chunks": [
+    {"hostElapsedNs": "0", "bytesBase64": "cmFuZ2U6"},
+    {"hostElapsedNs": "10000000", "bytesBase64": "MTIuMwpyYW5nZToxNC4xCg=="}
+  ],
+  "gaps": [],
+  "expectedValues": [12.3, 14.1],
+  "limitations": ["No board, driver, sensor or physical behavior is modeled."]
+}

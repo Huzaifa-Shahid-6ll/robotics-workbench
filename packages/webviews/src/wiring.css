@@ -1,0 +1,52 @@
+.wiring-app { min-height: 100vh; display: flex; flex-direction: column; container-type: inline-size; }
+.wiring-toolbar, .wiring-form, .wiring-preview { padding: var(--workbench-padding); border-bottom: 1px solid var(--workbench-divider); display: grid; gap: var(--workbench-gap); }
+.wiring-form, .wiring-preview { background: var(--vscode-sideBar-background, var(--workbench-canvas)); }
+.wiring-preview { border-inline-start: 3px solid var(--workbench-focus); }
+.wiring-preview ul { margin: 0; padding-inline-start: 20px; }
+.wiring-content { display: grid; align-content: start; gap: var(--workbench-padding); padding: var(--workbench-padding); min-width: 0; flex: 1; }
+.wiring-content > section { min-width: 0; }
+.form-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--workbench-gap); align-items: end; }
+.span-all { grid-column: 1 / -1; }
+.filter { max-width: 440px; margin-bottom: var(--workbench-gap); }
+.table-scroll { overflow-x: auto; max-width: 100%; border: 1px solid var(--workbench-divider); border-radius: var(--workbench-radius); }
+.table-scroll:focus-visible { outline: 2px solid var(--workbench-focus); outline-offset: 2px; }
+.wiring-app table { border-collapse: collapse; width: 100%; min-width: 50em; text-align: start; }
+.wiring-app th, .wiring-app td { padding: var(--workbench-space) var(--workbench-gap); border-bottom: 1px solid var(--workbench-divider); vertical-align: top; height: 28px; }
+.wiring-app th { font-weight: 600; text-align: start; }
+.wiring-app th:first-child { position: sticky; inset-inline-start: 0; z-index: 1; max-inline-size: min(12em, 40cqi); background: var(--workbench-canvas); overflow-wrap: anywhere; }
+.wiring-app th .link-button:hover { background: transparent; text-decoration: underline; }
+.wiring-app tbody tr:last-child > * { border-bottom: none; }
+.wiring-app tr[aria-selected=true] { background: var(--vscode-list-activeSelectionBackground, var(--workbench-field)); color: var(--vscode-list-activeSelectionForeground, var(--workbench-text)); outline: 1px solid var(--workbench-focus); outline-offset: -1px; }
+.wiring-app tr[aria-selected=true] > th { background: var(--vscode-list-activeSelectionBackground, var(--workbench-field)); }
+.wiring-app tr[aria-selected=true] .link-button { color: inherit; }
+.wiring-app td { max-width: 280px; overflow-wrap: anywhere; }
+.wiring-app td small, .endpoint { display: block; }
+.wiring-inspector { display: grid; gap: var(--workbench-padding); border: 1px solid var(--workbench-divider); border-radius: 6px; padding: var(--workbench-padding); }
+.wiring-inspector details { border-top: 1px solid var(--workbench-divider); padding-top: var(--workbench-space); }
+.wiring-inspector details > p, .wiring-inspector details > button { margin-block: var(--workbench-gap); }
+.pin-detail { display: grid; grid-template-columns: minmax(0, 1fr) minmax(160px, 1fr); gap: var(--workbench-gap); padding-block: var(--workbench-gap); border-bottom: 1px solid var(--workbench-divider); }
+.binding { padding-block: var(--workbench-gap); }
+.wiring-records article { display: grid; gap: var(--workbench-space); padding: var(--workbench-gap) 0; border-top: 1px solid var(--workbench-divider); overflow-wrap: anywhere; }
+.wiring-footer { border-top: 1px solid var(--workbench-divider); padding: var(--workbench-padding); }
+.wiring-canvas { height: 520px; min-width: 0; border: 1px solid var(--workbench-divider); display: flex; flex-direction: column; border-radius: 6px; overflow: hidden; }
+.wiring-canvas .react-flow { background: var(--workbench-canvas); flex: 1; min-height: 0; }
+.wiring-canvas .react-flow__edge-path { stroke: var(--workbench-muted); stroke-width: 1.5; }
+.wiring-canvas .react-flow__edge.selected .react-flow__edge-path { stroke: var(--workbench-focus); stroke-width: 2.5; }
+.wiring-canvas .react-flow__edge-text { fill: var(--workbench-text); }
+.wiring-canvas .react-flow__edge-textbg { fill: var(--workbench-canvas); }
+.wiring-canvas .react-flow__background-pattern { stroke: var(--workbench-divider); fill: var(--workbench-divider); }
+.wiring-canvas .react-flow__controls { box-shadow: none; border: 1px solid var(--workbench-divider); }
+.wiring-canvas .react-flow__controls-button { background: var(--workbench-field); color: var(--workbench-text); border-color: var(--workbench-divider); width: 28px; height: 28px; }
+.wiring-canvas .react-flow__controls-button svg { fill: currentColor; }
+.wiring-canvas .react-flow__attribution { background: var(--workbench-canvas); color: var(--workbench-text); }
+.wiring-node { min-width: 170px; max-width: 220px; padding: var(--workbench-gap); border: 1px solid var(--workbench-divider); border-radius: var(--workbench-radius); background: var(--workbench-field); color: var(--workbench-text); display: grid; gap: var(--workbench-space); overflow-wrap: anywhere; }
+.react-flow__node.selected .wiring-node { outline: 2px solid var(--workbench-focus); outline-offset: 2px; }
+.node-pins { display: grid; gap: var(--workbench-space); margin-top: var(--workbench-space); }
+.node-pin { position: relative; padding-inline-start: var(--workbench-gap); display: flex; justify-content: space-between; gap: var(--workbench-gap); }
+.node-pin small { color: var(--workbench-muted); }
+.node-pin .react-flow__handle { width: 8px; height: 8px; background: var(--workbench-focus); border: 1px solid var(--workbench-text); left: -12px; top: 50%; }
+.canvas-note { flex-shrink: 0; padding: var(--workbench-space) var(--workbench-gap); border-top: 1px solid var(--workbench-divider); background: var(--workbench-canvas); color: var(--workbench-muted); font-size: max(12px, 0.95em); }
+.wiring-canvas-fallback { display: none; }
+@container (max-width: 599px) { .form-grid, .pin-detail { grid-template-columns: minmax(0, 1fr); } .span-all { grid-column: auto; } .wiring-canvas { height: 440px; } }
+@container (max-width: 319px) { .wiring-canvas { display: none; } .wiring-canvas-fallback { display: grid; } }
+@media (prefers-reduced-motion: reduce) { .wiring-app *, .wiring-app *::before, .wiring-app *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; } }

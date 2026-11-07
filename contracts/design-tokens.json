@@ -1,0 +1,120 @@
+{
+  "schemaVersion": 1,
+  "status": "specified-not-implemented",
+  "authority": "D42",
+  "updated": "2026-11-01",
+  "roles": {
+    "canvas": {
+      "css": "var(--vscode-editor-background)"
+    },
+    "textPrimary": {
+      "css": "var(--vscode-editor-foreground)"
+    },
+    "textSecondary": {
+      "css": "var(--vscode-descriptionForeground, var(--vscode-editor-foreground))"
+    },
+    "divider": {
+      "css": "var(--vscode-panel-border, var(--vscode-contrastBorder, transparent))"
+    },
+    "focusOutline": {
+      "css": "var(--vscode-focusBorder)"
+    },
+    "link": {
+      "css": "var(--vscode-textLink-foreground)"
+    },
+    "fieldBackground": {
+      "css": "var(--vscode-input-background)"
+    },
+    "fieldText": {
+      "css": "var(--vscode-input-foreground)"
+    },
+    "fieldBorder": {
+      "css": "var(--vscode-input-border, var(--vscode-contrastBorder, transparent))"
+    },
+    "actionPrimaryBackground": {
+      "css": "var(--vscode-button-background)"
+    },
+    "actionPrimaryText": {
+      "css": "var(--vscode-button-foreground)"
+    },
+    "actionPrimaryHover": {
+      "css": "var(--vscode-button-hoverBackground)"
+    },
+    "selectionBackground": {
+      "css": "var(--vscode-list-activeSelectionBackground)"
+    },
+    "selectionText": {
+      "css": "var(--vscode-list-activeSelectionForeground)"
+    },
+    "errorText": {
+      "css": "var(--vscode-errorForeground)"
+    },
+    "uiFont": {
+      "family": "var(--vscode-font-family)",
+      "size": "var(--vscode-font-size)",
+      "weight": "var(--vscode-font-weight)"
+    },
+    "codeFont": {
+      "family": "var(--vscode-editor-font-family)",
+      "size": "var(--vscode-editor-font-size)",
+      "weight": "var(--vscode-editor-font-weight)"
+    }
+  },
+  "geometry": {
+    "unit": "css-px",
+    "spaceScale": [
+      4,
+      8,
+      12,
+      16,
+      24,
+      32
+    ],
+    "relatedGap": 8,
+    "iconGroupGap": 4,
+    "panelPadding": 12,
+    "tableCellPaddingHorizontal": 8,
+    "controlRadius": 4,
+    "contentRadius": 6,
+    "separatorWidth": 1,
+    "focusWidth": 2,
+    "focusOffset": 2,
+    "minimumControlTarget": 24,
+    "visibleIcon": 16,
+    "minimumTableRow": 28
+  },
+  "typography": {
+    "proseLineHeight": 1.45,
+    "logLineHeight": 1.5,
+    "localTitleEm": 1.15,
+    "localTitleWeight": 600,
+    "minimumMetadataPx": 12,
+    "respectLargerHostPreference": true
+  },
+  "elevation": {
+    "defaultShadow": "none",
+    "overlayShadowColor": "var(--vscode-widget-shadow)",
+    "note": "widget.shadow is a color token, not a complete box-shadow declaration; overlay geometry requires a separately specified component rule."
+  },
+  "chartPalette": {
+    "status": "proposed-requires-theme-contrast-validation",
+    "colors": [
+      "#0072B2",
+      "#E69F00",
+      "#009E73",
+      "#CC79A7",
+      "#56B4E9",
+      "#D55E00"
+    ],
+    "pairWithPatterns": true,
+    "stableSeriesMapping": true,
+    "maximumDefaultVisibleSeries": 6
+  },
+  "rules": [
+    "Host theme overrides brand palettes.",
+    "Color is never the sole status channel.",
+    "Dimensions are minima and expand for zoom/font settings.",
+    "Missing theme variables require role-preserving fallback during implementation.",
+    "Chart palette requires active-background contrast validation and labelled data alternative."
+  ]
+}

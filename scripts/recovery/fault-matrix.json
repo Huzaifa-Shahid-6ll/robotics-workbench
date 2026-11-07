@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "owner": "D48 required fault matrix",
+  "evidenceClass": "software",
+  "additionalSuites": ["apps/companion/test/upload-reconciliation.test.ts", "apps/companion/test/capture-recovery.test.ts", "packages/adapters/arduino/test/cooperative-fingerprint.test.ts"],
+  "faults": [
+    { "testId": "task11.fault.compile-failure", "requirements": ["REQ-PROD-01", "REQ-HW-01", "REQ-HW-02"], "source": "packages/adapters/arduino/test/arduino.test.ts", "testName": "failed compile has scoped diagnostics, no outputs and no uploader invocation despite older successful files", "oracle": "Earlier binaries are historical; a failed compile creates no selectable output or upload." },
+    { "testId": "task11.fault.concurrent-edit", "requirements": ["REQ-ARCH-06", "REQ-UX-03"], "source": "apps/extension/test/task-review.test.ts", "testName": "dirty user buffer and provider disk edit preserve both and refuse source mutation", "oracle": "Dirty user text and saved provider bytes survive Keep/Revert conflict." },
+    { "testId": "task11.fault.stale-manifest", "requirements": ["REQ-ARCH-01", "REQ-ARCH-02", "REQ-HW-04"], "source": "apps/companion/test/wiring-service.test.ts", "testName": "stale revision or source hash refuses planning and conflicting saved edits are preserved", "oracle": "Revision/hash conflicts reject stale electrical intent before writing." },
+    { "testId": "task11.fault.library-change", "requirements": ["REQ-HW-01"], "source": "packages/adapters/arduino/test/arduino.test.ts", "testName": "board options, source and locally edited library contents change complete build identity", "oracle": "Library-only changes invalidate complete input fingerprint." },
+    { "testId": "task11.fault.monitor-release", "requirements": ["REQ-ARCH-04", "REQ-HW-02"], "source": "packages/devices/test/coordinator.test.ts", "testName": "upload waits for actual close, excludes concurrent opens/uploads and resumes one stream", "oracle": "Uploader begins only after observed close; aliases cannot obtain a second lease." },
+    { "testId": "task11.fault.external-owner", "requirements": ["REQ-ARCH-04", "REQ-UX-04"], "source": "packages/devices/test/coordinator.test.ts", "testName": "external contention and unexpected disconnect remain blocked with no synthetic success", "oracle": "Contention is explicit and never kills or claims control of an external owner." },
+    { "testId": "task11.fault.owner-crash", "requirements": ["REQ-ARCH-03", "REQ-ARCH-04", "REQ-HW-08"], "source": "apps/companion/test/coordinator-integration.test.ts", "testName": "AC-D19-03: real owning-process loss leaves one unknown receipt and never replays its synthetic effect", "oracle": "Actual child-process kill leaves the synthetic effect exactly once and an immutable unknown receipt." },
+    { "testId": "task11.fault.disk-full", "requirements": ["REQ-HW-03", "REQ-ARCH-03"], "source": "packages/adapters/serial/test/serial.test.ts", "testName": "disk failure retains earlier complete raw records and labels partial evidence", "oracle": "Injected storage failure preserves complete prior bytes and marks incomplete capture." },
+    { "testId": "task11.fault.provider-disconnect", "requirements": ["REQ-AGENT-01", "REQ-AGENT-02", "REQ-AGENT-05", "REQ-AGENT-06"], "source": "apps/companion/test/agent-service.test.ts", "testName": "restart retains unknown outcome and identical start does not replay a prompt", "oracle": "Restart/reconcile does not resubmit a prompt or duplicate tool effects." },
+    { "testId": "task11.fault.native-edit", "requirements": ["REQ-PROD-05", "REQ-HW-05"], "source": "apps/companion/test/kicad-service.test.ts", "testName": "native expected-hash race preserves external source and every staged immutable proposal", "oracle": "External native file save is retained and divergent generation fails without overwrite." },
+    { "testId": "task11.fault.restore-no-device", "requirements": ["REQ-PROD-02", "REQ-PROD-03", "REQ-PROD-04", "REQ-AGENT-04", "REQ-HW-03", "REQ-HW-07", "REQ-UX-06"], "source": "apps/companion/test/task11-journeys.test.ts", "testName": "task11.journey.persistent: ordinary source, evidence, both normalized providers and portable recovery share one project", "oracle": "Restored recording/derivation/citation/review/artifacts remain exact with no device and unknown physical claims." },
+    { "testId": "task11.fault.document-instructions", "requirements": ["REQ-ARCH-05", "REQ-AGENT-03", "REQ-AGENT-06"], "source": "packages/application/test/documents.test.ts", "testName": "FTS searches literal Unicode terms, explicit attachment/component filters, and never interpret document instructions", "oracle": "Instructions embedded in document text remain retrievable evidence and never launch tools." }
+  ],
+  "limitations": [
+    "Normalized provider, CLI and serial fixtures establish deterministic application behavior, not upstream compatibility or USB/physical results.",
+    "Cross-window refusal on the installed VSIX and actual external serial contention require separate packaged/real-hardware evidence.",
+    "Native KiCad/CAD reopening and live provider journeys require their separate selected-version probes.",
+    "Physical unplug/replug, wiring measurements, Windows screen-reader use and sustained performance are separate release checks."
+  ]
+}

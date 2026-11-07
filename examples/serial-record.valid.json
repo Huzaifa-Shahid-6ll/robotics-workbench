@@ -1,0 +1,10 @@
+{
+  "schemaVersion": 1,
+  "recordingId": "44444444-4444-4444-8444-444444444444",
+  "connectionSessionId": "55555555-5555-4555-8555-555555555555",
+  "sequence": 42,
+  "hostElapsedNs": "1200000000",
+  "hostReceivedAt": "2026-11-01T07:00:01.200Z",
+  "bytesBase64": "cmFuZ2U6MTIuMwo=",
+  "quality": "received"
+}

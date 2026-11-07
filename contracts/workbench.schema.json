@@ -1,0 +1,375 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:robotics-workbench:manifest:1",
+  "title": "Workbench manifest v1",
+  "$comment": "Structural validation only. Implement semantic unique-ID/reference checks and canonical filesystem containment checks; regex is not a security boundary.",
+  "type": "object",
+  "properties": {
+    "schemaVersion": {
+      "const": 1
+    },
+    "projectId": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "projectRevision": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "sketches": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/sketch"
+      }
+    },
+    "targets": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/target"
+      }
+    },
+    "components": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/component"
+      }
+    },
+    "nets": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/net"
+      }
+    },
+    "codeBindings": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/codeBinding"
+      }
+    },
+    "documents": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/document"
+      }
+    },
+    "extensions": {
+      "type": "object"
+    }
+  },
+  "required": [
+    "schemaVersion",
+    "projectId",
+    "projectRevision",
+    "name",
+    "sketches",
+    "targets",
+    "components",
+    "nets",
+    "codeBindings",
+    "documents",
+    "extensions"
+  ],
+  "additionalProperties": false,
+  "$defs": {
+    "component": {
+      "type": "object",
+      "properties": {
+        "componentId": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "label": {
+          "type": "string",
+          "minLength": 1
+        },
+        "definition": {
+          "anyOf": [
+            {
+              "type": "object",
+              "properties": {
+                "definitionId": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "definitionVersion": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "required": [
+                "definitionId",
+                "definitionVersion"
+              ],
+              "additionalProperties": false
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "properties": {
+          "type": "object"
+        },
+        "identityStatus": {
+          "enum": [
+            "unresolved",
+            "resolved"
+          ]
+        },
+        "candidateLabels": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "evidenceRefs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "provisionalPins": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "pinId": {
+                "type": "string",
+                "minLength": 1
+              },
+              "label": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "pinId",
+              "label"
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      "required": [
+        "componentId",
+        "label",
+        "definition"
+      ],
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "definition": {
+                "type": "null"
+              }
+            },
+            "required": [
+              "definition"
+            ]
+          },
+          "then": {
+            "required": [
+              "identityStatus"
+            ],
+            "properties": {
+              "identityStatus": {
+                "const": "unresolved"
+              }
+            }
+          },
+          "else": {
+            "properties": {
+              "identityStatus": {
+                "const": "resolved"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "net": {
+      "type": "object",
+      "properties": {
+        "netId": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "label": {
+          "type": "string",
+          "minLength": 1
+        },
+        "members": {
+          "type": "array",
+          "minItems": 2,
+          "uniqueItems": true,
+          "items": {
+            "type": "object",
+            "properties": {
+              "componentId": {
+                "type": "string",
+                "format": "uuid"
+              },
+              "pinId": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "componentId",
+              "pinId"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "intent": {
+          "type": "object",
+          "properties": {
+            "domainId": {
+              "type": "string",
+              "minLength": 1
+            },
+            "designState": {
+              "enum": [
+                "proposed",
+                "accepted"
+              ]
+            },
+            "sourceRefs": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "netId",
+        "members"
+      ],
+      "additionalProperties": false
+    },
+    "codeBinding": {
+      "type": "object",
+      "properties": {
+        "bindingId": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "componentId": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "pinId": {
+          "type": "string",
+          "minLength": 1
+        },
+        "path": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "^(?!/)(?!.*\\\\)(?!.*:)(?!.*(?:^|/)\\.\\.(?:/|$)).+$"
+        },
+        "symbol": {
+          "type": "string",
+          "minLength": 1
+        },
+        "line": {
+          "type": "integer",
+          "minimum": 1
+        }
+      },
+      "required": [
+        "bindingId",
+        "componentId",
+        "path"
+      ],
+      "additionalProperties": false
+    },
+    "document": {
+      "type": "object",
+      "properties": {
+        "documentId": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "path": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "^(?!/)(?!.*\\\\)(?!.*:)(?!.*(?:^|/)\\.\\.(?:/|$)).+$"
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "componentIds": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "format": "uuid"
+          }
+        }
+      },
+      "required": [
+        "documentId",
+        "path"
+      ],
+      "additionalProperties": false
+    },
+    "target": {
+      "type": "object",
+      "properties": {
+        "targetId": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "fqbn": {
+          "type": "string",
+          "pattern": "^[^:]+:[^:]+:[^:]+(?::.*)?$"
+        },
+        "options": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "targetId",
+        "fqbn",
+        "options"
+      ],
+      "additionalProperties": false
+    },
+    "sketch": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "^(?!/)(?!.*\\\\)(?!.*:)(?!.*(?:^|/)\\.\\.(?:/|$)).+$"
+        },
+        "targetId": {
+          "type": "string",
+          "format": "uuid"
+        }
+      },
+      "required": [
+        "path",
+        "targetId"
+      ],
+      "additionalProperties": false
+    }
+  }
+}

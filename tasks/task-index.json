@@ -1,0 +1,857 @@
+{
+  "schemaVersion": 1,
+  "tasks": [
+    {
+      "task_id": "TASK-00",
+      "title": "Baseline and compatibility",
+      "status": "done",
+      "depends_on": [],
+      "read": [
+        "D01",
+        "D02",
+        "D03",
+        "D04",
+        "D05",
+        "D06",
+        "D07",
+        "D08",
+        "D09",
+        "D10",
+        "D23",
+        "D24",
+        "D25",
+        "D31",
+        "D49"
+      ],
+      "write_scope": [
+        "scripts/compatibility",
+        "packages/test-fixtures/compatibility",
+        "docs/dependencies-and-compatibility.md"
+      ],
+      "contract_inputs": [
+        "D09 compatibility matrix",
+        "D10 spike record"
+      ],
+      "outputs": [
+        "environment inventory",
+        "compatibility evidence",
+        "selected runtime strategy"
+      ],
+      "acceptance": [
+        "AC-D10-01",
+        "AC-D10-02",
+        "AC-D10-03",
+        "AC-D10-04"
+      ],
+      "validation_gates": [
+        "VG-01",
+        "VG-02",
+        "VG-03",
+        "VG-05",
+        "VG-07"
+      ],
+      "stop_conditions": [
+        "unsupported Windows/runtime combination",
+        "account access required for harmless provider probe"
+      ],
+      "evidence_class": [
+        "document",
+        "live-provider",
+        "packaged-windows"
+      ],
+      "exclusions": [
+        "full agent UI",
+        "unrequested hardware changes"
+      ],
+      "release_gate": "G0",
+      "conditional_validation_gates": [
+        {
+          "gate_id": "VG-04",
+          "when": "VG-02 or VG-03 fails natively and a WSL provider workaround is selected; otherwise this gate remains not-run and WSL support is not claimed."
+        }
+      ],
+      "prerequisite_gates": []
+    },
+    {
+      "task_id": "TASK-01",
+      "title": "Repository and host shell",
+      "status": "done",
+      "depends_on": [],
+      "read": [
+        "D11",
+        "D12",
+        "D13",
+        "D20",
+        "D43",
+        "D49"
+      ],
+      "write_scope": [
+        "apps/extension",
+        "apps/companion",
+        "packages/contracts",
+        "packages/webviews",
+        "scripts"
+      ],
+      "contract_inputs": [
+        "D12 module boundaries",
+        "D18 message protocol"
+      ],
+      "outputs": [
+        "workspace scaffold",
+        "host activation and disposal",
+        "build scripts"
+      ],
+      "acceptance": [
+        "AC-D12-01",
+        "AC-D12-02",
+        "AC-D12-04",
+        "AC-D13-04"
+      ],
+      "validation_gates": [
+        "VG-01"
+      ],
+      "stop_conditions": [
+        "unresolved runtime choice"
+      ],
+      "evidence_class": [
+        "software",
+        "packaged-windows"
+      ],
+      "exclusions": [
+        "provider implementation",
+        "physical device mutation"
+      ],
+      "release_gate": "G1",
+      "prerequisite_gates": []
+    },
+    {
+      "task_id": "TASK-02",
+      "title": "Domain contracts and persistence",
+      "status": "done",
+      "depends_on": [
+        "TASK-01"
+      ],
+      "read": [
+        "D14",
+        "D15",
+        "D16",
+        "D17",
+        "D18"
+      ],
+      "write_scope": [
+        "packages/contracts",
+        "packages/domain",
+        "packages/application",
+        "packages/persistence",
+        "packages/test-fixtures/domain",
+        "apps/companion",
+        "apps/extension/src/companion-client.ts",
+        "apps/extension/test",
+        "scripts",
+        "package.json",
+        "package-lock.json",
+        "tasks",
+        "verification"
+      ],
+      "contract_inputs": [
+        "D14 identifiers",
+        "D15 manifest authority",
+        "D18 request/response/event schema"
+      ],
+      "outputs": [
+        "manifest validation",
+        "operation persistence",
+        "immutable artifact registry",
+        "protocol validation"
+      ],
+      "acceptance": [
+        "AC-D16-01",
+        "AC-D16-02",
+        "AC-D16-04",
+        "AC-D18-01",
+        "AC-D18-02"
+      ],
+      "validation_gates": [
+        "VG-13",
+        "VG-15"
+      ],
+      "stop_conditions": [
+        "conflicting authoritative schema",
+        "unresolved migration behavior"
+      ],
+      "evidence_class": [
+        "software"
+      ],
+      "exclusions": [
+        "hardware execution",
+        "provider authentication"
+      ],
+      "release_gate": "G1",
+      "prerequisite_gates": []
+    },
+    {
+      "task_id": "TASK-03",
+      "title": "Process and device coordinator",
+      "status": "done",
+      "depends_on": [
+        "TASK-02"
+      ],
+      "read": [
+        "D19",
+        "D20",
+        "D32",
+        "D33"
+      ],
+      "write_scope": [
+        "packages/devices",
+        "packages/application/jobs",
+        "packages/adapters/serial",
+        "apps/companion",
+        "packages/test-fixtures/devices",
+        "packages/application/src/jobs",
+        "packages/persistence/src/index.ts",
+        "packages/application/test",
+        "packages/application/src/index.ts",
+        "apps/companion/test",
+        "apps/extension/src/companion-client.ts",
+        "scripts",
+        "package.json",
+        "package-lock.json",
+        "tasks",
+        "verification"
+      ],
+      "contract_inputs": [
+        "D19 operation lifecycle",
+        "D32 device state machine"
+      ],
+      "outputs": [
+        "job supervision",
+        "lease state machine",
+        "fake transport",
+        "crash reconciliation"
+      ],
+      "acceptance": [
+        "AC-D19-01",
+        "AC-D19-02",
+        "AC-D19-03",
+        "AC-D19-04",
+        "AC-D19-05",
+        "AC-D19-06"
+      ],
+      "validation_gates": [
+        "VG-13",
+        "VG-14"
+      ],
+      "stop_conditions": [
+        "ambiguous device ownership",
+        "unobserved process termination"
+      ],
+      "evidence_class": [
+        "software"
+      ],
+      "exclusions": [
+        "autonomous real uploads",
+        "provider UI"
+      ],
+      "release_gate": "G1",
+      "prerequisite_gates": []
+    },
+    {
+      "task_id": "TASK-04",
+      "title": "Arduino vertical slice",
+      "status": "done",
+      "depends_on": [
+        "TASK-03"
+      ],
+      "read": [
+        "D15",
+        "D19",
+        "D21",
+        "D26",
+        "D31",
+        "D32",
+        "D33",
+        "D40"
+      ],
+      "write_scope": [
+        "packages/adapters/arduino",
+        "packages/adapters/serial",
+        "packages/devices",
+        "apps/extension",
+        "packages/test-fixtures/arduino",
+        "packages/application/context"
+      ],
+      "contract_inputs": [
+        "D31 build identity",
+        "D32 exact artifact upload",
+        "D33 raw recording"
+      ],
+      "outputs": [
+        "sketch import",
+        "compile and diagnostics",
+        "coordinated upload",
+        "raw serial capture",
+        "one existing provider IDE or terminal surface with bounded application snapshot"
+      ],
+      "acceptance": [
+        "AC-D31-01",
+        "AC-D31-02",
+        "AC-D31-03",
+        "AC-D31-04",
+        "AC-D32-01",
+        "AC-D32-05",
+        "AC-D32-06"
+      ],
+      "validation_gates": [
+        "VG-05",
+        "VG-06",
+        "VG-14"
+      ],
+      "stop_conditions": [
+        "unresolved board identity",
+        "unsupported CLI version",
+        "dirty-buffer conflict"
+      ],
+      "evidence_class": [
+        "software",
+        "real-hardware"
+      ],
+      "exclusions": [
+        "bootloader burning",
+        "forced sketch conversion"
+      ],
+      "release_gate": "G2",
+      "prerequisite_gates": [
+        "VG-05"
+      ]
+    },
+    {
+      "task_id": "TASK-05",
+      "title": "Agent adapters and domain tools",
+      "status": "done",
+      "depends_on": [
+        "TASK-02",
+        "TASK-04"
+      ],
+      "read": [
+        "D21",
+        "D22",
+        "D23",
+        "D24",
+        "D25",
+        "D26",
+        "D27",
+        "D28",
+        "D29",
+        "D30"
+      ],
+      "write_scope": [
+        "packages/agents",
+        "packages/adapters/codex",
+        "packages/adapters/opencode",
+        "packages/application/context",
+        "packages/application/tools",
+        "packages/test-fixtures/agents"
+      ],
+      "contract_inputs": [
+        "D22 provider adapter",
+        "D29 domain tools",
+        "D26 context packet"
+      ],
+      "outputs": [
+        "two provider adapters",
+        "bounded robotics tools",
+        "session handoff",
+        "agent contract fixtures"
+      ],
+      "acceptance": [
+        "AC-D22-01",
+        "AC-D22-02",
+        "AC-D22-03",
+        "AC-D22-04",
+        "AC-D22-05",
+        "AC-D23-01",
+        "AC-D24-01"
+      ],
+      "validation_gates": [
+        "VG-02",
+        "VG-03",
+        "VG-08"
+      ],
+      "stop_conditions": [
+        "unsupported provider protocol",
+        "authentication unavailable",
+        "capability mismatch"
+      ],
+      "evidence_class": [
+        "software",
+        "live-provider"
+      ],
+      "exclusions": [
+        "private credential extraction",
+        "new model harness"
+      ],
+      "release_gate": "G3",
+      "prerequisite_gates": []
+    },
+    {
+      "task_id": "TASK-06",
+      "title": "Unified agent context and review UI",
+      "status": "done",
+      "depends_on": [
+        "TASK-05"
+      ],
+      "read": [
+        "D13",
+        "D26",
+        "D27",
+        "D28",
+        "D41",
+        "D42",
+        "D43",
+        "D44",
+        "D45",
+        "D46",
+        "D47"
+      ],
+      "write_scope": [
+        "packages/webviews/agent",
+        "packages/webviews/context",
+        "packages/webviews/review",
+        "apps/extension"
+      ],
+      "contract_inputs": [
+        "D44 S02 S03 S06",
+        "D45 interaction contracts",
+        "D18 webview protocol"
+      ],
+      "outputs": [
+        "common conversation panel",
+        "context inspector",
+        "task change review",
+        "cancel and reconnect UI"
+      ],
+      "acceptance": [
+        "AC-D13-03",
+        "AC-D13-05",
+        "AC-D42-01",
+        "AC-D44-03",
+        "AC-D44-06"
+      ],
+      "validation_gates": [
+        "VG-08"
+      ],
+      "stop_conditions": [
+        "unresolved edit ownership",
+        "unobservable provider feature"
+      ],
+      "evidence_class": [
+        "software",
+        "manual-ui"
+      ],
+      "exclusions": [
+        "claiming hidden provider context",
+        "upload on source acceptance"
+      ],
+      "release_gate": "G3",
+      "prerequisite_gates": []
+    },
+    {
+      "task_id": "TASK-07",
+      "title": "Components and wiring",
+      "status": "done",
+      "depends_on": [
+        "TASK-02"
+      ],
+      "read": [
+        "D14",
+        "D34",
+        "D35",
+        "D41",
+        "D42",
+        "D43",
+        "D44",
+        "D45",
+        "D46",
+        "D47"
+      ],
+      "write_scope": [
+        "packages/domain/components",
+        "packages/domain/wiring",
+        "packages/application/wiring",
+        "packages/webviews/components",
+        "packages/webviews/wiring",
+        "apps/extension"
+      ],
+      "contract_inputs": [
+        "D34 component definitions",
+        "D35 intended nets",
+        "D44 S04 S05"
+      ],
+      "outputs": [
+        "components table",
+        "net validation",
+        "explicit code bindings",
+        "canvas cross-selection"
+      ],
+      "acceptance": [
+        "AC-D14-01",
+        "AC-D14-02",
+        "AC-D14-04",
+        "AC-D34-01",
+        "AC-D35-01"
+      ],
+      "validation_gates": [],
+      "stop_conditions": [
+        "missing pin electrical facts",
+        "manifest revision conflict"
+      ],
+      "evidence_class": [
+        "software",
+        "manual-ui"
+      ],
+      "exclusions": [
+        "electrical certification",
+        "automatic lossless KiCad synchronization"
+      ],
+      "release_gate": "G4",
+      "prerequisite_gates": []
+    },
+    {
+      "task_id": "TASK-08",
+      "title": "Documents and diagnostics",
+      "status": "done",
+      "depends_on": [
+        "TASK-02"
+      ],
+      "read": [
+        "D31",
+        "D38",
+        "D43",
+        "D44",
+        "D45",
+        "D46"
+      ],
+      "write_scope": [
+        "packages/adapters/documents",
+        "packages/application/documents",
+        "packages/webviews/documents",
+        "apps/extension"
+      ],
+      "contract_inputs": [
+        "D38 citations and extraction",
+        "D31 language diagnostics",
+        "D44 S11"
+      ],
+      "outputs": [
+        "language-service wiring",
+        "document extraction",
+        "page anchored retrieval"
+      ],
+      "acceptance": [
+        "AC-D38-01",
+        "AC-D31-02"
+      ],
+      "validation_gates": [
+        "VG-12"
+      ],
+      "stop_conditions": [
+        "unsupported extraction format",
+        "ambiguous page anchor"
+      ],
+      "evidence_class": [
+        "software",
+        "manual-ui"
+      ],
+      "exclusions": [
+        "fabricated OCR text",
+        "instructions from untrusted document content"
+      ],
+      "release_gate": "G5",
+      "prerequisite_gates": []
+    },
+    {
+      "task_id": "TASK-09",
+      "title": "Telemetry and experiments",
+      "status": "done",
+      "depends_on": [
+        "TASK-04"
+      ],
+      "read": [
+        "D33",
+        "D39",
+        "D40",
+        "D44",
+        "D45",
+        "D46",
+        "D47"
+      ],
+      "write_scope": [
+        "packages/application/experiments",
+        "packages/adapters/serial",
+        "packages/webviews/telemetry",
+        "packages/webviews/experiments",
+        "packages/test-fixtures/recordings"
+      ],
+      "contract_inputs": [
+        "D33 raw capture",
+        "D39 run manifest",
+        "D44 S08 S09"
+      ],
+      "outputs": [
+        "versioned parsers",
+        "plots and intervals",
+        "run comparison",
+        "evidence export"
+      ],
+      "acceptance": [
+        "AC-D33-01",
+        "AC-D33-02",
+        "AC-D33-03",
+        "AC-D33-04",
+        "AC-D33-05",
+        "AC-D33-06",
+        "AC-D39-01",
+        "AC-D44-04"
+      ],
+      "validation_gates": [
+        "VG-06"
+      ],
+      "stop_conditions": [
+        "missing timestamp basis",
+        "incompatible units"
+      ],
+      "evidence_class": [
+        "software",
+        "real-hardware",
+        "manual-ui"
+      ],
+      "exclusions": [
+        "replacing gaps with zeros",
+        "test pass inferred from compilation"
+      ],
+      "release_gate": "G5",
+      "prerequisite_gates": []
+    },
+    {
+      "task_id": "TASK-10",
+      "title": "KiCad and CAD handoff",
+      "status": "done",
+      "depends_on": [
+        "TASK-02",
+        "TASK-07"
+      ],
+      "read": [
+        "D36",
+        "D37",
+        "D44",
+        "D45",
+        "D46"
+      ],
+      "write_scope": [
+        "packages/adapters/kicad",
+        "packages/adapters/cad",
+        "packages/webviews/previews",
+        "packages/test-fixtures/engineering"
+      ],
+      "contract_inputs": [
+        "D36 native schematic handoff",
+        "D37 CAD artifacts",
+        "D44 S10 S16"
+      ],
+      "outputs": [
+        "version-gated schematic generation and checks",
+        "CAD generation and preview",
+        "external edit detection"
+      ],
+      "acceptance": [
+        "AC-D36-01",
+        "AC-D37-01"
+      ],
+      "validation_gates": [
+        "VG-09",
+        "VG-10"
+      ],
+      "stop_conditions": [
+        "unsupported native format",
+        "unverified viewer API",
+        "external design divergence"
+      ],
+      "evidence_class": [
+        "software",
+        "manual-ui"
+      ],
+      "exclusions": [
+        "custom CAD engine",
+        "overwriting independent KiCad edits"
+      ],
+      "release_gate": "G5",
+      "prerequisite_gates": []
+    },
+    {
+      "task_id": "TASK-11",
+      "title": "Recovery and complete journeys",
+      "status": "review",
+      "depends_on": [
+        "TASK-06",
+        "TASK-07",
+        "TASK-08",
+        "TASK-09",
+        "TASK-10"
+      ],
+      "read": [
+        "D05",
+        "D06",
+        "D07",
+        "D11",
+        "D16",
+        "D20",
+        "D30",
+        "D40",
+        "D44",
+        "D46",
+        "D47",
+        "D48"
+      ],
+      "write_scope": [
+        "apps/extension",
+        "apps/companion",
+        "packages/application",
+        "packages/test-fixtures",
+        "scripts",
+        "verification"
+      ],
+      "contract_inputs": [
+        "D05 journeys",
+        "D07 performance budgets",
+        "D48 evidence records"
+      ],
+      "outputs": [
+        "integrated failure drills",
+        "backup restore evidence",
+        "performance and accessibility results",
+        "requirement traceability"
+      ],
+      "acceptance": [
+        "AC-D06-01",
+        "AC-D06-02",
+        "AC-D06-03",
+        "AC-D06-04",
+        "AC-D44-01",
+        "AC-D44-02",
+        "AC-D44-05",
+        "AC-D48-01",
+        "AC-D48-02",
+        "AC-D48-04"
+      ],
+      "validation_gates": [
+        "VG-08",
+        "VG-11",
+        "VG-13",
+        "VG-14",
+        "VG-15"
+      ],
+      "stop_conditions": [
+        "mandatory journey blocked",
+        "unresolved recovery or privacy failure"
+      ],
+      "evidence_class": [
+        "software",
+        "live-provider",
+        "real-hardware",
+        "manual-ui"
+      ],
+      "exclusions": [
+        "scope reduction to declare completion",
+        "mock results represented as hardware proof"
+      ],
+      "release_gate": "G6",
+      "prerequisite_gates": []
+    },
+    {
+      "task_id": "TASK-12",
+      "title": "Personal release",
+      "status": "blocked",
+      "depends_on": [
+        "TASK-11"
+      ],
+      "read": [
+        "D09",
+        "D48",
+        "D49",
+        "D50"
+      ],
+      "write_scope": [
+        "scripts",
+        "docs",
+        "verification",
+        "dist"
+      ],
+      "contract_inputs": [
+        "D49 release manifest",
+        "D48 evidence ledger"
+      ],
+      "outputs": [
+        "inspected VSIX",
+        "checksums",
+        "version matrix",
+        "installation and maintenance guide"
+      ],
+      "acceptance": [
+        "AC-D49-01",
+        "AC-D49-02",
+        "AC-D49-03",
+        "AC-D49-04",
+        "AC-D49-05",
+        "AC-D49-06",
+        "AC-D48-03",
+        "AC-D48-05",
+        "AC-D50-04"
+      ],
+      "validation_gates": [
+        "VG-01",
+        "VG-02",
+        "VG-03",
+        "VG-05",
+        "VG-06",
+        "VG-07",
+        "VG-09",
+        "VG-10",
+        "VG-11",
+        "VG-12",
+        "VG-13",
+        "VG-14",
+        "VG-15"
+      ],
+      "stop_conditions": [
+        "failed mandatory acceptance criterion",
+        "unverified package assets"
+      ],
+      "evidence_class": [
+        "document",
+        "packaged-windows",
+        "real-hardware"
+      ],
+      "exclusions": [
+        "Marketplace publishing",
+        "unrequested cloud deployment"
+      ],
+      "release_gate": "G6",
+      "prerequisite_gates": [
+        "VG-01",
+        "VG-02",
+        "VG-03",
+        "VG-05",
+        "VG-06",
+        "VG-07",
+        "VG-09",
+        "VG-10",
+        "VG-11",
+        "VG-12",
+        "VG-13",
+        "VG-14",
+        "VG-15"
+      ]
+    }
+  ]
+}

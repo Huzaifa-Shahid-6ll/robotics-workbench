@@ -1,0 +1,64 @@
+{
+  "schemaVersion": 1,
+  "packetId": "00000000-0000-4000-8000-000000000010",
+  "projectId": "00000000-0000-4000-8000-000000000001",
+  "projectRevision": 12,
+  "sourceSnapshotId": "00000000-0000-4000-8000-000000000004",
+  "assembledAt": "2026-11-01T10:00:00Z",
+  "task": "Explain why the front sensor has no readings. Do not upload firmware.",
+  "selection": {
+    "kind": "recording-range",
+    "recordingId": "00000000-0000-4000-8000-000000000009",
+    "channelIds": [
+      "range_mm"
+    ],
+    "startMs": 0,
+    "endMs": 1000,
+    "timeBasis": "relative",
+    "projectRevision": 12
+  },
+  "current": {
+    "targetFqbn": "arduino:avr:uno",
+    "deviceId": null,
+    "connectionState": "disconnected",
+    "latestBuildId": "00000000-0000-4000-8000-000000000017",
+    "lastUploadReceiptId": "00000000-0000-4000-8000-000000000016",
+    "physicalConfirmation": "stale",
+    "activeOperationIds": []
+  },
+  "constraints": [
+    "Keep the existing Arduino sketch layout."
+  ],
+  "evidenceRefs": [
+    {
+      "evidenceId": "00000000-0000-4000-8000-000000000009",
+      "artifactId": "00000000-0000-4000-8000-000000000019",
+      "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "basis": "measured",
+      "sourceUri": "artifact://00000000-0000-4000-8000-000000000019",
+      "location": {
+        "kind": "recording-range",
+        "start": 0,
+        "end": 1000,
+        "timeBasis": "relative"
+      },
+      "projectRevision": 11,
+      "observedAt": "2026-11-01T09:00:00Z",
+      "applicability": "historical",
+      "summary": "Illustrative fixture: no valid range samples in a previous capture."
+    }
+  ],
+  "conflicts": [
+    "The latest build is not the last uploaded build."
+  ],
+  "unknowns": [
+    "Physical wiring after revision 12 is unconfirmed."
+  ],
+  "omitted": [
+    {
+      "reason": "budget",
+      "ref": "datasheet-full",
+      "expansionHandle": "evidence:datasheet-full"
+    }
+  ]
+}

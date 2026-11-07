@@ -1,0 +1,7 @@
+{
+  "name": "@robotics-workbench/devices",
+  "version": "0.1.0",
+  "private": true,
+  "exports": { ".": "./src/index.ts" },
+  "dependencies": { "@robotics-workbench/contracts": "0.1.0" }
+}

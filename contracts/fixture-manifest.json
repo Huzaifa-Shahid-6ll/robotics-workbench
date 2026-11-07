@@ -1,0 +1,90 @@
+{
+  "schemaVersion": 1,
+  "fixtures": [
+    {
+      "schema": "request.schema.json",
+      "file": "../examples/request.valid.json",
+      "expected": "valid"
+    },
+    {
+      "schema": "request.schema.json",
+      "file": "../examples/request.invalid.json",
+      "expected": "invalid"
+    },
+    {
+      "schema": "response.schema.json",
+      "file": "../examples/response.valid.json",
+      "expected": "valid"
+    },
+    {
+      "schema": "response.schema.json",
+      "file": "../examples/response.invalid.json",
+      "expected": "invalid"
+    },
+    {
+      "schema": "event.schema.json",
+      "file": "../examples/event.valid.json",
+      "expected": "valid"
+    },
+    {
+      "schema": "event.schema.json",
+      "file": "../examples/event.invalid.json",
+      "expected": "invalid"
+    },
+    {
+      "schema": "operation.schema.json",
+      "file": "../examples/operation.valid.json",
+      "expected": "valid"
+    },
+    {
+      "schema": "operation.schema.json",
+      "file": "../examples/operation.invalid.json",
+      "expected": "invalid"
+    },
+    {
+      "schema": "context-packet.schema.json",
+      "file": "../examples/context-packet.valid.json",
+      "expected": "valid"
+    },
+    {
+      "schema": "context-packet.schema.json",
+      "file": "../examples/context-packet.invalid.json",
+      "expected": "invalid"
+    },
+    {
+      "schema": "workbench.schema.json",
+      "file": "../examples/workbench.valid.json",
+      "expected": "valid"
+    },
+    {
+      "schema": "serial-record.schema.json",
+      "file": "../examples/serial-record.valid.json",
+      "expected": "valid"
+    },
+    {
+      "schema": "serial-record.schema.json",
+      "file": "../examples/serial-record.invalid.json",
+      "expected": "invalid"
+    },
+    {
+      "schema": "context-packet.schema.json",
+      "file": "../examples/context-packet-range.valid.json",
+      "expected": "valid"
+    },
+    {
+      "schema": "context-packet.schema.json",
+      "file": "../examples/context-packet-range.invalid.json",
+      "expected": "invalid"
+    },
+    {
+      "schema": "task-packet.schema.json",
+      "file": "../tasks/task-index.json",
+      "expected": "valid"
+    },
+    {
+      "schema": "workbench.schema.json",
+      "file": "../examples/workbench.invalid.json",
+      "expected": "invalid"
+    }
+  ]
+}

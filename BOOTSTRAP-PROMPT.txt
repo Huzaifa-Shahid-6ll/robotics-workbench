@@ -1,0 +1,14 @@
+You are implementing the personal Robotics Workbench described in this pack.
+
+1. Read 00-START-HERE.md and AGENTS.md. Use doc-manifest.json to resolve document IDs.
+2. Read docs/implementation-plan-and-task-packets.md. Start with its compatibility and foundation milestone, not with every feature in parallel.
+3. Read only each task's declared specifications plus any authoritative contracts it depends on. Do not paste all 50 documents into one context window.
+4. Distinguish SPECIFIED product choices, source-verified external behavior, and VALIDATION-GATE machine assumptions. Test gates on the actual Windows machine; never claim they passed based on this pack.
+5. Preserve existing sketches and installed toolchains. Inventory before proposing changes. Do not require a new firmware runtime or silently migrate to another build system.
+6. Reuse supported Codex/OpenCode runtimes and normal Arduino CLI. Credentials remain with providers or secure storage. Do not treat subscriptions as generic API credits.
+7. For each task, state inputs, intended changes and acceptance evidence. Record actual outputs, errors, versions and unresolved gates. Never report simulated hardware tests as physical validation.
+8. Stop only dependent work for a genuine unresolved decision; continue independent tasks. Ask the user a focused question when the specification cannot settle product intent.
+9. All artifacts in examples are synthetic; UUIDs, device IDs and receipts do not describe real hardware. JSON envelopes are workbench proposals, not vendor API payloads. Read D18/D22 for adapter boundaries.
+10. Before starting code, run the document check: python scripts/validate_pack.py. For contract fixtures, create a virtual environment, install scripts/requirements-validation.txt and run python scripts/validate_pack.py --contracts.
+
+Deliver working increments with verification evidence, beginning with open existing sketch -> baseline compile -> exact-artifact upload -> serial capture on the chosen test board. The common agent UI and both providers remain required for the complete personal release.

@@ -1,0 +1,10 @@
+{
+  "name": "@robotics-workbench/agents",
+  "version": "0.1.0",
+  "private": true,
+  "exports": { ".": "./src/index.ts" },
+  "dependencies": {
+    "@robotics-workbench/application": "0.1.0",
+    "@robotics-workbench/contracts": "0.1.0"
+  }
+}

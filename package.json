@@ -1,0 +1,63 @@
+{
+  "name": "robotics-workbench",
+  "version": "0.1.0",
+  "private": true,
+  "packageManager": "npm@11.16.0",
+  "engines": {
+    "node": ">=24.18.0 <25",
+    "npm": ">=11 <12"
+  },
+  "workspaces": [
+    "apps/*",
+    "packages/contracts",
+    "packages/domain",
+    "packages/application",
+    "packages/persistence",
+    "packages/devices",
+    "packages/adapters/arduino",
+    "packages/adapters/serial",
+    "packages/webviews",
+    "packages/agents",
+    "packages/adapters/codex",
+    "packages/adapters/opencode",
+    "packages/adapters/documents",
+    "packages/adapters/kicad",
+    "packages/adapters/cad"
+  ],
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "check": "tsc --noEmit && node --test scripts/boundaries.test.mjs scripts/verification/validate-evidence.test.mjs scripts/release/release-record.test.mjs && node scripts/verification/validate-evidence.mjs",
+    "test": "npm run build && node scripts/test.mjs",
+    "test:host": "npm run build && node scripts/test-host.mjs",
+    "test:packaged": "node scripts/install-test-vsix.mjs && node scripts/test-host.mjs --packaged",
+    "package": "npm run check && npm run build && node scripts/package.mjs",
+    "launch": "node scripts/launch.mjs",
+    "doctor": "powershell -NoProfile -File scripts/compatibility/inventory.ps1",
+    "verify": "node scripts/verify.mjs",
+    "verify:task": "node scripts/verify-task.mjs",
+    "release:record": "node scripts/release/create-record.mjs",
+    "release:check": "node scripts/release/validate-record.mjs",
+    "release:maintenance": "node scripts/release/maintenance-drill.mjs",
+    "compatibility:record": "node scripts/compatibility/record-completion.mjs"
+  },
+  "devDependencies": {
+    "@modelcontextprotocol/sdk": "1.32.2",
+    "@opencode-ai/sdk": "1.18.32",
+    "@serialport/bindings-cpp": "13.0.1",
+    "@types/node": "24.10.1",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "@types/vscode": "1.144.0",
+    "@vscode/test-electron": "3.1.0",
+    "@vscode/vsce": "4.1.0",
+    "esbuild": "0.28.2",
+    "playwright": "1.61.1",
+    "typescript": "5.9.3",
+    "vscode-languageclient": "9.0.1"
+  },
+  "overrides": {
+    "@vscode/vsce": {
+      "minimatch": "11.0.3"
+    }
+  }
+}

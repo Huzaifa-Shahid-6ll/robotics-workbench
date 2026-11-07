@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "assets": [{
+    "assetId": "99999999-9999-4999-8999-999999999999",
+    "label": "Synthetic design-choice box",
+    "scriptRelativePath": "mechanical/box.py",
+    "parameterRelativePath": "mechanical/parameters.json",
+    "localModulePaths": ["mechanical/box_dimensions.py"],
+    "environmentLockRelativePath": "mechanical/environment.lock.json",
+    "dependencyDiscovery": "declared",
+    "componentIds": [],
+    "dimensionEvidenceRefs": [],
+    "output": { "linearTolerance": 0.1, "angularTolerance": 0.1, "expectedBoundsMm": [20, 10, 3], "boundsToleranceMm": 0.001, "expectedVolumeMm3": 600, "volumeToleranceMm3": 0.001 }
+  }]
+}

@@ -1,0 +1,16 @@
+node_modules/
+dist/
+.venv-validation/
+.vscode-test/
+artifacts/
+*.vsix
+*.tsbuildinfo
+__pycache__/
+
+verification/evidence/
+verification/history/
+.env
+.env.*
+*.sqlite
+*.sqlite-wal
+*.sqlite-shm

@@ -1,0 +1,245 @@
+{
+  "name": "robotics-workbench",
+  "displayName": "Robotics Workbench",
+  "description": "Personal robotics workbench for Arduino projects, engineering evidence, and agent tasks.",
+  "version": "0.1.0",
+  "publisher": "local-workbench",
+  "private": true,
+  "engines": {
+    "vscode": "^1.144.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "main": "./dist/extension.js",
+  "extensionKind": [
+    "ui"
+  ],
+  "capabilities": {
+    "untrustedWorkspaces": {
+      "supported": "limited",
+      "description": "Static navigation is available; companion execution requires Workspace Trust."
+    },
+    "virtualWorkspaces": {
+      "supported": false,
+      "description": "The workbench requires a local Windows folder."
+    }
+  },
+  "contributes": {
+    "commands": [
+      {
+        "command": "roboticsWorkbench.openWiring",
+        "title": "Robotics: Components & Wiring"
+      },
+      {
+        "command": "roboticsWorkbench.openComponents",
+        "title": "Robotics: Components"
+      },
+      {
+        "command": "roboticsWorkbench.openProject",
+        "title": "Robotics: Open Project"
+      },
+      {
+        "command": "roboticsWorkbench.checkTools",
+        "title": "Robotics: Check Tools"
+      },
+      {
+        "command": "roboticsWorkbench.importSketch",
+        "title": "Robotics: Import Existing Sketch"
+      },
+      {
+        "command": "roboticsWorkbench.selectBoard",
+        "title": "Robotics: Select Observed Device"
+      },
+      {
+        "command": "roboticsWorkbench.compile",
+        "title": "Robotics: Compile"
+      },
+      {
+        "command": "roboticsWorkbench.upload",
+        "title": "Robotics: Upload Exact Artifact"
+      },
+      {
+        "command": "roboticsWorkbench.openSerial",
+        "title": "Robotics: Record Raw Serial"
+      },
+      {
+        "command": "roboticsWorkbench.inspectContext",
+        "title": "Robotics: Inspect Application Context"
+      },
+      {
+        "command": "roboticsWorkbench.openAgent",
+        "title": "Robotics: Open Agent"
+      },
+      {
+        "command": "roboticsWorkbench.reviewTaskChanges",
+        "title": "Robotics: Review Task Changes"
+      },
+      {
+        "command": "roboticsWorkbench.openAgentTerminal",
+        "title": "Robotics: Open Codex Terminal"
+      },
+      {
+        "command": "roboticsWorkbench.startLanguageService",
+        "title": "Robotics: Start Arduino Language Service"
+      },
+      {
+        "command": "roboticsWorkbench.stopLanguageService",
+        "title": "Robotics: Stop Arduino Language Service"
+      },
+      {
+        "command": "roboticsWorkbench.openDocuments",
+        "title": "Robotics: Documents & Datasheets"
+      },
+      {
+        "command": "roboticsWorkbench.attachDocument",
+        "title": "Robotics: Attach Project Document"
+      },
+      {
+        "command": "roboticsWorkbench.openTelemetry",
+        "title": "Robotics: Telemetry & Experiments"
+      },
+      {
+        "command": "roboticsWorkbench.openRuns",
+        "title": "Robotics: Experiment Runs"
+      },
+      {
+        "command": "roboticsWorkbench.openParserProfiles",
+        "title": "Robotics: Open Telemetry Parser Profiles"
+      },
+      {
+        "command": "roboticsWorkbench.openSchematic",
+        "title": "Robotics: Open Schematic Handoff"
+      },
+      {
+        "command": "roboticsWorkbench.openCad",
+        "title": "Robotics: Open CAD Handoff"
+      },
+      {
+        "command": "roboticsWorkbench.openRecovery",
+        "title": "Robotics: Recovery Center"
+      },
+      {
+        "command": "roboticsWorkbench.exportProject",
+        "title": "Robotics: Export Project Backup"
+      },
+      {
+        "command": "roboticsWorkbench.restoreProject",
+        "title": "Robotics: Restore Project Backup to New Directories"
+      },
+      {
+        "command": "roboticsWorkbench.exportDiagnostics",
+        "title": "Robotics: Export Diagnostic Bundle"
+      }
+    ],
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "roboticsWorkbench",
+          "title": "Robotics",
+          "icon": "media/robotics.svg"
+        }
+      ]
+    },
+    "views": {
+      "roboticsWorkbench": [
+        {
+          "id": "roboticsWorkbench.project",
+          "name": "Project"
+        },
+        {
+          "id": "roboticsWorkbench.agent",
+          "name": "Agent",
+          "type": "webview"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "Robotics Workbench",
+      "properties": {
+        "roboticsWorkbench.nodePath": {
+          "type": "string",
+          "default": "",
+          "scope": "machine",
+          "description": "Absolute path to a local Node 24 executable. Empty discovers Node on the host PATH."
+        },
+        "roboticsWorkbench.arduinoPath": {
+          "type": "string",
+          "default": "",
+          "scope": "machine",
+          "description": "Absolute installed Arduino CLI executable. Empty discovers PATH then Arduino IDE installation."
+        },
+        "roboticsWorkbench.codexPath": {
+          "type": "string",
+          "default": "",
+          "scope": "machine",
+          "description": "Absolute native Codex executable. Empty discovers codex.exe on PATH."
+        },
+        "roboticsWorkbench.dataRoot": {
+          "type": "string",
+          "default": "",
+          "scope": "machine",
+          "description": "Absolute operational data directory outside project source. Empty uses extension global storage."
+        },
+        "roboticsWorkbench.opencodePath": {
+          "type": "string",
+          "default": "",
+          "scope": "machine",
+          "description": "Absolute installed native OpenCode executable. Empty discovers opencode.exe on host PATH."
+        },
+        "roboticsWorkbench.arduinoLanguageServerPath": {
+          "type": "string",
+          "default": "",
+          "scope": "machine",
+          "description": "Absolute installed Arduino language server executable. Empty discovers PATH then Arduino IDE."
+        },
+        "roboticsWorkbench.clangdPath": {
+          "type": "string",
+          "default": "",
+          "scope": "machine",
+          "description": "Absolute installed clangd executable. Empty discovers PATH then Arduino IDE."
+        },
+        "roboticsWorkbench.arduinoConfigPath": {
+          "type": "string",
+          "default": "",
+          "scope": "machine",
+          "description": "Absolute existing Arduino CLI configuration file for language tools. Empty uses Arduino IDE configuration."
+        },
+        "roboticsWorkbench.kicadPath": {
+          "type": "string",
+          "default": "",
+          "scope": "machine",
+          "description": "Absolute tested KiCad CLI executable. Empty discovers PATH. Optional feature; see TASK-10 compatibility matrix."
+        },
+        "roboticsWorkbench.kicadSha256": {
+          "type": "string",
+          "default": "",
+          "scope": "machine",
+          "description": "Optional exact tested KiCad executable SHA-256 pin. A mismatch disables schematic execution."
+        },
+        "roboticsWorkbench.cadPythonPath": {
+          "type": "string",
+          "default": "",
+          "scope": "machine",
+          "description": "Absolute Python executable in the selected isolated CadQuery environment. Empty disables CAD execution; no automatic installation."
+        }
+      }
+    },
+    "languages": [
+      {
+        "id": "cpp",
+        "extensions": [
+          ".ino"
+        ]
+      }
+    ]
+  },
+  "dependencies": {
+    "@robotics-workbench/contracts": "0.1.0",
+    "@robotics-workbench/application": "0.1.0",
+    "@robotics-workbench/domain": "0.1.0",
+    "@robotics-workbench/agents": "0.1.0",
+    "@robotics-workbench/webviews": "0.1.0",
+    "vscode-languageclient": "9.0.1"
+  }
+}

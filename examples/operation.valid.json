@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "operationId": "f7d3e897-776e-4b20-83a2-1affb3ff27cf",
+  "projectId": "b4e3d676-5968-4ff9-b3eb-38016fb22121",
+  "kind": "upload",
+  "status": "outcome-unknown",
+  "expectedProjectRevision": 7,
+  "sourceSnapshotId": "b9820054-bc78-4940-a0b5-ddaf21085414",
+  "deviceId": "c6ec64da-9c2d-4966-bd87-11da1e1fc74e",
+  "createdAt": "2026-11-01T06:59:58Z",
+  "startedAt": "2026-11-01T06:59:59Z",
+  "finishedAt": "2026-11-01T07:00:00Z",
+  "tool": {
+    "name": "fake-arduino-cli",
+    "version": "fixture-only"
+  },
+  "artifacts": [],
+  "error": {
+    "code": "DEVICE_DISCONNECTED",
+    "message": "Transport lost after upload began; do not replay automatically.",
+    "retryable": false
+  },
+  "requestId": "d765f06d-1ea2-4b2a-90ae-b89368146607"
+}

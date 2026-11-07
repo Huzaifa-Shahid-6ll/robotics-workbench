@@ -1,0 +1,16 @@
+{
+  "name": "@robotics-workbench/companion",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@robotics-workbench/contracts": "0.1.0",
+    "@robotics-workbench/application": "0.1.0",
+    "@robotics-workbench/persistence": "0.1.0",
+    "@robotics-workbench/devices": "0.1.0",
+    "@robotics-workbench/arduino": "0.1.0",
+    "@robotics-workbench/serial": "0.1.0",
+    "@robotics-workbench/documents": "0.1.0",
+    "@robotics-workbench/kicad": "0.1.0",
+    "@robotics-workbench/cad": "0.1.0"
+  }
+}

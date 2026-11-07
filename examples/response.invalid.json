@@ -1,0 +1,10 @@
+{
+  "schemaVersion": 1,
+  "requestId": "d765f06d-1ea2-4b2a-90ae-b89368146607",
+  "result": {},
+  "error": {
+    "code": "CONFLICT",
+    "message": "Example invalid double result",
+    "retryable": false
+  }
+}

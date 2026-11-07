@@ -1,0 +1,2 @@
+# Documentation contract validation only; application dependencies are separate.
+jsonschema==4.26.0

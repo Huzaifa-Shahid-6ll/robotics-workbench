@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 1,
+  "eventId": "b3ac15d0-157b-4e67-8a42-ddc8c8d00db1",
+  "sequence": 1,
+  "projectId": "b4e3d676-5968-4ff9-b3eb-38016fb22121",
+  "projectRevision": 7,
+  "operationId": "f7d3e897-776e-4b20-83a2-1affb3ff27cf",
+  "type": "operation.changed",
+  "occurredAt": "2026-11-01T07:00:00Z",
+  "payload": {
+    "status": "outcome-unknown"
+  }
+}

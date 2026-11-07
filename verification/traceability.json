@@ -1,0 +1,1672 @@
+{
+  "schemaVersion": 1,
+  "scope": "Public requirements and test map. Prior local evidence is retained privately. Run fresh checks before asserting release acceptance.",
+  "requirements": [
+    {
+      "requirementId": "REQ-PROD-01",
+      "acceptanceCriteria": [
+        "AC-D15-01",
+        "AC-D15-02",
+        "AC-D15-03",
+        "AC-D15-04",
+        "AC-D15-05"
+      ],
+      "implementationOwners": [
+        "TASK-04",
+        "TASK-11"
+      ],
+      "implementationPaths": [
+        "packages/contracts/src/project.ts",
+        "packages/domain/src/index.ts",
+        "packages/application/src/project-files.ts",
+        "packages/persistence/src/index.ts",
+        "apps/companion/src/project-service.ts",
+        "apps/companion/src/project-archive.ts",
+        "apps/companion/src/hardware-service.ts",
+        "apps/extension/src/extension.ts",
+        "apps/extension/src/source-policy.ts",
+        "packages/adapters/arduino/src/index.ts",
+        "packages/adapters/serial/src/recorder.ts",
+        "packages/adapters/serial/src/native.ts"
+      ],
+      "testIds": [
+        "software.tests",
+        "hardware.uno-loop",
+        "provider.context",
+        "package.native-runtime",
+        "task11.complete.archive-restore"
+      ],
+      "verificationStatus": "not-run",
+      "plannedAssertion": "Existing sketch opens/builds externally without conversion",
+      "testImplementation": "Registered task suites provide scoped evidence. Full requirement acceptance remains governed by D48 and the explicit verification status; historical suite success is not a complete-release pass.",
+      "evidence": [],
+      "evidenceClass": "software-and-integration",
+      "partialVerification": {
+        "taskId": "TASK-04",
+        "result": "passed",
+        "scope": "127 tests, installed VSIX/native runtime, actual Uno exact-upload/raw reconnect/contention, unchanged IDE sketch opening and native Codex bounded context."
+      },
+      "task11RemainingGates": [
+        "External Arduino IDE opening/building and all ordinary-project preservation acceptance assertions require their own final evidence.",
+        "Full requirement acceptance remains pending. These scoped records do not supply complete release-wide source/app/dependency metadata for every mandated evidence class."
+      ]
+    },
+    {
+      "requirementId": "REQ-PROD-02",
+      "acceptanceCriteria": [
+        "AC-D22-01",
+        "AC-D22-02",
+        "AC-D22-03",
+        "AC-D22-04",
+        "AC-D22-05"
+      ],
+      "implementationOwners": [
+        "TASK-05",
+        "TASK-06",
+        "TASK-11"
+      ],
+      "implementationPaths": [
+        "apps/companion/src/agent-service.ts",
+        "apps/companion/src/main.ts",
+        "apps/companion/src/mcp-bridge.ts",
+        "apps/companion/src/mcp-stdio.ts",
+        "apps/companion/src/project-service.ts",
+        "apps/extension/src/companion-client.ts",
+        "packages/adapters/codex/src/index.ts",
+        "packages/adapters/codex/src/transport.ts",
+        "packages/adapters/opencode/src/index.ts",
+        "packages/agents/src/index.ts",
+        "packages/application/src/context/index.ts",
+        "packages/application/src/index.ts"
+      ],
+      "testIds": [
+        "documentation.contracts",
+        "software.boundaries",
+        "software.tests",
+        "package",
+        "host.installed",
+        "codex.live",
+        "opencode.live",
+        "codex.coordinator",
+        "opencode.coordinator",
+        "ui.browser",
+        "context.pin-handoff",
+        "host.native-review",
+        "provider.task11-codex-1",
+        "provider.task11-codex-2",
+        "provider.task11-codex-3",
+        "provider.task11-opencode-1",
+        "provider.task11-opencode-2",
+        "provider.task11-opencode-3",
+        "provider.snapshot-diagnosis"
+      ],
+      "verificationStatus": "not-run",
+      "plannedAssertion": "Equivalent revision-stamped snapshot supplied to either provider",
+      "testImplementation": "Registered task suites provide scoped evidence. Full requirement acceptance remains governed by D48 and the explicit verification status; historical suite success is not a complete-release pass.",
+      "evidence": [],
+      "evidenceClass": "software-and-integration",
+      "task11RemainingGates": [
+        "Six final read-only provider turns now pass with equivalent project/revision facts and bounded selected-document context. Full provider contract and all shared-fact/cancellation/reconnect assertions remain separately gated.",
+        "Requirement status remains unchanged; all mandated assertions/evidence classes and exact final source/run metadata must be reconciled before complete acceptance."
+      ]
+    },
+    {
+      "requirementId": "REQ-PROD-03",
+      "acceptanceCriteria": [
+        "AC-D43-01",
+        "AC-D43-02",
+        "AC-D43-03",
+        "AC-D43-04",
+        "AC-D43-05"
+      ],
+      "implementationOwners": [
+        "TASK-07",
+        "TASK-09",
+        "TASK-11"
+      ],
+      "implementationPaths": [
+        "packages/domain/src/components.ts",
+        "packages/domain/src/wiring.ts",
+        "packages/application/src/wiring/index.ts",
+        "apps/companion/src/wiring-service.ts",
+        "apps/extension/src/wiring-controller.ts",
+        "packages/webviews/src/wiring.tsx"
+      ],
+      "testIds": [
+        "software.tests",
+        "host.installed",
+        "ui.wiring-production",
+        "task11.complete.retained-recording",
+        "task11.ui.wiring",
+        "task11.ui.telemetry",
+        "provider.task11-codex-1",
+        "provider.task11-codex-2",
+        "provider.task11-codex-3",
+        "provider.task11-opencode-1",
+        "provider.task11-opencode-2",
+        "provider.task11-opencode-3"
+      ],
+      "verificationStatus": "not-run",
+      "plannedAssertion": "Component/interval selection resolves the same stable object in agent context",
+      "testImplementation": "Registered task suites provide scoped evidence. Full requirement acceptance remains governed by D48 and the explicit verification status; historical suite success is not a complete-release pass.",
+      "evidence": [],
+      "evidenceClass": "software-and-integration",
+      "partialVerification": {
+        "taskId": "TASK-07",
+        "result": "passed",
+        "scope": "Pure catalog/wiring and service faults, 18 production browser checks, native save/undo/conflict preservation and installed VSIX."
+      },
+      "task11RemainingGates": [
+        "Actual selected-document context is supplied to both live providers. Complete native component/interval selection-to-agent interaction remains pending.",
+        "Requirement status remains unchanged; all mandated assertions/evidence classes and exact final source/run metadata must be reconciled before complete acceptance."
+      ]
+    },
+    {
+      "requirementId": "REQ-PROD-04",
+      "acceptanceCriteria": [
+        "AC-D27-01",
+        "AC-D27-02",
+        "AC-D27-03",
+        "AC-D27-04",
+        "AC-D27-05",
+        "AC-D27-06"
+      ],
+      "implementationOwners": [
+        "TASK-02",
+        "TASK-04",
+        "TASK-09",
+        "TASK-11"
+      ],
+      "implementationPaths": [
+        "apps/companion/src/hardware-service.ts",
+        "apps/extension/src/extension.ts",
+        "apps/extension/src/source-policy.ts",
+        "packages/adapters/arduino/src/index.ts",
+        "packages/adapters/serial/src/recorder.ts",
+        "packages/adapters/serial/src/native.ts"
+      ],
+      "testIds": [
+        "software.tests",
+        "hardware.uno-loop",
+        "provider.context",
+        "package.native-runtime",
+        "task11.hardware.exact-upload-handoff",
+        "task11.complete.cad",
+        "task11.complete.retained-recording",
+        "task11.ui.telemetry",
+        "task11.ui.engineering",
+        "provider.task11-codex-1",
+        "provider.task11-codex-2",
+        "provider.task11-codex-3",
+        "provider.task11-opencode-1",
+        "provider.task11-opencode-2",
+        "provider.task11-opencode-3"
+      ],
+      "verificationStatus": "not-run",
+      "plannedAssertion": "Mismatch fixture displays each truth independently",
+      "testImplementation": "Registered task suites provide scoped evidence. Full requirement acceptance remains governed by D48 and the explicit verification status; historical suite success is not a complete-release pass.",
+      "evidence": [],
+      "evidenceClass": "software-and-integration",
+      "partialVerification": {
+        "taskId": "TASK-04",
+        "result": "passed",
+        "scope": "127 tests, installed VSIX/native runtime, actual Uno exact-upload/raw reconnect/contention, unchanged IDE sketch opening and native Codex bounded context."
+      },
+      "task11RemainingGates": [
+        "Full mismatch/error fixtures and final native presentation must preserve all compiler/uploader/design/physical truth distinctions.",
+        "Full requirement acceptance remains pending. These scoped records do not supply complete release-wide source/app/dependency metadata for every mandated evidence class."
+      ]
+    },
+    {
+      "requirementId": "REQ-PROD-05",
+      "acceptanceCriteria": [
+        "AC-D15-01",
+        "AC-D15-02",
+        "AC-D15-03",
+        "AC-D15-04",
+        "AC-D15-05"
+      ],
+      "implementationOwners": [
+        "TASK-04",
+        "TASK-10",
+        "TASK-11"
+      ],
+      "implementationPaths": [
+        "packages/contracts/src/project.ts",
+        "packages/domain/src/index.ts",
+        "packages/application/src/project-files.ts",
+        "packages/persistence/src/index.ts",
+        "apps/companion/src/project-service.ts",
+        "apps/companion/src/project-archive.ts",
+        "apps/companion/src/hardware-service.ts",
+        "apps/extension/src/extension.ts",
+        "apps/extension/src/source-policy.ts",
+        "packages/adapters/arduino/src/index.ts",
+        "packages/adapters/serial/src/recorder.ts",
+        "packages/adapters/serial/src/native.ts"
+      ],
+      "testIds": [
+        "software.tests",
+        "hardware.uno-loop",
+        "provider.context",
+        "package.native-runtime",
+        "task11.complete.kicad",
+        "task11.complete.cad",
+        "task11.complete.archive-restore"
+      ],
+      "verificationStatus": "not-run",
+      "plannedAssertion": "Exported native artifacts open in independent tools",
+      "testImplementation": "Registered task suites provide scoped evidence. Full requirement acceptance remains governed by D48 and the explicit verification status; historical suite success is not a complete-release pass.",
+      "evidence": [],
+      "evidenceClass": "software-and-integration",
+      "partialVerification": {
+        "taskId": "TASK-04",
+        "result": "passed",
+        "scope": "127 tests, installed VSIX/native runtime, actual Uno exact-upload/raw reconnect/contention, unchanged IDE sketch opening and native Codex bounded context."
+      },
+      "task11RemainingGates": [
+        "Independent native KiCad/CAD reopen is scoped evidence; packaged external-file usability and all artifact/viewer acceptance assertions remain pending.",
+        "Full requirement acceptance remains pending. These scoped records do not supply complete release-wide source/app/dependency metadata for every mandated evidence class."
+      ]
+    },
+    {
+      "requirementId": "REQ-PROD-06",
+      "acceptanceCriteria": [
+        "AC-D04-01",
+        "AC-D04-02",
+        "AC-D04-03",
+        "AC-D04-04"
+      ],
+      "implementationOwners": [
+        "TASK-11",
+        "TASK-12"
+      ],
+      "implementationPaths": [
+        "verification/traceability.json",
+        "scripts/release/maintenance-drill.mjs",
+        "scripts/release/release-record.mjs",
+        "apps/companion/src/diagnostics-service.ts",
+        "apps/extension/src/recovery-controller.ts"
+      ],
+      "testIds": [
+        "verification.requirement-coverage",
+        "task11.hardware.exact-upload-handoff",
+        "task11.hardware.external-contention",
+        "task11.hardware.physical-unplug-replug",
+        "task11.hardware.capture-process-loss",
+        "task11.complete.document",
+        "task11.complete.kicad",
+        "task11.complete.cad",
+        "task11.complete.retained-recording",
+        "task11.complete.archive-restore",
+        "performance.host-baseline",
+        "performance.host-workbench",
+        "performance.sustained-raw-display",
+        "task11.ui.agent",
+        "task11.ui.wiring",
+        "task11.ui.documents",
+        "task11.ui.telemetry",
+        "task11.ui.engineering",
+        "provider.task11-codex-1",
+        "provider.task11-codex-2",
+        "provider.task11-codex-3",
+        "provider.task11-opencode-1",
+        "provider.task11-opencode-2",
+        "provider.task11-opencode-3",
+        "task11.native-review.source-preservation",
+        "provider.snapshot-diagnosis",
+        "documentation.contracts",
+        "software.boundaries",
+        "software.tests",
+        "package",
+        "host.installed",
+        "release.maintenance",
+        "release.dependencies",
+        "release.vendor-support-review"
+      ],
+      "verificationStatus": "not-run",
+      "plannedAssertion": "All release journeys pass, including KiCad/CAD and both providers",
+      "testImplementation": "Registered task suites provide scoped evidence. Full requirement acceptance remains governed by D48 and the explicit verification status; historical suite success is not a complete-release pass.",
+      "evidence": [],
+      "evidenceClass": "software-and-integration",
+      "task11RemainingGates": [
+        "Six final read-only live-provider turns and application-owned handoff passed;420-test/five-stage wrapper65dd2500 passed before the later minimal stale-build-hash filtering change. Latest installed-host/release reconciliation remains root-owned.",
+        "Native keyboard/visual/zoom core journeys remain unverified; Narrator was skipped at explicit user request. Synthetic-source native conflict assertions are not manual-ui acceptance.",
+        "Full personal workflow and all release assertions remain pending; historical failed initial runs are not rewritten by successful later slices.",
+        "Requirement status remains unchanged; all mandated assertions/evidence classes and exact final source/run metadata must be reconciled before complete acceptance."
+      ]
+    },
+    {
+      "requirementId": "REQ-ARCH-01",
+      "acceptanceCriteria": [
+        "AC-D14-01",
+        "AC-D14-02",
+        "AC-D14-03",
+        "AC-D14-04",
+        "AC-D14-05"
+      ],
+      "implementationOwners": [
+        "TASK-02",
+        "TASK-11"
+      ],
+      "implementationPaths": [
+        "packages/contracts/src/project.ts",
+        "packages/domain/src/index.ts",
+        "packages/application/src/project-files.ts",
+        "packages/persistence/src/index.ts",
+        "apps/companion/src/project-service.ts",
+        "apps/companion/src/project-archive.ts",
+        "packages/domain/src/components.ts",
+        "packages/domain/src/wiring.ts",
+        "packages/application/src/wiring/index.ts",
+        "apps/companion/src/wiring-service.ts",
+        "apps/extension/src/wiring-controller.ts",
+        "packages/webviews/src/wiring.tsx"
+      ],
+      "testIds": [
+        "software.tests",
+        "host.installed",
+        "ui.wiring-production",
+        "task11.complete.archive-restore"
+      ],
+      "verificationStatus": "not-run",
+      "plannedAssertion": "Reindex reconstructs derived state without changing authoritative files",
+      "testImplementation": "Registered task suites provide scoped evidence. Full requirement acceptance remains governed by D48 and the explicit verification status; historical suite success is not a complete-release pass.",
+      "evidence": [],
+      "evidenceClass": "software-and-integration",
+      "partialVerification": {
+        "taskId": "TASK-07",
+        "result": "passed",
+        "scope": "Pure catalog/wiring and service faults, 18 production browser checks, native save/undo/conflict preservation and installed VSIX."
+      },
+      "task11RemainingGates": [
+        "Full reindex reconstruction and all authority-preservation assertions require final dedicated evidence.",
+        "Full requirement acceptance remains pending. These scoped records do not supply complete release-wide source/app/dependency metadata for every mandated evidence class."
+      ]
+    },
+    {
+      "requirementId": "REQ-ARCH-02",
+      "acceptanceCriteria": [
+        "AC-D18-01",
+        "AC-D18-02",
+        "AC-D18-03",
+        "AC-D18-04",
+        "AC-D18-05"
+      ],
+      "implementationOwners": [
+        "TASK-01",
+        "TASK-02",
+        "TASK-11"
+      ],
+      "implementationPaths": [
+        "packages/contracts/src/project.ts",
+        "packages/domain/src/index.ts",
+        "packages/application/src/project-files.ts",
+        "packages/persistence/src/index.ts",
+        "apps/companion/src/project-service.ts",
+        "apps/companion/src/project-archive.ts"
+      ],
+      "testIds": [
+        "documentation.contracts",
+        "software.boundaries",
+        "software.tests",
+        "package",
+        "host.installed",
+        "documentation.final"
+      ],
+      "verificationStatus": "not-run",
+      "plannedAssertion": "Unknown or malformed request rejected without side effects",
+      "testImplementation": "Registered task suites provide scoped evidence. Full requirement acceptance remains governed by D48 and the explicit verification status; historical suite success is not a complete-release pass.",
+      "evidence": [],
+      "evidenceClass": "software-and-integration"
+    },
+    {
+      "requirementId": "REQ-ARCH-03",
+      "acceptanceCriteria": [
+        "AC-D19-01",
+        "AC-D19-02",
+        "AC-D19-03",
+        "AC-D19-04",
+        "AC-D19-05",
+        "AC-D19-06"
+      ],
+      "implementationOwners": [
+        "TASK-03",
+        "TASK-11"
+      ],
+      "implementationPaths": [
+        "packages/contracts/src/project.ts",
+        "packages/domain/src/index.ts",
+        "packages/application/src/project-files.ts",
+        "packages/persistence/src/index.ts",
+        "apps/companion/src/project-service.ts",
+        "apps/companion/src/project-archive.ts",
+        "packages/devices/src/index.ts",
+        "packages/application/src/jobs/coordinator.ts",
+        "packages/application/src/jobs/process-runner.ts",
+        "apps/companion/src/hardware-service.ts",
+        "apps/extension/src/extension.ts",
+        "apps/extension/src/source-policy.ts",
+        "packages/adapters/arduino/src/index.ts",
+        "packages/adapters/serial/src/recorder.ts",
+        "packages/adapters/serial/src/native.ts"
+      ],
+      "testIds": [
+        "software.tests",
+        "hardware.uno-loop",
+        "provider.context",
+        "package.native-runtime",
+        "task11.hardware.physical-unplug-replug",
+        "task11.hardware.capture-process-loss",
+        "task11.complete.archive-restore"
+      ],
+      "verificationStatus": "not-run",
+      "plannedAssertion": "Crash reconciliation retains failed/unknown outcomes",
+      "testImplementation": "Registered task suites provide scoped evidence. Full requirement acceptance remains governed by D48 and the explicit verification status; historical suite success is not a complete-release pass.",
+      "evidence": [],
+      "evidenceClass": "software-and-integration",
+      "partialVerification": {
+        "taskId": "TASK-04",
+        "result": "passed",
+        "scope": "127 tests, installed VSIX/native runtime, actual Uno exact-upload/raw reconnect/contention, unchanged IDE sketch opening and native Codex bounded context."
+      },
+      "task11RemainingGates": [
+        "Actual capture crash and archive history are covered; broader lifecycle/unknown-effect reconciliation and final release validation remain pending.",
+        "Full requirement acceptance remains pending. These scoped records do not supply complete release-wide source/app/dependency metadata for every mandated evidence class."
+      ]
+    },
+    {
+      "requirementId": "REQ-ARCH-04",
+      "acceptanceCriteria": [
+        "AC-D19-01",
+        "AC-D19-02",
+        "AC-D19-03",
+        "AC-D19-04",
+        "AC-D19-05",
+        "AC-D19-06"
+      ],
+      "implementationOwners": [
+        "TASK-03",
+        "TASK-04",
+        "TASK-11"
+      ],
+      "implementationPaths": [
+        "packages/devices/src/index.ts",
+        "packages/application/src/jobs/coordinator.ts",
+        "packages/application/src/jobs/process-runner.ts",
+        "apps/companion/src/project-service.ts",
+        "apps/companion/src/hardware-service.ts",
+        "apps/extension/src/extension.ts",
+        "apps/extension/src/source-policy.ts",
+        "packages/adapters/arduino/src/index.ts",
+        "packages/adapters/serial/src/recorder.ts",
+        "packages/adapters/serial/src/native.ts"
+      ],
+      "testIds": [
+        "software.tests",
+        "hardware.uno-loop",
+        "provider.context",
+        "package.native-runtime",
+        "task11.hardware.exact-upload-handoff",
+        "task11.hardware.external-contention"
+      ],
+      "verificationStatus": "not-run",
+      "plannedAssertion": "Concurrent upload/monitor attempts do not open competing workbench handles",
+      "testImplementation": "Registered task suites provide scoped evidence. Full requirement acceptance remains governed by D48 and the explicit verification status; historical suite success is not a complete-release pass.",
+      "evidence": [],
+      "evidenceClass": "software-and-integration",
+      "partialVerification": {
+        "taskId": "TASK-04",
+        "result": "passed",
+        "scope": "127 tests, installed VSIX/native runtime, actual Uno exact-upload/raw reconnect/contention, unchanged IDE sketch opening and native Codex bounded context."
+      },
+      "task11RemainingGates": [
+        "Actual exact upload/handoff and external contention are covered; all competing-owner/unknown-operation cases and final integrated release validation remain pending.",
+        "Full requirement acceptance remains pending. These scoped records do not supply complete release-wide source/app/dependency metadata for every mandated evidence class."
+      ]
+    },
+    {
+      "requirementId": "REQ-ARCH-05",
+      "acceptanceCriteria": [
+        "AC-D20-01",
+        "AC-D20-02",
+        "AC-D20-03",
+        "AC-D20-04",
+        "AC-D20-05",
+        "AC-D20-06"
+      ],
+      "implementationOwners": [
+        "TASK-01",
+        "TASK-05",
+        "TASK-12",
+        "TASK-11"
+      ],
+      "implementationPaths": [
+        "packages/contracts/src/project.ts",
+        "packages/domain/src/index.ts",
+        "packages/application/src/project-files.ts",
+        "packages/persistence/src/index.ts",
+        "apps/companion/src/project-service.ts",
+        "apps/companion/src/project-archive.ts",
+        "packages/devices/src/index.ts",
+        "packages/application/src/jobs/coordinator.ts",
+        "packages/application/src/jobs/process-runner.ts",
+        "scripts/release/maintenance-drill.mjs",
+        "scripts/release/release-record.mjs",
+        "apps/companion/src/diagnostics-service.ts",
+        "apps/extension/src/recovery-controller.ts"
+      ],
+      "testIds": [
+        "documentation.contracts",
+        "software.boundaries",
+        "software.tests",
+        "package",
+        "host.installed",
+        "codex.live",
+        "opencode.live",
+        "codex.coordinator",
+        "opencode.coordinator",
+        "release.maintenance",
+        "release.dependencies",
+        "task12.native-diagnostic-preview"
+      ],
+      "verificationStatus": "not-run",
+      "plannedAssertion": "Logs/exports omit secrets; unauthorized local requests fail",
+      "testImplementation": "Registered task suites provide scoped evidence. Full requirement acceptance remains governed by D48 and the explicit verification status; historical suite success is not a complete-release pass.",
+      "evidence": [],
+      "evidenceClass": "software-and-integration"
+    },
+    {
+      "requirementId": "REQ-ARCH-06",
+      "acceptanceCriteria": [
+        "AC-D13-01",
+        "AC-D13-02",
+        "AC-D13-03",
+        "AC-D13-04",
+        "AC-D13-05"
+      ],
+      "implementationOwners": [
+        "TASK-04",
+        "TASK-06",
+        "TASK-11"
+      ],
+      "implementationPaths": [
+        "packages/contracts/src/project.ts",
+        "packages/domain/src/index.ts",
+        "packages/application/src/project-files.ts",
+        "packages/persistence/src/index.ts",
+        "apps/companion/src/project-service.ts",
+        "apps/companion/src/project-archive.ts",
+        "apps/companion/src/hardware-service.ts",
+        "apps/extension/src/extension.ts",
+        "apps/extension/src/source-policy.ts",
+        "packages/adapters/arduino/src/index.ts",
+        "packages/adapters/serial/src/recorder.ts",
+        "packages/adapters/serial/src/native.ts"
+      ],
+      "testIds": [
+        "software.tests",
+        "hardware.uno-loop",
+        "provider.context",
+        "package.native-runtime",
+        "task11.native-review.source-preservation",
+        "host.installed"
+      ],
+      "verificationStatus": "not-run",
+      "plannedAssertion": "Dirty-buffer conflict test loses neither version",
+      "testImplementation": "Registered task suites provide scoped evidence. Full requirement acceptance remains governed by D48 and the explicit verification status; historical suite success is not a complete-release pass.",
+      "evidence": [],
+      "evidenceClass": "software-and-integration",
+      "partialVerification": {
+        "taskId": "TASK-04",
+        "result": "passed",
+        "scope": "127 tests, installed VSIX/native runtime, actual Uno exact-upload/raw reconnect/contention, unchanged IDE sketch opening and native Codex bounded context."
+      },
+      "task11RemainingGates": [
+        "Actual TaskReview/nativeReviewHost synthetic-source conflict rejects revert and preserves dirty-user plus saved-provider bytes. Fixture JSON review storage is separate from production backend and complete native/manual acceptance.",
+        "Requirement status remains unchanged; all mandated assertions/evidence classes and exact final source/run metadata must be reconciled before complete acceptance."
+      ]
+    },
+    {
+      "requirementId": "REQ-AGENT-01",
+      "acceptanceCriteria": [
+        "AC-D23-01",
+        "AC-D23-02",
+        "AC-D23-03",
+        "AC-D23-04",
+        "AC-D23-05",
+        "AC-D23-06"
+      ],
+      "implementationOwners": [
+        "TASK-05",
+        "TASK-06",
+        "TASK-11"
+      ],
+      "implementationPaths": [
+        "apps/companion/src/agent-service.ts",
+        "apps/companion/src/main.ts",
+        "apps/companion/src/mcp-bridge.ts",
+        "apps/companion/src/mcp-stdio.ts",
+        "apps/companion/src/project-service.ts",
+        "apps/extension/src/companion-client.ts",
+        "packages/adapters/codex/src/index.ts",
+        "packages/adapters/codex/src/transport.ts",
+        "packages/adapters/opencode/src/index.ts",
+        "packages/agents/src/index.ts",
+        "packages/application/src/context/index.ts",
+        "packages/application/src/index.ts"
+      ],
+      "testIds": [
+        "documentation.contracts",
+        "software.boundaries",
+        "software.tests",
+        "package",
+        "host.installed",
+        "codex.live",
+        "opencode.live",
+        "codex.coordinator",
+        "opencode.coordinator",
+        "ui.browser",
+        "context.pin-handoff",
+        "host.native-review",
+        "provider.task11-codex-1",
+        "provider.task11-codex-2",
+        "provider.task11-codex-3"
+      ],
+      "verificationStatus": "not-run",
+      "plannedAssertion": "Handshake, turn, observable event, cancel/reconnect fixtures pass",
+      "testImplementation": "Registered task suites provide scoped evidence. Full requirement acceptance remains governed by D48 and the explicit verification status; historical suite success is not a complete-release pass.",
+      "evidence": [],
+      "evidenceClass": "software-and-integration",
+      "task11RemainingGates": [
+        "Three actual Codex read-only project-snapshot turns pass. Broader capability/cancel/reconnect/failure protocol assertions and final release reconciliation remain separate.",
+        "Requirement status remains unchanged; all mandated assertions/evidence classes and exact final source/run metadata must be reconciled before complete acceptance."
+      ]
+    },
+    {
+      "requirementId": "REQ-AGENT-02",
+      "acceptanceCriteria": [
+        "AC-D24-01",
+        "AC-D24-02",
+        "AC-D24-03",
+        "AC-D24-04",
+        "AC-D24-05",
+        "AC-D24-06"
+      ],
+      "implementationOwners": [
+        "TASK-05",
+        "TASK-06",
+        "TASK-11"
+      ],
+      "implementationPaths": [
+        "apps/companion/src/agent-service.ts",
+        "apps/companion/src/main.ts",
+        "apps/companion/src/mcp-bridge.ts",
+        "apps/companion/src/mcp-stdio.ts",
+        "apps/companion/src/project-service.ts",
+        "apps/extension/src/companion-client.ts",
+        "packages/adapters/codex/src/index.ts",
+        "packages/adapters/codex/src/transport.ts",
+        "packages/adapters/opencode/src/index.ts",
+        "packages/agents/src/index.ts",
+        "packages/application/src/context/index.ts",
+        "packages/application/src/index.ts"
+      ],
+      "testIds": [
+        "documentation.contracts",
+        "software.boundaries",
+        "software.tests",
+        "package",
+        "host.installed",
+        "codex.live",
+        "opencode.live",
+        "codex.coordinator",
+        "opencode.coordinator",
+        "ui.browser",
+        "context.pin-handoff",
+        "host.native-review",
+        "provider.task11-opencode-1",
+        "provider.task11-opencode-2",
+        "provider.task11-opencode-3"
+      ],
+      "verificationStatus": "not-run",
+      "plannedAssertion": "Same capability-based contract tests pass",
+      "testImplementation": "Registered task suites provide scoped evidence. Full requirement acceptance remains governed by D48 and the explicit verification status; historical suite success is not a complete-release pass.",
+      "evidence": [],
+      "evidenceClass": "software-and-integration",
+      "task11RemainingGates": [
+        "Three actual OpenCode read-only project-snapshot turns and application-owned handoff observation pass. Broader capability/cancel/reconnect/failure protocol assertions and final release reconciliation remain separate.",
+        "Requirement status remains unchanged; all mandated assertions/evidence classes and exact final source/run metadata must be reconciled before complete acceptance."
+      ]
+    },
+    {
+      "requirementId": "REQ-AGENT-03",
+      "acceptanceCriteria": [
+        "AC-D26-01",
+        "AC-D26-02",
+        "AC-D26-03",
+        "AC-D26-04",
+        "AC-D26-05",
+        "AC-D26-06"
+      ],
+      "implementationOwners": [
+        "TASK-05",
+        "TASK-06",
+        "TASK-11"
+      ],
+      "implementationPaths": [
+        "apps/companion/src/agent-service.ts",
+        "apps/companion/src/main.ts",
+        "apps/companion/src/mcp-bridge.ts",
+        "apps/companion/src/mcp-stdio.ts",
+        "apps/companion/src/project-service.ts",
+        "apps/extension/src/companion-client.ts",
+        "packages/adapters/codex/src/index.ts",
+        "packages/adapters/codex/src/transport.ts",
+        "packages/adapters/opencode/src/index.ts",
+        "packages/agents/src/index.ts",
+        "packages/application/src/context/index.ts",
+        "packages/application/src/index.ts"
+      ],
+      "testIds": [
+        "documentation.contracts",
+        "software.boundaries",
+        "software.tests",
+        "package",
+        "host.installed",
+        "codex.live",
+        "opencode.live",
+        "codex.coordinator",
+        "opencode.coordinator",
+        "ui.browser",
+        "context.pin-handoff",
+        "host.native-review",
+        "task11.ui.agent",
+        "provider.task11-codex-1",
+        "provider.task11-codex-2",
+        "provider.task11-codex-3",
+        "provider.task11-opencode-1",
+        "provider.task11-opencode-2",
+        "provider.task11-opencode-3"
+      ],
+      "verificationStatus": "not-run",
+      "plannedAssertion": "Request has explicit scope and expansion handles; no unbounded log dump",
+      "testImplementation": "Registered task suites provide scoped evidence. Full requirement acceptance remains governed by D48 and the explicit verification status; historical suite success is not a complete-release pass.",
+      "evidence": [],
+      "evidenceClass": "software-and-integration",
+      "task11RemainingGates": [
+        "Actual bounded selected-document packets and one observed successful snapshot call per live turn are covered. Explicit expansion/retrieval and native component/interval journeys remain separate.",
+        "Requirement status remains unchanged; all mandated assertions/evidence classes and exact final source/run metadata must be reconciled before complete acceptance."
+      ]
+    },
+    {
+      "requirementId": "REQ-AGENT-04",
+      "acceptanceCriteria": [
+        "AC-D27-01",
+        "AC-D27-02",
+        "AC-D27-03",
+        "AC-D27-04",
+        "AC-D27-05",
+        "AC-D27-06"
+      ],
+      "implementationOwners": [
+        "TASK-05",
+        "TASK-09",
+        "TASK-06",
+        "TASK-11"
+      ],
+      "implementationPaths": [
+        "apps/companion/src/agent-service.ts",
+        "apps/companion/src/main.ts",
+        "apps/companion/src/mcp-bridge.ts",
+        "apps/companion/src/mcp-stdio.ts",
+        "apps/companion/src/project-service.ts",
+        "apps/extension/src/companion-client.ts",
+        "packages/adapters/codex/src/index.ts",
+        "packages/adapters/codex/src/transport.ts",
+        "packages/adapters/opencode/src/index.ts",
+        "packages/agents/src/index.ts",
+        "packages/application/src/context/index.ts",
+        "packages/application/src/index.ts"
+      ],
+      "testIds": [
+        "documentation.contracts",
+        "software.boundaries",
+        "software.tests",
+        "package",
+        "host.installed",
+        "codex.live",
+        "opencode.live",
+        "codex.coordinator",
+        "opencode.coordinator",
+        "documentation.contracts-final",
+        "package.final-corrections",
+        "host.installed-final-corrections",
+        "software.interval-export-final",
+        "ui.telemetry-production",
+        "telemetry.retained-real-capture",
+        "ui.browser",
+        "context.pin-handoff",
+        "host.native-review",
+        "task11.ui.agent",
+        "provider.task11-codex-1",
+        "provider.task11-codex-2",
+        "provider.task11-codex-3",
+        "provider.task11-opencode-1",
+        "provider.task11-opencode-2",
+        "provider.task11-opencode-3"
+      ],
+      "verificationStatus": "not-run",
+      "plannedAssertion": "Stale pin/document/build evidence is labeled and retrievable",
+      "testImplementation": "Registered task suites provide scoped evidence. Full requirement acceptance remains governed by D48 and the explicit verification status; historical suite success is not a complete-release pass.",
+      "evidence": [],
+      "evidenceClass": "software-and-integration",
+      "task11RemainingGates": [
+        "Actual document provenance/revision context is retained across six live turns. Every stale pin/build/document retrieval and native context journey remains separately gated.",
+        "Requirement status remains unchanged; all mandated assertions/evidence classes and exact final source/run metadata must be reconciled before complete acceptance."
+      ]
+    },
+    {
+      "requirementId": "REQ-AGENT-05",
+      "acceptanceCriteria": [
+        "AC-D28-01",
+        "AC-D28-02",
+        "AC-D28-03",
+        "AC-D28-04",
+        "AC-D28-05",
+        "AC-D28-06"
+      ],
+      "implementationOwners": [
+        "TASK-05",
+        "TASK-06",
+        "TASK-11"
+      ],
+      "implementationPaths": [
+        "apps/companion/src/agent-service.ts",
+        "apps/companion/src/main.ts",
+        "apps/companion/src/mcp-bridge.ts",
+        "apps/companion/src/mcp-stdio.ts",
+        "apps/companion/src/project-service.ts",
+        "apps/extension/src/companion-client.ts",
+        "packages/adapters/codex/src/index.ts",
+        "packages/adapters/codex/src/transport.ts",
+        "packages/adapters/opencode/src/index.ts",
+        "packages/agents/src/index.ts",
+        "packages/application/src/context/index.ts",
+        "packages/application/src/index.ts"
+      ],
+      "testIds": [
+        "documentation.contracts",
+        "software.boundaries",
+        "software.tests",
+        "package",
+        "host.installed",
+        "codex.live",
+        "opencode.live",
+        "codex.coordinator",
+        "opencode.coordinator",
+        "ui.browser",
+        "context.pin-handoff",
+        "host.native-review",
+        "provider.task11-opencode-1",
+        "provider.task11-opencode-2",
+        "provider.task11-opencode-3"
+      ],
+      "verificationStatus": "not-run",
+      "plannedAssertion": "Provider switch preserves decisions/evidence without claiming hidden history",
+      "testImplementation": "Registered task suites provide scoped evidence. Full requirement acceptance remains governed by D48 and the explicit verification status; historical suite success is not a complete-release pass.",
+      "evidence": [],
+      "evidenceClass": "software-and-integration",
+      "task11RemainingGates": [
+        "OpenCode observes application-owned Codex handoff and explicit private-history exclusion in three live turns. Complete recovery/cancel/reconnect memory assertions remain separately gated.",
+        "Requirement status remains unchanged; all mandated assertions/evidence classes and exact final source/run metadata must be reconciled before complete acceptance."
+      ]
+    },
+    {
+      "requirementId": "REQ-AGENT-06",
+      "acceptanceCriteria": [
+        "AC-D21-01",
+        "AC-D21-02",
+        "AC-D21-03",
+        "AC-D21-04",
+        "AC-D21-05"
+      ],
+      "implementationOwners": [
+        "TASK-03",
+        "TASK-05",
+        "TASK-06",
+        "TASK-11"
+      ],
+      "implementationPaths": [
+        "packages/devices/src/index.ts",
+        "packages/application/src/jobs/coordinator.ts",
+        "packages/application/src/jobs/process-runner.ts",
+        "apps/companion/src/project-service.ts"
+      ],
+      "testIds": [
+        "documentation.contracts",
+        "software.boundaries",
+        "software.tests",
+        "package",
+        "host.installed",
+        "documentation.final",
+        "codex.live",
+        "opencode.live",
+        "codex.coordinator",
+        "opencode.coordinator",
+        "ui.browser",
+        "context.pin-handoff",
+        "host.native-review",
+        "provider.task11-codex-1",
+        "provider.task11-codex-2",
+        "provider.task11-codex-3",
+        "provider.task11-opencode-1",
+        "provider.task11-opencode-2",
+        "provider.task11-opencode-3",
+        "task11.agent-error-recovery"
+      ],
+      "verificationStatus": "not-run",
+      "plannedAssertion": "Text claiming upload success cannot create a successful upload receipt",
+      "testImplementation": "Registered task suites provide scoped evidence. Full requirement acceptance remains governed by D48 and the explicit verification status; historical suite success is not a complete-release pass.",
+      "evidence": [],
+      "evidenceClass": "software-and-integration",
+      "task11RemainingGates": [
+        "All six read-only turns preserve protected source and operation IDs, report no new upload receipts and deny physical-success/private-history claims. Unrestricted-shell limits and every effect-policy negative fixture remain separate.",
+        "Requirement status remains unchanged; all mandated assertions/evidence classes and exact final source/run metadata must be reconciled before complete acceptance."
+      ]
+    },
+    {
+      "requirementId": "REQ-HW-01",
+      "acceptanceCriteria": [
+        "AC-D31-01",
+        "AC-D31-02",
+        "AC-D31-03",
+        "AC-D31-04",
+        "AC-D31-05"
+      ],
+      "implementationOwners": [
+        "TASK-04"
+      ],
+      "implementationPaths": [
+        "apps/companion/src/hardware-service.ts",
+        "apps/extension/src/extension.ts",
+        "apps/extension/src/source-policy.ts",
+        "packages/adapters/arduino/src/index.ts",
+        "packages/adapters/serial/src/recorder.ts",
+        "packages/adapters/serial/src/native.ts"
+      ],
+      "testIds": [
+        "software.tests",
+        "hardware.uno-loop",
+        "provider.context",
+        "package.native-runtime"
+      ],
+      "verificationStatus": "not-run",
+      "plannedAssertion": "Local-library change invalidates prior build currency",
+      "testImplementation": "Registered task suites provide scoped evidence. Full requirement acceptance remains governed by D48 and the explicit verification status; historical suite success is not a complete-release pass.",
+      "evidence": [],
+      "evidenceClass": "software-and-integration",
+      "partialVerification": {
+        "taskId": "TASK-04",
+        "result": "passed",
+        "scope": "127 tests, installed VSIX/native runtime, actual Uno exact-upload/raw reconnect/contention, unchanged IDE sketch opening and native Codex bounded context."
+      }
+    },
+    {
+      "requirementId": "REQ-HW-02",
+      "acceptanceCriteria": [
+        "AC-D32-01",
+        "AC-D32-02",
+        "AC-D32-03",
+        "AC-D32-04",
+        "AC-D32-05",
+        "AC-D32-06"
+      ],
+      "implementationOwners": [
+        "TASK-04",
+        "TASK-11"
+      ],
+      "implementationPaths": [
+        "apps/companion/src/hardware-service.ts",
+        "apps/extension/src/extension.ts",
+        "apps/extension/src/source-policy.ts",
+        "packages/adapters/arduino/src/index.ts",
+        "packages/adapters/serial/src/recorder.ts",
+        "packages/adapters/serial/src/native.ts"
+      ],
+      "testIds": [
+        "software.tests",
+        "hardware.uno-loop",
+        "provider.context",
+        "package.native-runtime",
+        "task11.hardware.exact-upload-handoff"
+      ],
+      "verificationStatus": "not-run",
+      "plannedAssertion": "Receipt includes matching digest, FQBN/options, target and uploader result",
+      "testImplementation": "Registered task suites provide scoped evidence. Full requirement acceptance remains governed by D48 and the explicit verification status; historical suite success is not a complete-release pass.",
+      "evidence": [],
+      "evidenceClass": "real-hardware",
+      "partialVerification": {
+        "taskId": "TASK-04",
+        "result": "passed",
+        "scope": "127 tests, installed VSIX/native runtime, actual Uno exact-upload/raw reconnect/contention, unchanged IDE sketch opening and native Codex bounded context."
+      },
+      "task11RemainingGates": [
+        "Exact dedicated-Uno upload is scoped hardware evidence; all FQBN/options/target mismatch and failure assertions plus final release metadata require reconciliation.",
+        "Full requirement acceptance remains pending. These scoped records do not supply complete release-wide source/app/dependency metadata for every mandated evidence class."
+      ]
+    },
+    {
+      "requirementId": "REQ-HW-03",
+      "acceptanceCriteria": [
+        "AC-D33-01",
+        "AC-D33-02",
+        "AC-D33-03",
+        "AC-D33-04",
+        "AC-D33-05",
+        "AC-D33-06"
+      ],
+      "implementationOwners": [
+        "TASK-04",
+        "TASK-09",
+        "TASK-11"
+      ],
+      "implementationPaths": [
+        "apps/companion/src/hardware-service.ts",
+        "apps/extension/src/extension.ts",
+        "apps/extension/src/source-policy.ts",
+        "packages/adapters/arduino/src/index.ts",
+        "packages/adapters/serial/src/recorder.ts",
+        "packages/adapters/serial/src/native.ts"
+      ],
+      "testIds": [
+        "software.tests",
+        "hardware.uno-loop",
+        "provider.context",
+        "package.native-runtime",
+        "task11.hardware.physical-unplug-replug",
+        "task11.hardware.capture-process-loss",
+        "task11.complete.retained-recording",
+        "performance.sustained-raw-display",
+        "task11.ui.telemetry"
+      ],
+      "verificationStatus": "not-run",
+      "plannedAssertion": "Parser/plot changes do not alter raw bytes; dropped data is explicit",
+      "testImplementation": "Registered task suites provide scoped evidence. Full requirement acceptance remains governed by D48 and the explicit verification status; historical suite success is not a complete-release pass.",
+      "evidence": [],
+      "evidenceClass": "software-and-integration",
+      "partialVerification": {
+        "taskId": "TASK-04",
+        "result": "passed",
+        "scope": "127 tests, installed VSIX/native runtime, actual Uno exact-upload/raw reconnect/contention, unchanged IDE sketch opening and native Codex bounded context."
+      },
+      "task11RemainingGates": [
+        "Actual USB/capture-crash raw retention and synthetic sustained recorder are scoped evidence; every parser/plot/persistence assertion and final integrated validation remain pending.",
+        "Full requirement acceptance remains pending. These scoped records do not supply complete release-wide source/app/dependency metadata for every mandated evidence class."
+      ]
+    },
+    {
+      "requirementId": "REQ-HW-04",
+      "acceptanceCriteria": [
+        "AC-D34-01",
+        "AC-D34-02",
+        "AC-D34-03",
+        "AC-D34-04",
+        "AC-D34-05"
+      ],
+      "implementationOwners": [
+        "TASK-07",
+        "TASK-11"
+      ],
+      "implementationPaths": [
+        "packages/domain/src/components.ts",
+        "packages/domain/src/wiring.ts",
+        "packages/application/src/wiring/index.ts",
+        "apps/companion/src/wiring-service.ts",
+        "apps/extension/src/wiring-controller.ts",
+        "packages/webviews/src/wiring.tsx"
+      ],
+      "testIds": [
+        "software.tests",
+        "host.installed",
+        "ui.wiring-production",
+        "task11.ui.wiring"
+      ],
+      "verificationStatus": "not-run",
+      "plannedAssertion": "Pin aliases resolve consistently; duplicate-resource conflicts are detected",
+      "testImplementation": "Registered task suites provide scoped evidence. Full requirement acceptance remains governed by D48 and the explicit verification status; historical suite success is not a complete-release pass.",
+      "evidence": [],
+      "evidenceClass": "software-and-integration",
+      "partialVerification": {
+        "taskId": "TASK-07",
+        "result": "passed",
+        "scope": "Pure catalog/wiring and service faults, 18 production browser checks, native save/undo/conflict preservation and installed VSIX."
+      },
+      "task11RemainingGates": [
+        "Browser selection/rendering does not complete pin-alias/rule/duplicate-resource domain acceptance.",
+        "Full requirement acceptance remains pending. These scoped records do not supply complete release-wide source/app/dependency metadata for every mandated evidence class."
+      ]
+    },
+    {
+      "requirementId": "REQ-HW-05",
+      "acceptanceCriteria": [
+        "AC-D36-01",
+        "AC-D36-02",
+        "AC-D36-03",
+        "AC-D36-04",
+        "AC-D36-05",
+        "AC-D36-06"
+      ],
+      "implementationOwners": [
+        "TASK-10",
+        "TASK-11"
+      ],
+      "implementationPaths": [
+        "packages/adapters/kicad/src/index.ts",
+        "packages/adapters/kicad/src/native.ts",
+        "apps/companion/src/kicad-service.ts",
+        "apps/extension/src/engineering-controller.ts"
+      ],
+      "testIds": [
+        "software.tests",
+        "host.installed",
+        "ui.engineering-production",
+        "native.kicad",
+        "task11.complete.kicad",
+        "task11.ui.engineering"
+      ],
+      "verificationStatus": "not-run",
+      "plannedAssertion": "Divergent native file is never overwritten automatically",
+      "testImplementation": "Registered task suites provide scoped evidence. Full requirement acceptance remains governed by D48 and the explicit verification status; historical suite success is not a complete-release pass.",
+      "evidence": [],
+      "evidenceClass": "software-and-integration",
+      "partialVerification": {
+        "taskId": "TASK-10",
+        "result": "passed",
+        "scope": "Version-gated native engineering slice; full-release obligations remain."
+      },
+      "task11RemainingGates": [
+        "Native generation/reopen and synthetic stale UI do not complete divergent independent KiCad edit preservation and final native GUI acceptance.",
+        "Full requirement acceptance remains pending. These scoped records do not supply complete release-wide source/app/dependency metadata for every mandated evidence class."
+      ]
+    },
+    {
+      "requirementId": "REQ-HW-06",
+      "acceptanceCriteria": [
+        "AC-D37-01",
+        "AC-D37-02",
+        "AC-D37-03",
+        "AC-D37-04",
+        "AC-D37-05"
+      ],
+      "implementationOwners": [
+        "TASK-10",
+        "TASK-11"
+      ],
+      "implementationPaths": [
+        "packages/adapters/cad/src/index.ts",
+        "packages/adapters/cad/src/runner.py",
+        "apps/companion/src/cad-service.ts",
+        "packages/webviews/src/engineering.tsx"
+      ],
+      "testIds": [
+        "software.tests",
+        "host.installed",
+        "ui.engineering-production",
+        "native.cad",
+        "task11.complete.cad",
+        "task11.ui.engineering"
+      ],
+      "verificationStatus": "not-run",
+      "plannedAssertion": "Stale preview remains distinguishable from latest successful generation",
+      "testImplementation": "Registered task suites provide scoped evidence. Full requirement acceptance remains governed by D48 and the explicit verification status; historical suite success is not a complete-release pass.",
+      "evidence": [],
+      "evidenceClass": "software-and-integration",
+      "partialVerification": {
+        "taskId": "TASK-10",
+        "result": "passed",
+        "scope": "Version-gated native engineering slice; full-release obligations remain."
+      },
+      "task11RemainingGates": [
+        "Synthetic native CAD geometry/reopen and stale browser presentation do not complete every parameter/failure/source-change assertion or native viewer acceptance.",
+        "Full requirement acceptance remains pending. These scoped records do not supply complete release-wide source/app/dependency metadata for every mandated evidence class."
+      ]
+    },
+    {
+      "requirementId": "REQ-HW-07",
+      "acceptanceCriteria": [
+        "AC-D38-01",
+        "AC-D38-02",
+        "AC-D38-03",
+        "AC-D38-04",
+        "AC-D38-05",
+        "AC-D38-06"
+      ],
+      "implementationOwners": [
+        "TASK-08",
+        "TASK-09",
+        "TASK-11"
+      ],
+      "implementationPaths": [
+        "packages/adapters/documents/src/index.ts",
+        "packages/application/src/documents/index.ts",
+        "apps/companion/src/document-service.ts",
+        "apps/extension/src/document-controller.ts",
+        "packages/webviews/src/documents.tsx",
+        "apps/companion/src/telemetry-service.ts",
+        "packages/adapters/serial/src/parsers.ts",
+        "packages/application/src/experiments/index.ts",
+        "packages/webviews/src/telemetry.tsx"
+      ],
+      "testIds": [
+        "software.tests",
+        "ui.documents-production",
+        "host.installed",
+        "ui.telemetry-production",
+        "telemetry.retained-real-capture",
+        "task11.complete.document",
+        "task11.complete.retained-recording",
+        "task11.ui.documents",
+        "task11.ui.telemetry",
+        "provider.task11-codex-1",
+        "provider.task11-codex-2",
+        "provider.task11-codex-3",
+        "provider.task11-opencode-1",
+        "provider.task11-opencode-2",
+        "provider.task11-opencode-3"
+      ],
+      "verificationStatus": "not-run",
+      "plannedAssertion": "Answer/test links exact page or recording interval and applicable revision",
+      "testImplementation": "Registered task suites provide scoped evidence. Full requirement acceptance remains governed by D48 and the explicit verification status; historical suite success is not a complete-release pass.",
+      "evidence": [],
+      "evidenceClass": "software-and-integration",
+      "partialVerification": {
+        "taskIds": [
+          "TASK-08",
+          "TASK-09"
+        ],
+        "result": "passed",
+        "scope": "Exact historical page and recording/channel/time/epoch/configuration references; full-release obligations remain."
+      },
+      "task11RemainingGates": [
+        "Exact document/recording evidence is retained; final native navigation and both live-provider citation/experiment journeys remain pending.",
+        "Full requirement acceptance remains pending. These scoped records do not supply complete release-wide source/app/dependency metadata for every mandated evidence class."
+      ]
+    },
+    {
+      "requirementId": "REQ-HW-08",
+      "acceptanceCriteria": [
+        "AC-D40-01",
+        "AC-D40-02",
+        "AC-D40-03",
+        "AC-D40-04",
+        "AC-D40-05"
+      ],
+      "implementationOwners": [
+        "TASK-11"
+      ],
+      "implementationPaths": [
+        "verification/traceability.json"
+      ],
+      "testIds": [
+        "verification.requirement-coverage",
+        "task11.hardware.exact-upload-handoff",
+        "task11.complete.retained-recording",
+        "provider.task11-codex-1",
+        "provider.task11-codex-2",
+        "provider.task11-codex-3",
+        "provider.task11-opencode-1",
+        "provider.task11-opencode-2",
+        "provider.task11-opencode-3"
+      ],
+      "verificationStatus": "not-run",
+      "plannedAssertion": "Compiler/mock success never marks a physical test passed",
+      "testImplementation": "Registered task suites provide scoped evidence. Full requirement acceptance remains governed by D48 and the explicit verification status; historical suite success is not a complete-release pass.",
+      "evidence": [],
+      "evidenceClass": "real-hardware",
+      "task11RemainingGates": [
+        "Retained upload remains uploader-reported-only and experiment inconclusive; no physical calibration/sensor/actuator measurement is claimed. All policy-negative and release acceptance assertions remain separate.",
+        "Full requirement acceptance remains pending. These scoped records do not supply complete release-wide source/app/dependency metadata for every mandated evidence class."
+      ]
+    },
+    {
+      "requirementId": "REQ-UX-01",
+      "acceptanceCriteria": [
+        "AC-D42-01",
+        "AC-D42-02",
+        "AC-D42-03",
+        "AC-D42-04",
+        "AC-D42-05"
+      ],
+      "implementationOwners": [
+        "TASK-01",
+        "TASK-06",
+        "TASK-11"
+      ],
+      "implementationPaths": [
+        "apps/companion/src/agent-service.ts",
+        "apps/companion/src/main.ts",
+        "apps/companion/src/review-service.ts",
+        "apps/extension/src/agent-controller.ts",
+        "apps/extension/src/agent-view.ts",
+        "apps/extension/src/context-view.ts",
+        "apps/extension/src/extension.ts",
+        "apps/extension/src/review-files.ts",
+        "apps/extension/src/task-review.ts",
+        "packages/contracts/src/index.ts",
+        "packages/contracts/src/project.ts",
+        "packages/contracts/src/review.ts"
+      ],
+      "testIds": [
+        "documentation.contracts",
+        "software.boundaries",
+        "software.tests",
+        "package",
+        "host.installed",
+        "ui.browser",
+        "context.pin-handoff",
+        "host.native-review",
+        "task11.ui.agent",
+        "task11.ui.wiring",
+        "task11.ui.documents",
+        "task11.ui.telemetry",
+        "task11.ui.engineering",
+        "task11.native-visual-capture"
+      ],
+      "verificationStatus": "not-run",
+      "plannedAssertion": "Light/dark/high-contrast checks pass without inaccessible hard-coded chrome",
+      "testImplementation": "Registered task suites provide scoped evidence. Full requirement acceptance remains governed by D48 and the explicit verification status; historical suite success is not a complete-release pass.",
+      "evidence": [],
+      "evidenceClass": "software-and-integration",
+      "task11RemainingGates": [
+        "Actual native host light/dark/high-contrast traversal and assistive checks remain pending; browser fixtures are not manual-ui evidence.",
+        "Full requirement acceptance remains pending. These scoped records do not supply complete release-wide source/app/dependency metadata for every mandated evidence class.",
+        "Narrator was skipped at user request; actual native visual/keyboard/zoom acceptance remains separate from automated native-source and synthetic-browser evidence."
+      ]
+    },
+    {
+      "requirementId": "REQ-UX-02",
+      "acceptanceCriteria": [
+        "AC-D44-01",
+        "AC-D44-02",
+        "AC-D44-03",
+        "AC-D44-04",
+        "AC-D44-05",
+        "AC-D44-06"
+      ],
+      "implementationOwners": [
+        "TASK-06",
+        "TASK-11"
+      ],
+      "implementationPaths": [
+        "apps/companion/src/agent-service.ts",
+        "apps/companion/src/main.ts",
+        "apps/companion/src/review-service.ts",
+        "apps/extension/src/agent-controller.ts",
+        "apps/extension/src/agent-view.ts",
+        "apps/extension/src/context-view.ts",
+        "apps/extension/src/extension.ts",
+        "apps/extension/src/review-files.ts",
+        "apps/extension/src/task-review.ts",
+        "packages/contracts/src/index.ts",
+        "packages/contracts/src/project.ts",
+        "packages/contracts/src/review.ts"
+      ],
+      "testIds": [
+        "documentation.contracts",
+        "software.boundaries",
+        "software.tests",
+        "package",
+        "host.installed",
+        "ui.browser",
+        "context.pin-handoff",
+        "host.native-review",
+        "task11.ui.agent",
+        "provider.task11-codex-1",
+        "provider.task11-codex-2",
+        "provider.task11-codex-3",
+        "provider.task11-opencode-1",
+        "provider.task11-opencode-2",
+        "provider.task11-opencode-3"
+      ],
+      "verificationStatus": "not-run",
+      "plannedAssertion": "Inspector never claims to expose provider-hidden context/reasoning",
+      "testImplementation": "Registered task suites provide scoped evidence. Full requirement acceptance remains governed by D48 and the explicit verification status; historical suite success is not a complete-release pass.",
+      "evidence": [],
+      "evidenceClass": "software-and-integration",
+      "task11RemainingGates": [
+        "Synthetic context inspector is covered; final native/live-provider context-availability and hidden-state claims remain pending.",
+        "Full requirement acceptance remains pending. These scoped records do not supply complete release-wide source/app/dependency metadata for every mandated evidence class."
+      ]
+    },
+    {
+      "requirementId": "REQ-UX-03",
+      "acceptanceCriteria": [
+        "AC-D44-01",
+        "AC-D44-02",
+        "AC-D44-03",
+        "AC-D44-04",
+        "AC-D44-05",
+        "AC-D44-06"
+      ],
+      "implementationOwners": [
+        "TASK-06",
+        "TASK-11"
+      ],
+      "implementationPaths": [
+        "apps/companion/src/agent-service.ts",
+        "apps/companion/src/main.ts",
+        "apps/companion/src/review-service.ts",
+        "apps/extension/src/agent-controller.ts",
+        "apps/extension/src/agent-view.ts",
+        "apps/extension/src/context-view.ts",
+        "apps/extension/src/extension.ts",
+        "apps/extension/src/review-files.ts",
+        "apps/extension/src/task-review.ts",
+        "packages/contracts/src/index.ts",
+        "packages/contracts/src/project.ts",
+        "packages/contracts/src/review.ts"
+      ],
+      "testIds": [
+        "documentation.contracts",
+        "software.boundaries",
+        "software.tests",
+        "package",
+        "host.installed",
+        "ui.browser",
+        "context.pin-handoff",
+        "host.native-review",
+        "task11.ui.agent",
+        "task11.native-review.source-preservation",
+        "task11.agent-error-recovery"
+      ],
+      "verificationStatus": "not-run",
+      "plannedAssertion": "Apply/Dismiss and Keep/Revert are used for correct edit states",
+      "testImplementation": "Registered task suites provide scoped evidence. Full requirement acceptance remains governed by D48 and the explicit verification status; historical suite success is not a complete-release pass.",
+      "evidence": [],
+      "evidenceClass": "software-and-integration",
+      "task11RemainingGates": [
+        "Actual native TaskReview proposed/written diffs and conflicted revert refusal now have automated byte-preservation evidence. Manual visual/keyboard/zoom and complete review UX acceptance remain pending; Narrator skipped at user request.",
+        "Requirement status remains unchanged; all mandated assertions/evidence classes and exact final source/run metadata must be reconciled before complete acceptance."
+      ]
+    },
+    {
+      "requirementId": "REQ-UX-04",
+      "acceptanceCriteria": [
+        "AC-D46-01",
+        "AC-D46-02",
+        "AC-D46-03",
+        "AC-D46-04",
+        "AC-D46-05",
+        "AC-D46-06"
+      ],
+      "implementationOwners": [
+        "TASK-11",
+        "TASK-06"
+      ],
+      "implementationPaths": [
+        "apps/companion/src/agent-service.ts",
+        "apps/companion/src/main.ts",
+        "apps/companion/src/review-service.ts",
+        "apps/extension/src/agent-controller.ts",
+        "apps/extension/src/agent-view.ts",
+        "apps/extension/src/context-view.ts",
+        "apps/extension/src/extension.ts",
+        "apps/extension/src/review-files.ts",
+        "apps/extension/src/task-review.ts",
+        "packages/contracts/src/index.ts",
+        "packages/contracts/src/project.ts",
+        "packages/contracts/src/review.ts"
+      ],
+      "testIds": [
+        "documentation.contracts",
+        "software.boundaries",
+        "software.tests",
+        "package",
+        "host.installed",
+        "ui.browser",
+        "context.pin-handoff",
+        "host.native-review",
+        "task11.hardware.external-contention",
+        "task11.ui.agent",
+        "task11.ui.wiring",
+        "task11.ui.documents",
+        "task11.ui.telemetry",
+        "task11.ui.engineering",
+        "task11.native-review.source-preservation",
+        "task11.native-keyboard-receipts",
+        "task11.agent-error-recovery"
+      ],
+      "verificationStatus": "not-run",
+      "plannedAssertion": "Missing tool/busy port/disk-full fixture presents valid next action",
+      "testImplementation": "Registered task suites provide scoped evidence. Full requirement acceptance remains governed by D48 and the explicit verification status; historical suite success is not a complete-release pass.",
+      "evidence": [],
+      "evidenceClass": "software-and-integration",
+      "task11RemainingGates": [
+        "Synthetic failure states and actual port contention are scoped; native Recovery Center keyboard/manual accessibility (Narrator skipped at user request) and all missing-tool/disk-full recovery assertions remain pending.",
+        "Full requirement acceptance remains pending. These scoped records do not supply complete release-wide source/app/dependency metadata for every mandated evidence class."
+      ]
+    },
+    {
+      "requirementId": "REQ-UX-05",
+      "acceptanceCriteria": [
+        "AC-D47-01",
+        "AC-D47-02",
+        "AC-D47-03",
+        "AC-D47-04",
+        "AC-D47-05",
+        "AC-D47-06"
+      ],
+      "implementationOwners": [
+        "TASK-11",
+        "TASK-06"
+      ],
+      "implementationPaths": [
+        "apps/companion/src/agent-service.ts",
+        "apps/companion/src/main.ts",
+        "apps/companion/src/review-service.ts",
+        "apps/extension/src/agent-controller.ts",
+        "apps/extension/src/agent-view.ts",
+        "apps/extension/src/context-view.ts",
+        "apps/extension/src/extension.ts",
+        "apps/extension/src/review-files.ts",
+        "apps/extension/src/task-review.ts",
+        "packages/contracts/src/index.ts",
+        "packages/contracts/src/project.ts",
+        "packages/contracts/src/review.ts"
+      ],
+      "testIds": [
+        "documentation.contracts",
+        "software.boundaries",
+        "software.tests",
+        "package",
+        "host.installed",
+        "ui.browser",
+        "context.pin-handoff",
+        "host.native-review",
+        "performance.host-baseline",
+        "performance.host-workbench",
+        "performance.sustained-raw-display",
+        "task11.ui.agent",
+        "task11.ui.wiring",
+        "task11.ui.documents",
+        "task11.ui.telemetry",
+        "task11.ui.engineering",
+        "provider.snapshot-diagnosis",
+        "task11.native-keyboard-receipts",
+        "task11.native-visual-capture",
+        "task11.native-screen-reader"
+      ],
+      "verificationStatus": "not-run",
+      "plannedAssertion": "Core journeys usable at 1366×768 and with keyboard-only navigation",
+      "testImplementation": "Registered task suites provide scoped evidence. Full requirement acceptance remains governed by D48 and the explicit verification status; historical suite success is not a complete-release pass.",
+      "evidence": [],
+      "evidenceClass": "software-and-integration",
+      "task11RemainingGates": [
+        "Actual native1366x768 window/200percent zoom, keyboard-only core journeys and Narrator speech/focus checks were skipped at user request; native keyboard/visual/zoom acceptance remains pending.",
+        "Browser rendered timings and isolated host/recorder measurements do not certify arbitrary system workloads or every accessibility/performance assertion.",
+        "Full requirement acceptance remains pending. These scoped records do not supply complete release-wide source/app/dependency metadata for every mandated evidence class."
+      ]
+    },
+    {
+      "requirementId": "REQ-UX-06",
+      "acceptanceCriteria": [
+        "AC-D49-01",
+        "AC-D49-02",
+        "AC-D49-03",
+        "AC-D49-04",
+        "AC-D49-05",
+        "AC-D49-06"
+      ],
+      "implementationOwners": [
+        "TASK-12",
+        "TASK-06",
+        "TASK-11"
+      ],
+      "implementationPaths": [
+        "apps/companion/src/agent-service.ts",
+        "apps/companion/src/main.ts",
+        "apps/companion/src/review-service.ts",
+        "apps/extension/src/agent-controller.ts",
+        "apps/extension/src/agent-view.ts",
+        "apps/extension/src/context-view.ts",
+        "apps/extension/src/extension.ts",
+        "apps/extension/src/review-files.ts",
+        "apps/extension/src/task-review.ts",
+        "packages/contracts/src/index.ts",
+        "packages/contracts/src/project.ts",
+        "packages/contracts/src/review.ts",
+        "scripts/release/maintenance-drill.mjs",
+        "scripts/release/release-record.mjs",
+        "apps/companion/src/diagnostics-service.ts",
+        "apps/extension/src/recovery-controller.ts"
+      ],
+      "testIds": [
+        "documentation.contracts",
+        "software.boundaries",
+        "software.tests",
+        "package",
+        "host.installed",
+        "ui.browser",
+        "context.pin-handoff",
+        "host.native-review",
+        "task11.complete.archive-restore",
+        "release.maintenance",
+        "release.dependencies",
+        "task12.native-diagnostic-preview",
+        "release.vendor-support-review"
+      ],
+      "verificationStatus": "not-run",
+      "plannedAssertion": "Packaged restore retains evidence; uninstall preserves user projects",
+      "testImplementation": "Registered task suites provide scoped evidence. Full requirement acceptance remains governed by D48 and the explicit verification status; historical suite success is not a complete-release pass.",
+      "evidence": [],
+      "evidenceClass": "software-and-integration",
+      "task11RemainingGates": [
+        "Packaged install/restore/update/uninstall preservation and final installed-host release validation remain pending; ordinary archive roundtrip alone is insufficient.",
+        "Full requirement acceptance remains pending. These scoped records do not supply complete release-wide source/app/dependency metadata for every mandated evidence class."
+      ]
+    }
+  ],
+  "partialEvidence": "verification/task-00-01.json",
+  "compatibilityEvidence": "verification/task-00-completion.json"
+}

@@ -1,0 +1,4 @@
+{
+  "width": { "value": 20, "unit": "mm", "basis": "design-choice", "fitCritical": true },
+  "depth": { "value": 10, "unit": "mm", "basis": "design-choice", "fitCritical": false }
+}

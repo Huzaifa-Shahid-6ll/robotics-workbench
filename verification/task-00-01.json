@@ -1,0 +1,9 @@
+{
+  "schemaVersion": 1,
+  "taskIds": [
+    "TASK-00",
+    "TASK-01"
+  ],
+  "status": "withheld",
+  "scope": "The historical record contains local operational evidence. See the task packet and run current checks in your own environment."
+}

@@ -1,0 +1,10 @@
+{
+  "schemaVersion": 1,
+  "addedOrReplacedMedia": [],
+  "retainedAssets": [
+    {"id":"workbench-extension-icon","consumers":["S01"],"source":"apps/extension/media/robotics.svg","treatment":"Existing Robotics view icon shipped in the inspected VSIX."},
+    {"id":"vscode-native-icons","consumers":["S01","S12","S14","S15","S17"],"source":"VS Code host product icons","treatment":"Status icons accompany text and inherit the host icon theme."},
+    {"id":"engineering-preview","consumers":["S10","S11","S16"],"source":"Retained project artifacts and existing renderers","treatment":"Preview has source identity and a named fallback. Synthetic fixture imagery is evidence only."}
+  ],
+  "notes":"The shared CSS compiles into the five existing stylesheet outputs. No remote or generated illustration is required. The local VSIX inspection included the five bundled stylesheets."
+}

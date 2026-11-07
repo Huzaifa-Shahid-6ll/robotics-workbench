@@ -1,0 +1,208 @@
+{
+  "schemaVersion": 1,
+  "package": "robotics-workbench-agent-specification",
+  "date": "2026-11-01",
+  "implementationStatus": "host-and-domain-persistence-implemented; complete-release-not-validated",
+  "documents": [
+    {
+      "id": "D01",
+      "path": "00-START-HERE.md"
+    },
+    {
+      "id": "D02",
+      "path": "AGENTS.md"
+    },
+    {
+      "id": "D03",
+      "path": "docs/product-definition.md"
+    },
+    {
+      "id": "D04",
+      "path": "docs/scope-and-release-boundaries.md"
+    },
+    {
+      "id": "D05",
+      "path": "docs/personal-workflows.md"
+    },
+    {
+      "id": "D06",
+      "path": "docs/requirements-and-acceptance.md"
+    },
+    {
+      "id": "D07",
+      "path": "docs/quality-and-performance-budgets.md"
+    },
+    {
+      "id": "D08",
+      "path": "docs/architecture-decisions.md"
+    },
+    {
+      "id": "D09",
+      "path": "docs/dependencies-and-compatibility.md"
+    },
+    {
+      "id": "D10",
+      "path": "docs/unknowns-and-validation-spikes.md"
+    },
+    {
+      "id": "D11",
+      "path": "docs/system-architecture.md"
+    },
+    {
+      "id": "D12",
+      "path": "docs/repository-and-module-map.md"
+    },
+    {
+      "id": "D13",
+      "path": "docs/vscode-integration-contract.md"
+    },
+    {
+      "id": "D14",
+      "path": "docs/domain-model-and-identifiers.md"
+    },
+    {
+      "id": "D15",
+      "path": "docs/project-format-and-firmware-preservation.md"
+    },
+    {
+      "id": "D16",
+      "path": "docs/storage-and-migrations.md"
+    },
+    {
+      "id": "D17",
+      "path": "docs/events-and-synchronization.md"
+    },
+    {
+      "id": "D18",
+      "path": "docs/internal-api-and-webview-protocol.md"
+    },
+    {
+      "id": "D19",
+      "path": "docs/jobs-and-process-supervision.md"
+    },
+    {
+      "id": "D20",
+      "path": "docs/security-and-data-boundaries.md"
+    },
+    {
+      "id": "D21",
+      "path": "docs/agent-runtime-and-task-lifecycle.md"
+    },
+    {
+      "id": "D22",
+      "path": "docs/provider-adapter-contract.md"
+    },
+    {
+      "id": "D23",
+      "path": "docs/codex-integration.md"
+    },
+    {
+      "id": "D24",
+      "path": "docs/opencode-integration.md"
+    },
+    {
+      "id": "D25",
+      "path": "docs/accounts-subscriptions-and-api-routing.md"
+    },
+    {
+      "id": "D26",
+      "path": "docs/context-assembly-and-retrieval.md"
+    },
+    {
+      "id": "D27",
+      "path": "docs/context-provenance-and-freshness.md"
+    },
+    {
+      "id": "D28",
+      "path": "docs/memory-and-session-continuity.md"
+    },
+    {
+      "id": "D29",
+      "path": "docs/tool-catalog-and-action-policy.md"
+    },
+    {
+      "id": "D30",
+      "path": "docs/agent-evaluation-and-regression.md"
+    },
+    {
+      "id": "D31",
+      "path": "docs/arduino-toolchain-integration.md"
+    },
+    {
+      "id": "D32",
+      "path": "docs/device-discovery-and-upload.md"
+    },
+    {
+      "id": "D33",
+      "path": "docs/serial-monitor-and-telemetry.md"
+    },
+    {
+      "id": "D34",
+      "path": "docs/components-and-parts-catalog.md"
+    },
+    {
+      "id": "D35",
+      "path": "docs/wiring-model-and-validation.md"
+    },
+    {
+      "id": "D36",
+      "path": "docs/kicad-generation-and-handoff.md"
+    },
+    {
+      "id": "D37",
+      "path": "docs/cad-python-and-3d-preview.md"
+    },
+    {
+      "id": "D38",
+      "path": "docs/datasheet-and-document-ingestion.md"
+    },
+    {
+      "id": "D39",
+      "path": "docs/experiments-and-run-comparison.md"
+    },
+    {
+      "id": "D40",
+      "path": "docs/hardware-testing-and-debugging.md"
+    },
+    {
+      "id": "D41",
+      "path": "docs/design-reference-ledger.md"
+    },
+    {
+      "id": "D42",
+      "path": "docs/design-tokens-and-theming.md"
+    },
+    {
+      "id": "D43",
+      "path": "docs/information-architecture-and-navigation.md"
+    },
+    {
+      "id": "D44",
+      "path": "docs/screen-specifications.md"
+    },
+    {
+      "id": "D45",
+      "path": "docs/component-and-interaction-contracts.md"
+    },
+    {
+      "id": "D46",
+      "path": "docs/journeys-states-and-recovery.md"
+    },
+    {
+      "id": "D47",
+      "path": "docs/accessibility-responsive-layout-and-motion.md"
+    },
+    {
+      "id": "D48",
+      "path": "docs/testing-and-requirement-traceability.md"
+    },
+    {
+      "id": "D49",
+      "path": "docs/packaging-release-and-maintenance.md"
+    },
+    {
+      "id": "D50",
+      "path": "docs/implementation-plan-and-task-packets.md"
+    }
+  ]
+}

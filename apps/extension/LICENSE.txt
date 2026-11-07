@@ -1,0 +1,2 @@
+Private development scaffold. No public redistribution license has been selected.
+Third-party notices for bundled code are in dist/THIRD-PARTY-NOTICES.txt.

@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:robotics-workbench:companion-result:1",
+  "title": "Companion connection lifecycle result",
+  "oneOf": [
+    {
+      "type": "object",
+      "properties": {
+        "state": { "const": "ready" },
+        "pid": { "type": "integer", "minimum": 1 },
+        "runtimeVersion": { "type": "string", "pattern": "^v24\\." },
+        "platform": { "const": "win32" },
+        "arch": { "const": "x64" }
+      },
+      "required": ["state", "pid", "runtimeVersion", "platform", "arch"],
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "properties": { "state": { "const": "stopping" } },
+      "required": ["state"],
+      "additionalProperties": false
+    }
+  ]
+}

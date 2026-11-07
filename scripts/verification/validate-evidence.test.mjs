@@ -1,0 +1,31 @@
+import { test } from 'node:test';
+import assert from 'node:assert/strict';
+import { createHash } from 'node:crypto';
+import { mkdtempSync, writeFileSync, rmSync } from 'node:fs';
+import { tmpdir } from 'node:os';
+import { join } from 'node:path';
+import { validateTraceability } from './validate-evidence.mjs';
+
+test('traceability rejects missing links, unknown tests, forged success and artifact corruption', t => {
+  const root = mkdtempSync(join(tmpdir(), 'workbench-evidence-')); t.after(() => rmSync(root, { recursive: true, force: true }));
+  writeFileSync(join(root, 'code.ts'), 'fixture'); writeFileSync(join(root, 'result.json'), '{}');
+  const context = { root, requirements: ['REQ-HW-02'], acceptance: ['AC-D32-01'], owners: ['TASK-11'] };
+  const row = { requirementId: 'REQ-HW-02', acceptanceCriteria: ['AC-D32-01'], implementationOwners: ['TASK-11'], implementationPaths: ['code.ts'], testIds: ['bench'], verificationStatus: 'blocked', evidence: [] };
+  const catalog = { tests: [{ testId: 'bench', evidenceClass: 'real-hardware' }, { testId: 'software-only', evidenceClass: 'software' }] };
+  const check = value => validateTraceability({ requirements: [value] }, catalog, context);
+  assert.deepEqual(check(row), []);
+  assert.ok(validateTraceability({ requirements: [] }, catalog, context).length);
+  assert.ok(check({ ...row, acceptanceCriteria: [] }).length);
+  assert.ok(check({ ...row, testIds: ['invented'] }).length);
+  assert.ok(check({ ...row, implementationPaths: ['../outside'] }).length);
+  assert.ok(check({ ...row, verificationStatus: 'passed' }).length);
+  const evidence = { path: 'result.json', sha256: createHash('sha256').update('{}').digest('hex'), testId: 'bench', evidenceClass: 'real-hardware', runId: 'fixture', sourceDigest: 'a'.repeat(64), appVersion: '0.1.0', environment: { fixture: true }, dependencyVersions: { node: process.version }, startedAt: new Date().toISOString(), endedAt: new Date().toISOString(), result: 'passed' };
+  const passed = { ...row, verificationStatus: 'passed', requiredEvidenceClasses: ['real-hardware'], evidence: [evidence] };
+  assert.deepEqual(check(passed), []);
+  assert.ok(check({ ...passed, evidence: [{ ...evidence, evidenceClass: 'software' }] }).length);
+  assert.ok(check({ ...passed, evidence: [{ ...evidence, endedAt: 'invalid' }] }).length);
+  assert.ok(check({ ...passed, evidence: [{ ...evidence, environment: [] }] }).length);
+  assert.ok(check({ ...passed, evidence: [{ ...evidence, dependencyVersions: {} }] }).length);
+  assert.ok(check({ ...passed, testIds: ['software-only'], evidence: [{ ...evidence, testId: 'software-only' }] }).length, 'Software evidence cannot be relabeled physical.');
+  writeFileSync(join(root, 'result.json'), 'tampered'); assert.ok(check(passed).length);
+});

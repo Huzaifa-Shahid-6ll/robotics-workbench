@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "description": "Normative operation transitions; terminal ambiguous outcomes are reconciled by a new linked receipt, never silently replayed.",
+  "initial": "queued",
+  "terminal": [
+    "succeeded",
+    "failed",
+    "cancelled",
+    "outcome-unknown"
+  ],
+  "allowed": {
+    "queued": [
+      "running",
+      "awaiting-input",
+      "cancelled",
+      "failed"
+    ],
+    "running": [
+      "awaiting-input",
+      "succeeded",
+      "failed",
+      "cancelled",
+      "outcome-unknown"
+    ],
+    "awaiting-input": [
+      "running",
+      "cancelled",
+      "failed",
+      "outcome-unknown"
+    ],
+    "succeeded": [],
+    "failed": [],
+    "cancelled": [],
+    "outcome-unknown": []
+  }
+}

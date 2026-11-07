@@ -1,0 +1,101 @@
+{
+  "schemaVersion": 1,
+  "screens": [
+    {
+      "role": "workspace",
+      "product": "Orchids",
+      "screenId": "9cae5de0-255b-4687-afcf-7a6b0912ad3f",
+      "sourceUrl": "https://refero.design/pages/9cae5de0-255b-4687-afcf-7a6b0912ad3f",
+      "previewUrl": "https://images.refero.design/screenshots/orchids.app/desktop/23f58a95-bbe6-4a5b-8d2d-31123fd73c5f_preview.jpg",
+      "interpretation": "Approved layout reference; not production CSS or a robotics implementation."
+    },
+    {
+      "role": "agent",
+      "product": "Cursor",
+      "screenId": "acc9b60c-b2b4-4126-ad0f-82361e37a027",
+      "sourceUrl": "https://refero.design/pages/acc9b60c-b2b4-4126-ad0f-82361e37a027",
+      "previewUrl": "https://images.refero.design/screenshots/cursor.com/desktop/f243a6e4-b54d-452f-b8aa-df3db283c19f_preview.jpg",
+      "interpretation": "Approved layout reference; not production CSS or a robotics implementation."
+    },
+    {
+      "role": "context",
+      "product": "Factory",
+      "screenId": "beb6c1d6-a0fe-4d8c-9761-e1b321183102",
+      "sourceUrl": "https://refero.design/pages/beb6c1d6-a0fe-4d8c-9761-e1b321183102",
+      "previewUrl": "https://images.refero.design/screenshots/factory.ai/desktop/881a8f29-62a2-49c1-bfa4-bd13bc23165b_preview.jpg",
+      "interpretation": "Approved layout reference; not production CSS or a robotics implementation."
+    },
+    {
+      "role": "components",
+      "product": "Attio",
+      "screenId": "361d1d78-a133-43a7-b1ca-52a9ee163e15",
+      "sourceUrl": "https://refero.design/pages/361d1d78-a133-43a7-b1ca-52a9ee163e15",
+      "previewUrl": "https://images.refero.design/screenshots/attio.com/desktop/8e176881-fca2-4a69-b7d9-cbf9ad37d68e_preview.jpg",
+      "interpretation": "Approved layout reference; not production CSS or a robotics implementation."
+    },
+    {
+      "role": "wiring",
+      "product": "n8n",
+      "screenId": "bc1e065f-1c09-4748-9ffb-fc04bffbd6d9",
+      "sourceUrl": "https://refero.design/pages/bc1e065f-1c09-4748-9ffb-fc04bffbd6d9",
+      "previewUrl": "https://images.refero.design/screenshots/n8n.cloud/desktop/396e893c-4d57-42f0-bd9e-8491506f902b_preview.jpg",
+      "interpretation": "Approved layout reference; not production CSS or a robotics implementation."
+    },
+    {
+      "role": "review",
+      "product": "GitHub",
+      "screenId": "4b64c360-ee73-4c4e-91e2-1c7a9b923f8b",
+      "sourceUrl": "https://refero.design/pages/4b64c360-ee73-4c4e-91e2-1c7a9b923f8b",
+      "previewUrl": "https://images.refero.design/screenshots/github.com/desktop/740a3f08-5b35-47cb-9cba-1e4f89137179_preview.jpg",
+      "interpretation": "Approved layout reference; not production CSS or a robotics implementation."
+    },
+    {
+      "role": "logs",
+      "product": "Steel",
+      "screenId": "3fd6fb3a-5de2-48d6-986e-79d85cdc3e3f",
+      "sourceUrl": "https://refero.design/pages/3fd6fb3a-5de2-48d6-986e-79d85cdc3e3f",
+      "previewUrl": "https://images.refero.design/screenshots/steel.dev/desktop/3fd6fb3a-5de2-48d6-986e-79d85cdc3e3f_preview.jpg",
+      "interpretation": "Approved layout reference; not production CSS or a robotics implementation."
+    },
+    {
+      "role": "run",
+      "product": "Weights & Biases",
+      "screenId": "1141e627-682d-4219-a1bd-9efc6e15fcee",
+      "sourceUrl": "https://refero.design/pages/1141e627-682d-4219-a1bd-9efc6e15fcee",
+      "previewUrl": "https://images.refero.design/screenshots/wandb.ai/desktop/136bc4e7-7b95-422e-a02e-c0716af92850_preview.jpg",
+      "interpretation": "Approved layout reference; not production CSS or a robotics implementation."
+    },
+    {
+      "role": "comparison",
+      "product": "Weights & Biases",
+      "screenId": "1653cc08-edba-44ac-bddf-54f183015194",
+      "sourceUrl": "https://refero.design/pages/1653cc08-edba-44ac-bddf-54f183015194",
+      "previewUrl": "https://images.refero.design/screenshots/wandb.ai/desktop/8423b9ae-6f3c-4b0e-9d69-25a0fed3566d_preview.jpg",
+      "interpretation": "Approved layout reference; not production CSS or a robotics implementation."
+    },
+    {
+      "role": "cad",
+      "product": "Spline",
+      "screenId": "42c103b0-f7ac-4e89-b0cc-d77d174aa739",
+      "sourceUrl": "https://refero.design/pages/42c103b0-f7ac-4e89-b0cc-d77d174aa739",
+      "previewUrl": "https://images.refero.design/screenshots/spline.design/desktop/e9544e87-6b5b-403e-84f3-d0be540c22f5_preview.jpg",
+      "interpretation": "Approved layout reference; not production CSS or a robotics implementation."
+    },
+    {
+      "role": "docs",
+      "product": "Factory",
+      "screenId": "cbccf094-418c-45ec-850a-4d46d960676f",
+      "sourceUrl": "https://refero.design/pages/cbccf094-418c-45ec-850a-4d46d960676f",
+      "previewUrl": "https://images.refero.design/screenshots/factory.ai/desktop/8aa6e51c-db76-472b-b889-ebc743d11d19_preview.jpg",
+      "interpretation": "Approved layout reference; not production CSS or a robotics implementation."
+    },
+    {
+      "role": "connections",
+      "product": "Cursor",
+      "screenId": "a6a8face-1797-4a2c-8fdc-a966595e9304",
+      "sourceUrl": "https://refero.design/pages/a6a8face-1797-4a2c-8fdc-a966595e9304",
+      "previewUrl": "https://images.refero.design/screenshots/cursor.com/desktop/f49a2219-e79b-4adf-b064-23043c7015fc_preview.jpg",
+      "interpretation": "Approved layout reference; not production CSS or a robotics implementation."
+    }
+  ]
+}

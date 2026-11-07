@@ -1,0 +1,828 @@
+{
+  "scope": "Documentation structure, local links, JSON syntax, selected contract fixtures, declared operation-state vocabulary and task references/DAG only",
+  "implementation_tested": false,
+  "hardware_tested": false,
+  "passed": true,
+  "documents_checked": 50,
+  "json_files_checked": 31,
+  "contract_fixtures_checked": 17,
+  "task_packets_checked": 13,
+  "errors": [],
+  "warnings": [],
+  "document_index": [
+    {
+      "id": "D01",
+      "path": "00-START-HERE.md",
+      "words": 958,
+      "acceptance_criteria": [
+        "AC-D01-01",
+        "AC-D01-02",
+        "AC-D01-03",
+        "AC-D01-04"
+      ],
+      "requirement_references": [
+        "REQ-HW-02"
+      ]
+    },
+    {
+      "id": "D02",
+      "path": "AGENTS.md",
+      "words": 907,
+      "acceptance_criteria": [
+        "AC-D02-01",
+        "AC-D02-02",
+        "AC-D02-03",
+        "AC-D02-04"
+      ],
+      "requirement_references": [
+        "REQ-AGENT-06",
+        "REQ-ARCH-06",
+        "REQ-PROD-01"
+      ]
+    },
+    {
+      "id": "D03",
+      "path": "docs/product-definition.md",
+      "words": 791,
+      "acceptance_criteria": [
+        "AC-D03-01",
+        "AC-D03-02",
+        "AC-D03-03",
+        "AC-D03-04"
+      ],
+      "requirement_references": [
+        "REQ-PROD-01",
+        "REQ-PROD-02",
+        "REQ-PROD-03",
+        "REQ-PROD-04",
+        "REQ-PROD-05",
+        "REQ-PROD-06"
+      ]
+    },
+    {
+      "id": "D04",
+      "path": "docs/scope-and-release-boundaries.md",
+      "words": 842,
+      "acceptance_criteria": [
+        "AC-D04-01",
+        "AC-D04-02",
+        "AC-D04-03",
+        "AC-D04-04"
+      ],
+      "requirement_references": [
+        "REQ-PROD-06"
+      ]
+    },
+    {
+      "id": "D05",
+      "path": "docs/personal-workflows.md",
+      "words": 899,
+      "acceptance_criteria": [
+        "AC-D05-01",
+        "AC-D05-02",
+        "AC-D05-03",
+        "AC-D05-04",
+        "AC-D05-05",
+        "AC-D05-06"
+      ],
+      "requirement_references": [
+        "REQ-PROD-01",
+        "REQ-PROD-03",
+        "REQ-PROD-04"
+      ]
+    },
+    {
+      "id": "D06",
+      "path": "docs/requirements-and-acceptance.md",
+      "words": 1043,
+      "acceptance_criteria": [
+        "AC-D06-01",
+        "AC-D06-02",
+        "AC-D06-03",
+        "AC-D06-04"
+      ],
+      "requirement_references": [
+        "REQ-AGENT-01",
+        "REQ-AGENT-02",
+        "REQ-AGENT-03",
+        "REQ-AGENT-04",
+        "REQ-AGENT-05",
+        "REQ-AGENT-06",
+        "REQ-ARCH-01",
+        "REQ-ARCH-02",
+        "REQ-ARCH-03",
+        "REQ-ARCH-04",
+        "REQ-ARCH-05",
+        "REQ-ARCH-06",
+        "REQ-HW-01",
+        "REQ-HW-02",
+        "REQ-HW-03",
+        "REQ-HW-04",
+        "REQ-HW-05",
+        "REQ-HW-06",
+        "REQ-HW-07",
+        "REQ-HW-08",
+        "REQ-PROD-01",
+        "REQ-PROD-02",
+        "REQ-PROD-03",
+        "REQ-PROD-04",
+        "REQ-PROD-05",
+        "REQ-PROD-06",
+        "REQ-UX-01",
+        "REQ-UX-02",
+        "REQ-UX-03",
+        "REQ-UX-04",
+        "REQ-UX-05",
+        "REQ-UX-06"
+      ]
+    },
+    {
+      "id": "D07",
+      "path": "docs/quality-and-performance-budgets.md",
+      "words": 813,
+      "acceptance_criteria": [
+        "AC-D07-01",
+        "AC-D07-02",
+        "AC-D07-03",
+        "AC-D07-04",
+        "AC-D07-05"
+      ],
+      "requirement_references": [
+        "REQ-ARCH-03",
+        "REQ-HW-03",
+        "REQ-UX-05"
+      ]
+    },
+    {
+      "id": "D08",
+      "path": "docs/architecture-decisions.md",
+      "words": 887,
+      "acceptance_criteria": [
+        "AC-D08-01",
+        "AC-D08-02",
+        "AC-D08-03",
+        "AC-D08-04"
+      ],
+      "requirement_references": [
+        "REQ-ARCH-01",
+        "REQ-ARCH-03",
+        "REQ-ARCH-04",
+        "REQ-PROD-05"
+      ]
+    },
+    {
+      "id": "D09",
+      "path": "docs/dependencies-and-compatibility.md",
+      "words": 827,
+      "acceptance_criteria": [
+        "AC-D09-01",
+        "AC-D09-02",
+        "AC-D09-03",
+        "AC-D09-04",
+        "AC-D09-05"
+      ],
+      "requirement_references": [
+        "REQ-ARCH-05",
+        "REQ-PROD-01",
+        "REQ-UX-06"
+      ]
+    },
+    {
+      "id": "D10",
+      "path": "docs/unknowns-and-validation-spikes.md",
+      "words": 969,
+      "acceptance_criteria": [
+        "AC-D10-01",
+        "AC-D10-02",
+        "AC-D10-03",
+        "AC-D10-04"
+      ],
+      "requirement_references": []
+    },
+    {
+      "id": "D11",
+      "path": "docs/system-architecture.md",
+      "words": 908,
+      "acceptance_criteria": [
+        "AC-D11-01",
+        "AC-D11-02",
+        "AC-D11-03",
+        "AC-D11-04",
+        "AC-D11-05"
+      ],
+      "requirement_references": [
+        "REQ-ARCH-01",
+        "REQ-ARCH-04"
+      ]
+    },
+    {
+      "id": "D12",
+      "path": "docs/repository-and-module-map.md",
+      "words": 900,
+      "acceptance_criteria": [
+        "AC-D12-01",
+        "AC-D12-02",
+        "AC-D12-03",
+        "AC-D12-04",
+        "AC-D12-05"
+      ],
+      "requirement_references": [
+        "REQ-ARCH-01"
+      ]
+    },
+    {
+      "id": "D13",
+      "path": "docs/vscode-integration-contract.md",
+      "words": 838,
+      "acceptance_criteria": [
+        "AC-D13-01",
+        "AC-D13-02",
+        "AC-D13-03",
+        "AC-D13-04",
+        "AC-D13-05"
+      ],
+      "requirement_references": [
+        "REQ-ARCH-02",
+        "REQ-ARCH-06"
+      ]
+    },
+    {
+      "id": "D14",
+      "path": "docs/domain-model-and-identifiers.md",
+      "words": 902,
+      "acceptance_criteria": [
+        "AC-D14-01",
+        "AC-D14-02",
+        "AC-D14-03",
+        "AC-D14-04",
+        "AC-D14-05"
+      ],
+      "requirement_references": [
+        "REQ-ARCH-01"
+      ]
+    },
+    {
+      "id": "D15",
+      "path": "docs/project-format-and-firmware-preservation.md",
+      "words": 879,
+      "acceptance_criteria": [
+        "AC-D15-01",
+        "AC-D15-02",
+        "AC-D15-03",
+        "AC-D15-04",
+        "AC-D15-05"
+      ],
+      "requirement_references": [
+        "REQ-ARCH-06",
+        "REQ-PROD-01",
+        "REQ-PROD-05"
+      ]
+    },
+    {
+      "id": "D16",
+      "path": "docs/storage-and-migrations.md",
+      "words": 858,
+      "acceptance_criteria": [
+        "AC-D16-01",
+        "AC-D16-02",
+        "AC-D16-03",
+        "AC-D16-04",
+        "AC-D16-05"
+      ],
+      "requirement_references": [
+        "REQ-ARCH-01",
+        "REQ-ARCH-03"
+      ]
+    },
+    {
+      "id": "D17",
+      "path": "docs/events-and-synchronization.md",
+      "words": 860,
+      "acceptance_criteria": [
+        "AC-D17-01",
+        "AC-D17-02",
+        "AC-D17-03",
+        "AC-D17-04",
+        "AC-D17-05"
+      ],
+      "requirement_references": [
+        "REQ-ARCH-01",
+        "REQ-ARCH-02"
+      ]
+    },
+    {
+      "id": "D18",
+      "path": "docs/internal-api-and-webview-protocol.md",
+      "words": 916,
+      "acceptance_criteria": [
+        "AC-D18-01",
+        "AC-D18-02",
+        "AC-D18-03",
+        "AC-D18-04",
+        "AC-D18-05"
+      ],
+      "requirement_references": [
+        "REQ-ARCH-02"
+      ]
+    },
+    {
+      "id": "D19",
+      "path": "docs/jobs-and-process-supervision.md",
+      "words": 936,
+      "acceptance_criteria": [
+        "AC-D19-01",
+        "AC-D19-02",
+        "AC-D19-03",
+        "AC-D19-04",
+        "AC-D19-05",
+        "AC-D19-06"
+      ],
+      "requirement_references": [
+        "REQ-ARCH-03",
+        "REQ-ARCH-04"
+      ]
+    },
+    {
+      "id": "D20",
+      "path": "docs/security-and-data-boundaries.md",
+      "words": 884,
+      "acceptance_criteria": [
+        "AC-D20-01",
+        "AC-D20-02",
+        "AC-D20-03",
+        "AC-D20-04",
+        "AC-D20-05",
+        "AC-D20-06"
+      ],
+      "requirement_references": [
+        "REQ-ARCH-05"
+      ]
+    },
+    {
+      "id": "D21",
+      "path": "docs/agent-runtime-and-task-lifecycle.md",
+      "words": 795,
+      "acceptance_criteria": [
+        "AC-D21-01",
+        "AC-D21-02",
+        "AC-D21-03",
+        "AC-D21-04",
+        "AC-D21-05"
+      ],
+      "requirement_references": [
+        "REQ-AGENT-21"
+      ]
+    },
+    {
+      "id": "D22",
+      "path": "docs/provider-adapter-contract.md",
+      "words": 813,
+      "acceptance_criteria": [
+        "AC-D22-01",
+        "AC-D22-02",
+        "AC-D22-03",
+        "AC-D22-04",
+        "AC-D22-05"
+      ],
+      "requirement_references": [
+        "REQ-AGENT-22"
+      ]
+    },
+    {
+      "id": "D23",
+      "path": "docs/codex-integration.md",
+      "words": 793,
+      "acceptance_criteria": [
+        "AC-D23-01",
+        "AC-D23-02",
+        "AC-D23-03",
+        "AC-D23-04",
+        "AC-D23-05",
+        "AC-D23-06"
+      ],
+      "requirement_references": [
+        "REQ-AGENT-23"
+      ]
+    },
+    {
+      "id": "D24",
+      "path": "docs/opencode-integration.md",
+      "words": 804,
+      "acceptance_criteria": [
+        "AC-D24-01",
+        "AC-D24-02",
+        "AC-D24-03",
+        "AC-D24-04",
+        "AC-D24-05",
+        "AC-D24-06"
+      ],
+      "requirement_references": [
+        "REQ-AGENT-24"
+      ]
+    },
+    {
+      "id": "D25",
+      "path": "docs/accounts-subscriptions-and-api-routing.md",
+      "words": 770,
+      "acceptance_criteria": [
+        "AC-D25-01",
+        "AC-D25-02",
+        "AC-D25-03",
+        "AC-D25-04",
+        "AC-D25-05",
+        "AC-D25-06"
+      ],
+      "requirement_references": [
+        "REQ-AGENT-25"
+      ]
+    },
+    {
+      "id": "D26",
+      "path": "docs/context-assembly-and-retrieval.md",
+      "words": 872,
+      "acceptance_criteria": [
+        "AC-D26-01",
+        "AC-D26-02",
+        "AC-D26-03",
+        "AC-D26-04",
+        "AC-D26-05",
+        "AC-D26-06"
+      ],
+      "requirement_references": [
+        "REQ-AGENT-26"
+      ]
+    },
+    {
+      "id": "D27",
+      "path": "docs/context-provenance-and-freshness.md",
+      "words": 790,
+      "acceptance_criteria": [
+        "AC-D27-01",
+        "AC-D27-02",
+        "AC-D27-03",
+        "AC-D27-04",
+        "AC-D27-05",
+        "AC-D27-06"
+      ],
+      "requirement_references": [
+        "REQ-AGENT-27"
+      ]
+    },
+    {
+      "id": "D28",
+      "path": "docs/memory-and-session-continuity.md",
+      "words": 763,
+      "acceptance_criteria": [
+        "AC-D28-01",
+        "AC-D28-02",
+        "AC-D28-03",
+        "AC-D28-04",
+        "AC-D28-05",
+        "AC-D28-06"
+      ],
+      "requirement_references": [
+        "REQ-AGENT-28"
+      ]
+    },
+    {
+      "id": "D29",
+      "path": "docs/tool-catalog-and-action-policy.md",
+      "words": 1076,
+      "acceptance_criteria": [
+        "AC-D29-01",
+        "AC-D29-02",
+        "AC-D29-03",
+        "AC-D29-04",
+        "AC-D29-05",
+        "AC-D29-06"
+      ],
+      "requirement_references": [
+        "REQ-AGENT-29"
+      ]
+    },
+    {
+      "id": "D30",
+      "path": "docs/agent-evaluation-and-regression.md",
+      "words": 892,
+      "acceptance_criteria": [
+        "AC-D30-01",
+        "AC-D30-02",
+        "AC-D30-03",
+        "AC-D30-04",
+        "AC-D30-05"
+      ],
+      "requirement_references": [
+        "REQ-AGENT-30"
+      ]
+    },
+    {
+      "id": "D31",
+      "path": "docs/arduino-toolchain-integration.md",
+      "words": 790,
+      "acceptance_criteria": [
+        "AC-D31-01",
+        "AC-D31-02",
+        "AC-D31-03",
+        "AC-D31-04",
+        "AC-D31-05"
+      ],
+      "requirement_references": [
+        "REQ-HW-31-01"
+      ]
+    },
+    {
+      "id": "D32",
+      "path": "docs/device-discovery-and-upload.md",
+      "words": 921,
+      "acceptance_criteria": [
+        "AC-D32-01",
+        "AC-D32-02",
+        "AC-D32-03",
+        "AC-D32-04",
+        "AC-D32-05",
+        "AC-D32-06"
+      ],
+      "requirement_references": [
+        "REQ-HW-32-01"
+      ]
+    },
+    {
+      "id": "D33",
+      "path": "docs/serial-monitor-and-telemetry.md",
+      "words": 1018,
+      "acceptance_criteria": [
+        "AC-D33-01",
+        "AC-D33-02",
+        "AC-D33-03",
+        "AC-D33-04",
+        "AC-D33-05",
+        "AC-D33-06"
+      ],
+      "requirement_references": [
+        "REQ-HW-33-01"
+      ]
+    },
+    {
+      "id": "D34",
+      "path": "docs/components-and-parts-catalog.md",
+      "words": 800,
+      "acceptance_criteria": [
+        "AC-D34-01",
+        "AC-D34-02",
+        "AC-D34-03",
+        "AC-D34-04",
+        "AC-D34-05"
+      ],
+      "requirement_references": [
+        "REQ-HW-34-01"
+      ]
+    },
+    {
+      "id": "D35",
+      "path": "docs/wiring-model-and-validation.md",
+      "words": 844,
+      "acceptance_criteria": [
+        "AC-D35-01",
+        "AC-D35-02",
+        "AC-D35-03",
+        "AC-D35-04",
+        "AC-D35-05",
+        "AC-D35-06"
+      ],
+      "requirement_references": [
+        "REQ-HW-35-01"
+      ]
+    },
+    {
+      "id": "D36",
+      "path": "docs/kicad-generation-and-handoff.md",
+      "words": 820,
+      "acceptance_criteria": [
+        "AC-D36-01",
+        "AC-D36-02",
+        "AC-D36-03",
+        "AC-D36-04",
+        "AC-D36-05",
+        "AC-D36-06"
+      ],
+      "requirement_references": [
+        "REQ-HW-36-01"
+      ]
+    },
+    {
+      "id": "D37",
+      "path": "docs/cad-python-and-3d-preview.md",
+      "words": 795,
+      "acceptance_criteria": [
+        "AC-D37-01",
+        "AC-D37-02",
+        "AC-D37-03",
+        "AC-D37-04",
+        "AC-D37-05"
+      ],
+      "requirement_references": [
+        "REQ-HW-37-01"
+      ]
+    },
+    {
+      "id": "D38",
+      "path": "docs/datasheet-and-document-ingestion.md",
+      "words": 818,
+      "acceptance_criteria": [
+        "AC-D38-01",
+        "AC-D38-02",
+        "AC-D38-03",
+        "AC-D38-04",
+        "AC-D38-05",
+        "AC-D38-06"
+      ],
+      "requirement_references": [
+        "REQ-HW-38-01"
+      ]
+    },
+    {
+      "id": "D39",
+      "path": "docs/experiments-and-run-comparison.md",
+      "words": 807,
+      "acceptance_criteria": [
+        "AC-D39-01",
+        "AC-D39-02",
+        "AC-D39-03",
+        "AC-D39-04",
+        "AC-D39-05",
+        "AC-D39-06"
+      ],
+      "requirement_references": [
+        "REQ-HW-39-01"
+      ]
+    },
+    {
+      "id": "D40",
+      "path": "docs/hardware-testing-and-debugging.md",
+      "words": 947,
+      "acceptance_criteria": [
+        "AC-D40-01",
+        "AC-D40-02",
+        "AC-D40-03",
+        "AC-D40-04",
+        "AC-D40-05"
+      ],
+      "requirement_references": [
+        "REQ-HW-40-01"
+      ]
+    },
+    {
+      "id": "D41",
+      "path": "docs/design-reference-ledger.md",
+      "words": 760,
+      "acceptance_criteria": [
+        "AC-D41-01",
+        "AC-D41-02",
+        "AC-D41-03",
+        "AC-D41-04"
+      ],
+      "requirement_references": [
+        "REQ-UX-41"
+      ]
+    },
+    {
+      "id": "D42",
+      "path": "docs/design-tokens-and-theming.md",
+      "words": 853,
+      "acceptance_criteria": [
+        "AC-D42-01",
+        "AC-D42-02",
+        "AC-D42-03",
+        "AC-D42-04",
+        "AC-D42-05"
+      ],
+      "requirement_references": [
+        "REQ-UX-42"
+      ]
+    },
+    {
+      "id": "D43",
+      "path": "docs/information-architecture-and-navigation.md",
+      "words": 865,
+      "acceptance_criteria": [
+        "AC-D43-01",
+        "AC-D43-02",
+        "AC-D43-03",
+        "AC-D43-04",
+        "AC-D43-05"
+      ],
+      "requirement_references": [
+        "REQ-UX-43"
+      ]
+    },
+    {
+      "id": "D44",
+      "path": "docs/screen-specifications.md",
+      "words": 1637,
+      "acceptance_criteria": [
+        "AC-D44-01",
+        "AC-D44-02",
+        "AC-D44-03",
+        "AC-D44-04",
+        "AC-D44-05",
+        "AC-D44-06"
+      ],
+      "requirement_references": [
+        "REQ-UX-44"
+      ]
+    },
+    {
+      "id": "D45",
+      "path": "docs/component-and-interaction-contracts.md",
+      "words": 940,
+      "acceptance_criteria": [
+        "AC-D45-01",
+        "AC-D45-02",
+        "AC-D45-03",
+        "AC-D45-04",
+        "AC-D45-05"
+      ],
+      "requirement_references": [
+        "REQ-UX-45"
+      ]
+    },
+    {
+      "id": "D46",
+      "path": "docs/journeys-states-and-recovery.md",
+      "words": 1055,
+      "acceptance_criteria": [
+        "AC-D46-01",
+        "AC-D46-02",
+        "AC-D46-03",
+        "AC-D46-04",
+        "AC-D46-05",
+        "AC-D46-06"
+      ],
+      "requirement_references": [
+        "REQ-UX-46"
+      ]
+    },
+    {
+      "id": "D47",
+      "path": "docs/accessibility-responsive-layout-and-motion.md",
+      "words": 953,
+      "acceptance_criteria": [
+        "AC-D47-01",
+        "AC-D47-02",
+        "AC-D47-03",
+        "AC-D47-04",
+        "AC-D47-05",
+        "AC-D47-06"
+      ],
+      "requirement_references": [
+        "REQ-UX-47"
+      ]
+    },
+    {
+      "id": "D48",
+      "path": "docs/testing-and-requirement-traceability.md",
+      "words": 1204,
+      "acceptance_criteria": [
+        "AC-D48-01",
+        "AC-D48-02",
+        "AC-D48-03",
+        "AC-D48-04",
+        "AC-D48-05"
+      ],
+      "requirement_references": [
+        "REQ-ARCH-48"
+      ]
+    },
+    {
+      "id": "D49",
+      "path": "docs/packaging-release-and-maintenance.md",
+      "words": 1109,
+      "acceptance_criteria": [
+        "AC-D49-01",
+        "AC-D49-02",
+        "AC-D49-03",
+        "AC-D49-04",
+        "AC-D49-05",
+        "AC-D49-06"
+      ],
+      "requirement_references": [
+        "REQ-ARCH-49"
+      ]
+    },
+    {
+      "id": "D50",
+      "path": "docs/implementation-plan-and-task-packets.md",
+      "words": 1529,
+      "acceptance_criteria": [
+        "AC-D50-01",
+        "AC-D50-02",
+        "AC-D50-03",
+        "AC-D50-04",
+        "AC-D50-05"
+      ],
+      "requirement_references": [
+        "REQ-ARCH-50"
+      ]
+    }
+  ]
+}
