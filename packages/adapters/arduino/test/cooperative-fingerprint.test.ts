@@ -10,8 +10,11 @@ test('cooperative input hashing preserves exact identities while the event loop 
   const directory = mkdtempSync(join(tmpdir(), 'workbench-input-hash-')); t.after(() => rmSync(directory, { recursive: true, force: true }));
   mkdirSync(join(directory, 'nested')); mkdirSync(join(directory, '.git')); writeFileSync(join(directory, '.git', 'ignored'), 'not a tool input');
   for (let index = 0; index < 64; index++) writeFileSync(join(directory, 'nested', `${index}.h`), Buffer.alloc(128 * 1024, index));
+  // Hosted Windows can supply a short-name alias for the same temp directory.
+  const synchronous = fingerprintTree(directory);
+  const expected = { ...synchronous, path: await fs.realpath(synchronous.path) };
   let heartbeats = 0; const timer = setInterval(() => { heartbeats++; }, 0);
-  try { assert.deepEqual(await fingerprintTreeAsync(directory), fingerprintTree(directory)); assert.ok(heartbeats > 0, 'Inventory work must yield so operation queries and cancellation remain observable.'); }
+  try { assert.deepEqual(await fingerprintTreeAsync(directory), expected); assert.ok(heartbeats > 0, 'Inventory work must yield so operation queries and cancellation remain observable.'); }
   finally { clearInterval(timer); }
 });
 

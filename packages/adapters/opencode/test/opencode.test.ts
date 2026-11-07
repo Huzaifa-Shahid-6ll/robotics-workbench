@@ -1,7 +1,7 @@
 import test, { type TestContext } from 'node:test';
 import assert from 'node:assert/strict';
 import { createHash, randomUUID } from 'node:crypto';
-import { mkdtemp, rm } from 'node:fs/promises';
+import { mkdtemp, realpath, rm } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { pathToFileURL } from 'node:url';
@@ -10,7 +10,7 @@ import type { OpenSession, SubmitTurn, SessionRef } from '@robotics-workbench/co
 import { providerContract } from '../../../test-fixtures/agents/shared/provider-contract.js';
 
 async function fixture(t: TestContext) {
-  const directory = await mkdtemp(join(tmpdir(), 'opencode space '));
+  const directory = await realpath(await mkdtemp(join(tmpdir(), 'opencode space ')));
   const doc = { openapi: '3.1.0', info: { version: 'fixture' } };
   const calls: { path: string; method: string; body: unknown }[] = [];
   let stream: ReadableStreamDefaultController<Uint8Array> | undefined;
