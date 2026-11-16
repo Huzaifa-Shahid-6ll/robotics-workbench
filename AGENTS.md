@@ -85,3 +85,7 @@ Update contracts, task status, and evidence together when behavior changes. Do n
 This is project policy. **RESEARCH-RECORDED** supporting boundaries: [VS Code API](https://code.visualstudio.com/api/references/vscode-api), [Arduino integration](https://docs.arduino.cc/arduino-cli/integration-options/), [SQLite atomic commit](https://sqlite.org/atomiccommit.html).
 
 Related: [requirements](docs/requirements-and-acceptance.md), [unknowns](docs/unknowns-and-validation-spikes.md), [task packets](docs/implementation-plan-and-task-packets.md).
+
+## Tstack PR workflows
+
+Use the installed tstack skills for GitHub pull request work. Use `$file-pr` to open a PR, `$babysit-pr` to follow it through checks and review, and `$sol-loop` for a Sol review. Use `$full-stop` when asked to prepare a PR for the user to merge and `$full-send` when asked to take it through merge.
